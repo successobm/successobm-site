@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Who SuccessOBM Is For | Online Business Management for Growing Businesses</title>
+  <meta name="description" content="If your business is growing but your tools and processes haven't kept up, SuccessOBM was built for you. See how it fits owner-led operations, growing teams, and multi-admin structures.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://successobm.com/who-its-for">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="SuccessOBM">
+  <meta property="og:url"         content="https://successobm.com/who-its-for">
+  <meta property="og:title"       content="Who SuccessOBM Is For | Online Business Management for Growing Businesses">
+  <meta property="og:description" content="See whether SuccessOBM fits your business stage, structure, and way of operating — from owner-led to team-based to multi-admin.">
+  <meta property="og:locale"      content="en_US">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Who SuccessOBM Is For | Online Business Management for Growing Businesses">
+  <meta name="twitter:description" content="See whether SuccessOBM fits your business stage, structure, and way of operating.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://successobm.com/who-its-for#webpage",
+        "url": "https://successobm.com/who-its-for",
+        "name": "Who SuccessOBM Is For | Online Business Management for Growing Businesses",
+        "description": "SuccessOBM is built for online businesses at every stage of growth — from owner-led operations to multi-admin and partner management structures.",
+        "isPartOf": { "@id": "https://successobm.com/#website" },
+        "about": { "@id": "https://successobm.com/#product" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    /* ================================================================
+       Who It's For page — page-specific component styles
+       Prefix: .wif-* to avoid collision with shared styles.css
+       ================================================================ */
+
+    /* ---- Stage progression strip (inside hero) ---- */
+    .wif-stages-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+      justify-content: center;
+      margin-top: var(--s-10);
+    }
+
+    .wif-stage-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      padding: var(--s-2) var(--s-4);
+      background-color: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--r-full);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .wif-stage-pill__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--c-gold);
+      flex-shrink: 0;
+    }
+
+    /* ---- Intro section (narrow centered) ---- */
+    .wif-intro {
+      max-width: 720px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    /* ---- Stage blocks — split two-column layout ---- */
+    .wif-stage-block {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-10);
+      align-items: center;
+    }
+
+    @media (min-width: 860px) {
+      .wif-stage-block {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--s-16);
+      }
+
+      /* Visually reverses column order on desktop while keeping DOM order semantic */
+      .wif-stage-block--reverse .wif-fits-card {
+        order: -1;
+      }
+    }
+
+    .wif-stage-block__label {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--s-1) var(--s-3);
+      background-color: var(--c-gold-light);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: var(--r-full);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-gold-dark);
+      margin-bottom: var(--s-4);
+    }
+
+    .wif-stage-block__title {
+      font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: var(--c-text);
+      margin-bottom: var(--s-4);
+    }
+
+    .wif-stage-block__body {
+      font-size: var(--text-base);
+      color: var(--c-text-muted);
+      line-height: 1.75;
+      margin-bottom: var(--s-4);
+    }
+
+    .wif-stage-block__body:last-of-type {
+      margin-bottom: var(--s-6);
+    }
+
+    .wif-stage-block__link {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--c-primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-1);
+      transition: gap var(--t-fast), color var(--t-fast);
+    }
+
+    .wif-stage-block__link:hover {
+      color: var(--c-primary-dark);
+      gap: var(--s-2);
+    }
+
+    /* Fit signals card */
+    .wif-fits-card {
+      background-color: var(--c-white);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-2xl);
+      padding: var(--s-7);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .wif-fits-card__heading {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-text-muted);
+      margin-bottom: var(--s-5);
+      padding-bottom: var(--s-4);
+      border-bottom: 1px solid var(--c-border);
+    }
+
+    .wif-fits-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-4);
+      list-style: none;
+    }
+
+    .wif-fit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--s-3);
+    }
+
+    .wif-fit-item__check {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background-color: var(--c-primary-light);
+      border-radius: 50%;
+      color: var(--c-primary);
+      margin-top: 1px;
+    }
+
+    .wif-fit-item__text {
+      font-size: var(--text-sm);
+      color: var(--c-text-body);
+      line-height: 1.6;
+    }
+
+    .wif-fit-item__text strong {
+      color: var(--c-text);
+      font-weight: 600;
+    }
+
+    /* ---- Scale / continuity section (dark) ---- */
+    .wif-continuity {
+      background: linear-gradient(
+        135deg,
+        var(--c-dark)     0%,
+        var(--c-dark-alt) 55%,
+        #1a2744           100%
+      );
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wif-continuity::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 20%, rgba(37, 99, 235, 0.16) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 10% 80%, rgba(245, 158, 11, 0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .wif-continuity__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .wif-continuity__title {
+      font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: var(--c-white);
+      margin-bottom: var(--s-4);
+    }
+
+    .wif-continuity__body {
+      font-size: var(--text-lg);
+      color: rgba(255, 255, 255, 0.62);
+      line-height: 1.7;
+      max-width: 620px;
+      margin-bottom: var(--s-10);
+    }
+
+    .wif-continuity-points {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-4);
+      list-style: none;
+      margin-bottom: var(--s-10);
+    }
+
+    @media (min-width: 640px) {
+      .wif-continuity-points {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .wif-continuity-point {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--s-4);
+      padding: var(--s-5);
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: var(--r-xl);
+    }
+
+    .wif-continuity-point__icon {
+      flex-shrink: 0;
+      color: var(--c-gold);
+      margin-top: 2px;
+    }
+
+    .wif-continuity-point__text {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.65;
+    }
+
+    .wif-continuity-point__text strong {
+      color: var(--c-white);
+      font-weight: 600;
+      display: block;
+      margin-bottom: var(--s-1);
+    }
+
+    /* ---- Pain callout — opens each stage section with the friction state ---- */
+    .wif-pain-callout {
+      padding: var(--s-4) var(--s-5);
+      background-color: var(--c-primary-light);
+      border-left: 3px solid var(--c-primary);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      margin-bottom: var(--s-5);
+    }
+
+    .wif-pain-callout p {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--c-primary-deeper);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* On surface bg the callout needs slightly more contrast */
+    .section--surface .wif-pain-callout {
+      background-color: rgba(37, 99, 235, 0.08);
+    }
+
+    /* ---- "If this sounds familiar" section — pain signals at top ---- */
+    .wif-pain-section {
+      background-color: var(--c-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wif-pain-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 15% 50%, rgba(37, 99, 235, 0.14) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 85% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .wif-pain-section__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .wif-familiar-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-3);
+    }
+
+    @media (min-width: 640px) {
+      .wif-familiar-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .wif-familiar-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .wif-familiar-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--s-4);
+      padding: var(--s-5);
+      background-color: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--r-xl);
+      transition: background-color var(--t-base), border-color var(--t-base);
+    }
+
+    .wif-familiar-item:hover {
+      background-color: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.13);
+    }
+
+    .wif-familiar-item__icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(245, 158, 11, 0.12);
+      border-radius: var(--r-md);
+      color: var(--c-gold);
+    }
+
+    .wif-familiar-item__text { flex: 1; }
+
+    .wif-familiar-item__title {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--c-white);
+      margin-bottom: var(--s-1);
+      line-height: 1.35;
+    }
+
+    .wif-familiar-item__body {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.65;
+    }
+
+    /* ---- "What changes" outcomes — reuses shared outcome-item pattern ---- */
+    /* No new CSS needed — uses .outcomes-grid and .outcome-item from styles.css */
+
+    /* .wif-signals-grid / .wif-signal-item removed — replaced by .wif-familiar-* */
+
+    /* ---- Hero split layout (920px+) ---- */
+    @media (min-width: 920px) {
+      .hero--fit .hero__inner {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: var(--s-12);
+        align-items: center;
+        max-width: 1160px;
+      }
+
+      .hero--fit {
+        text-align: left;
+      }
+
+      .hero--fit .hero__subheadline {
+        margin-inline: 0;
+        max-width: none;
+      }
+
+      .hero--fit .hero__actions {
+        justify-content: flex-start;
+      }
+
+      .hero--fit .wif-stages-strip {
+        justify-content: flex-start;
+        margin-top: var(--s-8);
+      }
+    }
+
+    /* ---- Hero visual container ---- */
+    .wif-hero-visual {
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 920px) {
+      .wif-hero-visual {
+        display: flex;
+      }
+    }
+
+    .wif-concept-svg {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      display: block;
+    }
+
+    /* Hub glow pulse */
+    .wif-hub-glow-ring {
+      transform-origin: 200px 200px;
+      animation: wifGlowPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes wifGlowPulse {
+      0%, 100% { opacity: 0.45; transform: scale(1); }
+      50%       { opacity: 1;    transform: scale(1.1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wif-hub-glow-ring { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="/" class="nav__logo" aria-label="SuccessOBM — go to homepage">
+        <svg class="nav__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="98 72 122 137" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M164.08,80.65l3.98,1.11c14.44,8.84,28.86,17.67,43.26,26.48l.69,1.75v60.94l-.68,1.75-44.98,27.75c-3.71.82-10.62,1.42-14.09-.03l-45.69-28.25c-.51-20.93-.52-42.63-.01-63.58l43.95-26.81,3.98-1.1h9.59ZM167.05,145.61c-4.42-.01-8.16-.25-12.38-.29l-38.52-.4.02,20.93,39.08,23.59c3.01.23,5.64.26,8.59-.03l38.57-23.69v-51.09s-38.41-22.59-38.41-22.59l-9.06-.13-38.18,22.67-.31,20.8,50.54-.06-16.31-16.72,12.6-.04,23.98,16.66-.04,9.84-24.3,16.86c-4.16-.2-7.86.43-12.13-.38,5.96-6.66,10.46-9.46,16.27-15.95Z"/>
+        </svg>
+        <span class="nav__logo-text">SuccessOBM</span>
+      </a>
+
+      <button
+        class="nav__toggle"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list" role="list">
+          <li><a href="/platform"    class="nav__link">Platform</a></li>
+          <li><a href="/features"    class="nav__link">Features</a></li>
+          <li><a href="/pricing"     class="nav__link">Pricing</a></li>
+          <li><a href="/who-its-for" class="nav__link" aria-current="page">Who It&rsquo;s For</a></li>
+          <li><a href="/contact"     class="nav__link">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a href="/login"  class="btn btn--ghost">Log In</a>
+          <a href="/signup" class="btn btn--primary">Start Free Trial</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         1. HERO
+         One H1. Pain-diagnostic framing. "solopreneurs" not used.
+         Segment strip anchors the four operational realities.
+         ============================================================ -->
+    <section class="hero hero--fit" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+
+        <!-- Text column -->
+        <div class="hero__text">
+          <div class="hero__badge" aria-label="Page category">
+            Who It&rsquo;s For
+          </div>
+          <h1 class="hero__headline" id="hero-heading">
+            Built for Businesses Running on Too Many Tools and Not Enough Structure
+          </h1>
+          <p class="hero__subheadline">
+            If managing your business feels harder than it should — too many tools, too much manual coordination, not enough visibility — SuccessOBM was built for exactly that. It organizes your work into tasks, assigns clear ownership, and uses agents to handle the follow-through — so the business runs on a system, not on you holding everything together.
+          </p>
+          <div class="hero__actions">
+            <a href="/platform" class="btn btn--primary btn--lg">See the Platform</a>
+            <a href="/contact"  class="btn btn--outline-light btn--lg">Book a Demo</a>
+          </div>
+          <p class="hero__note">Dropped tasks &bull; Missed follow-up &bull; Unclear ownership &bull; No shared visibility</p>
+
+          <nav class="wif-stages-strip" aria-label="Business types covered on this page">
+            <span class="wif-stage-pill"><span class="wif-stage-pill__dot" aria-hidden="true"></span>Owner-Led</span>
+            <span class="wif-stage-pill"><span class="wif-stage-pill__dot" aria-hidden="true"></span>Growing Teams</span>
+            <span class="wif-stage-pill"><span class="wif-stage-pill__dot" aria-hidden="true"></span>Service-Based</span>
+            <span class="wif-stage-pill"><span class="wif-stage-pill__dot" aria-hidden="true"></span>Planning to Scale</span>
+          </nav>
+        </div>
+
+        <!-- Visual column — hub-and-spoke diagram; hidden on mobile -->
+        <div class="wif-hero-visual" aria-hidden="true">
+          <svg class="wif-concept-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img">
+
+            <defs>
+              <!-- Hub glow -->
+              <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%"   stop-color="#2563EB" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+              </radialGradient>
+              <!-- Hub fill -->
+              <radialGradient id="hubFill" cx="40%" cy="35%" r="65%">
+                <stop offset="0%"   stop-color="#1E40AF"/>
+                <stop offset="100%" stop-color="#0F172A"/>
+              </radialGradient>
+              <!-- Node chip fill -->
+              <linearGradient id="chipFill" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%"   stop-color="#1E293B"/>
+                <stop offset="100%" stop-color="#0F172A"/>
+              </linearGradient>
+              <!-- Spoke gradient -->
+              <linearGradient id="spokeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#2563EB" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#2563EB" stop-opacity="0.15"/>
+              </linearGradient>
+            </defs>
+
+            <!-- ── Background ── -->
+            <rect width="400" height="400" fill="#0B1120" rx="16"/>
+
+            <!-- Subtle grid lines -->
+            <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+              <line x1="0" y1="100" x2="400" y2="100"/>
+              <line x1="0" y1="200" x2="400" y2="200"/>
+              <line x1="0" y1="300" x2="400" y2="300"/>
+              <line x1="100" y1="0"  x2="100" y2="400"/>
+              <line x1="200" y1="0"  x2="200" y2="400"/>
+              <line x1="300" y1="0"  x2="300" y2="400"/>
+            </g>
+
+            <!-- ── Spokes (hub surface → node chip edge) ── -->
+            <!-- Marketing  (200,60)  → hub top   (200,148) -->
+            <line x1="200" y1="148" x2="200" y2="79"  stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.55" stroke-dasharray="4 3"/>
+            <!-- Sales      (333,157) → hub right (251,170) -->
+            <line x1="251" y1="170" x2="297" y2="157" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.55" stroke-dasharray="4 3"/>
+            <!-- Operations (282,313) → hub lower-right (234,241) -->
+            <line x1="234" y1="241" x2="247" y2="295" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.55" stroke-dasharray="4 3"/>
+            <!-- Workflows  (118,313) → hub lower-left  (166,241) -->
+            <line x1="166" y1="241" x2="153" y2="295" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.55" stroke-dasharray="4 3"/>
+            <!-- Team       (67,157)  → hub left  (149,170) -->
+            <line x1="149" y1="170" x2="103" y2="157" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.55" stroke-dasharray="4 3"/>
+
+            <!-- ── Hub ── -->
+            <!-- Outer glow ring (animated) -->
+            <circle class="wif-hub-glow-ring" cx="200" cy="200" r="80" fill="url(#hubGlow)"/>
+            <!-- Dashed orbit ring -->
+            <circle cx="200" cy="200" r="68" fill="none" stroke="#2563EB" stroke-width="1" stroke-opacity="0.22" stroke-dasharray="5 4"/>
+            <!-- Hub disc -->
+            <circle cx="200" cy="200" r="52" fill="url(#hubFill)" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.6"/>
+            <!-- Hub text -->
+            <text x="200" y="196" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#F59E0B" letter-spacing="0.5">Success</text>
+            <text x="200" y="212" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="rgba(255,255,255,0.9)" letter-spacing="1">OBM</text>
+            <!-- Hub status dot -->
+            <circle cx="228" cy="174" r="5" fill="#10B981"/>
+            <circle cx="228" cy="174" r="8" fill="#10B981" fill-opacity="0.2"/>
+
+            <!-- ── Node: Marketing (top, 200,60) ── -->
+            <g transform="translate(200,60)">
+              <!-- connector dot on chip -->
+              <circle cx="0" cy="19" r="3" fill="#2563EB" fill-opacity="0.7"/>
+              <!-- chip -->
+              <rect x="-52" y="0" width="104" height="28" rx="6" fill="url(#chipFill)" stroke="#2563EB" stroke-width="1" stroke-opacity="0.45"/>
+              <!-- gold indicator dot -->
+              <circle cx="-38" cy="14" r="4" fill="#F59E0B"/>
+              <!-- label -->
+              <text x="2" y="19" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="rgba(255,255,255,0.85)">Marketing</text>
+            </g>
+
+            <!-- ── Node: Sales (upper-right, 333,150) ── -->
+            <g transform="translate(333,150)">
+              <circle cx="-19" cy="14" r="3" fill="#2563EB" fill-opacity="0.7"/>
+              <rect x="-52" y="0" width="104" height="28" rx="6" fill="url(#chipFill)" stroke="#2563EB" stroke-width="1" stroke-opacity="0.45"/>
+              <circle cx="-38" cy="14" r="4" fill="#F59E0B"/>
+              <text x="2" y="19" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="rgba(255,255,255,0.85)">Sales &amp; CRM</text>
+            </g>
+
+            <!-- ── Node: Operations (lower-right, 282,305) ── -->
+            <g transform="translate(282,305)">
+              <circle cx="-19" cy="14" r="3" fill="#2563EB" fill-opacity="0.7"/>
+              <rect x="-52" y="0" width="104" height="28" rx="6" fill="url(#chipFill)" stroke="#2563EB" stroke-width="1" stroke-opacity="0.45"/>
+              <circle cx="-38" cy="14" r="4" fill="#F59E0B"/>
+              <text x="2" y="19" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="rgba(255,255,255,0.85)">Operations</text>
+            </g>
+
+            <!-- ── Node: Workflows (lower-left, 118,305) ── -->
+            <g transform="translate(118,305)">
+              <circle cx="19" cy="14" r="3" fill="#2563EB" fill-opacity="0.7"/>
+              <rect x="-52" y="0" width="104" height="28" rx="6" fill="url(#chipFill)" stroke="#2563EB" stroke-width="1" stroke-opacity="0.45"/>
+              <circle cx="-38" cy="14" r="4" fill="#F59E0B"/>
+              <text x="2" y="19" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="rgba(255,255,255,0.85)">Workflows</text>
+            </g>
+
+            <!-- ── Node: Team (upper-left, 67,150) ── -->
+            <g transform="translate(67,150)">
+              <circle cx="19" cy="14" r="3" fill="#2563EB" fill-opacity="0.7"/>
+              <rect x="-52" y="0" width="104" height="28" rx="6" fill="url(#chipFill)" stroke="#2563EB" stroke-width="1" stroke-opacity="0.45"/>
+              <circle cx="-38" cy="14" r="4" fill="#F59E0B"/>
+              <text x="2" y="19" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="rgba(255,255,255,0.85)">Team &amp; Access</text>
+            </g>
+
+            <!-- ── Caption strip at bottom ── -->
+            <rect x="0" y="368" width="400" height="32" fill="rgba(0,0,0,0.35)"/>
+            <text x="200" y="388" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="0.5">One task system — marketing, sales, operations, follow-through.</text>
+
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         2. IF THIS SOUNDS FAMILIAR — pain-first section
+         Dark background immediately after hero for maximum impact.
+         Moved from position 7 and substantially rewritten.
+         ============================================================ -->
+    <section class="section wif-pain-section" id="sound-familiar" aria-labelledby="familiar-heading">
+      <div class="container wif-pain-section__inner">
+        <div class="section-header section-header--centered section-header--on-dark">
+          <p class="section-eyebrow section-eyebrow--accent">Sound Familiar?</p>
+          <h2 class="section-title" id="familiar-heading">
+            If this is your business, you&rsquo;re in the right place
+          </h2>
+          <p class="section-lead">
+            These are the operational problems that make managing a growing online business harder than it needs to be. They&rsquo;re also the exact problems SuccessOBM is built to eliminate.
+          </p>
+        </div>
+
+        <ul class="wif-familiar-grid" role="list">
+          <li class="wif-familiar-item">
+            <div class="wif-familiar-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="7" height="7" rx="1"/><rect x="15" y="3" width="7" height="7" rx="1"/><rect x="2" y="14" width="7" height="7" rx="1"/><rect x="15" y="14" width="7" height="7" rx="1"/></svg>
+            </div>
+            <div class="wif-familiar-item__text">
+              <p class="wif-familiar-item__title">You&rsquo;re managing too many disconnected tools</p>
+              <p class="wif-familiar-item__body">Marketing on one platform, sales in another, operations somewhere else — follow-up emails in one tool, quotes in another, newsletters in a third. Nothing shares context. You spend more time switching between tools than actually running the business.</p>
+            </div>
+          </li>
+          <li class="wif-familiar-item">
+            <div class="wif-familiar-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="wif-familiar-item__text">
+              <p class="wif-familiar-item__title">Follow-up, quotes, and invoices fall through the gaps</p>
+              <p class="wif-familiar-item__body">Leads go cold. Quotes never get sent. Newsletters get skipped. Invoices go out late. The right things don&rsquo;t happen unless someone manually drives every step — and when they don&rsquo;t, the work just stops.</p>
+            </div>
+          </li>
+          <li class="wif-familiar-item">
+            <div class="wif-familiar-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" y1="11" x2="17" y2="17"/><line x1="14" y1="14" x2="20" y2="14"/></svg>
+            </div>
+            <div class="wif-familiar-item__text">
+              <p class="wif-familiar-item__title">You hired people but still feel like you&rsquo;re doing everything</p>
+              <p class="wif-familiar-item__body">Adding staff was supposed to take things off your plate. Instead you&rsquo;re coordinating more, explaining context more, and checking in on more things than you were before.</p>
+            </div>
+          </li>
+          <li class="wif-familiar-item">
+            <div class="wif-familiar-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </div>
+            <div class="wif-familiar-item__text">
+              <p class="wif-familiar-item__title">Nobody has a clear view of the whole business</p>
+              <p class="wif-familiar-item__body">Important data is scattered across multiple tools. There&rsquo;s no single place to see how marketing, sales, and operations are actually performing. Decisions get made without the full picture.</p>
+            </div>
+          </li>
+          <li class="wif-familiar-item">
+            <div class="wif-familiar-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="wif-familiar-item__text">
+              <p class="wif-familiar-item__title">The business is getting more complex but not more structured</p>
+              <p class="wif-familiar-item__body">More people. More processes. More moving parts. But the systems underneath haven&rsquo;t grown with it. The business is bigger — it just doesn&rsquo;t feel more organised.</p>
+            </div>
+          </li>
+          <li class="wif-familiar-item">
+            <div class="wif-familiar-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="wif-familiar-item__text">
+              <p class="wif-familiar-item__title">Work falls apart when it moves between people</p>
+              <p class="wif-familiar-item__body">Handoffs are informal. Context gets lost. Tasks get dropped. Someone finds out something went wrong two weeks after it happened. There&rsquo;s no shared system — just people trying to stay in sync.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         2b. SHORT BRIDGE — who it's for
+         Three sentences. Sets up the stage sections.
+         ============================================================ -->
+    <section class="section section--light" id="business-fit" aria-labelledby="fit-bridge-heading">
+      <div class="container">
+        <div class="wif-intro">
+          <p class="section-eyebrow">Who It&rsquo;s For</p>
+          <h2 class="section-title" id="fit-bridge-heading">
+            The businesses where this problem shows up most
+          </h2>
+          <p class="section-lead">
+            Different structures, different sizes, different teams — but the same underlying issue: too much work scattered across too many places, follow-up living in memory, ownership that&rsquo;s unclear, and no shared view of what&rsquo;s actually happening. Here&rsquo;s where SuccessOBM fits most directly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         3. STAGE 01 — OWNER-LED BUSINESSES
+         Pain-first body copy. Diagnostic H2. Stronger fit card.
+         ============================================================ -->
+    <section class="section section--surface" id="owner-led" aria-labelledby="owner-led-heading">
+      <div class="container">
+        <div class="wif-stage-block">
+
+          <div>
+            <div class="wif-stage-block__label">Stage 01</div>
+            <h2 class="wif-stage-block__title" id="owner-led-heading">
+              When You&rsquo;re Still the System
+            </h2>
+            <div class="wif-pain-callout">
+              <p>The business runs. But it runs because you&rsquo;re holding it together — your memory, your follow-through, your attention on every moving part. If you step away, things stop.</p>
+            </div>
+            <p class="wif-stage-block__body">
+              Owner-managed online businesses often work well — right up until the point where the owner&rsquo;s attention becomes the bottleneck. Marketing, sales, client communications, and operational tasks all depend on one person keeping track of everything. There&rsquo;s no system running in the background. There&rsquo;s just you.
+            </p>
+            <p class="wif-stage-block__body">
+              SuccessOBM gives owner-managed businesses the structure to run properly — marketing tasks like newsletters and follow-up emails, sales tasks like quotes and lead follow-through, and operational tasks like scheduling and invoicing, all organized in one place. Agents handle the routine execution so the business has a real system behind it, not just a person holding everything together.
+            </p>
+            <a href="/platform" class="wif-stage-block__link">
+              See how the platform works
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <div class="wif-fits-card" aria-label="Fit signals for owner-led businesses">
+            <p class="wif-fits-card__heading">This fits if you recognise any of this&hellip;</p>
+            <ul class="wif-fits-list" role="list">
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>Quotes, follow-up, and invoicing live in different places</strong> — and getting them done relies on you remembering to do each one manually.</span>
+              </li>
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>Work gets dropped when your attention is elsewhere</strong> — there&rsquo;s no system running in the background, just tasks that wait until you get back to them.</span>
+              </li>
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>You want task visibility without a full team</strong> — structure and accountability that doesn&rsquo;t require hiring someone just to keep track of things.</span>
+              </li>
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>Contacts, leads, and client information are scattered</strong> across inboxes, spreadsheets, and apps that don&rsquo;t share context with each other.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         4. STAGE 02 — GROWING BUSINESSES WITH STAFF
+         Pain-first. Card left / text right. Diagnostic H2.
+         ============================================================ -->
+    <section class="section section--light" id="growing-teams" aria-labelledby="growing-teams-heading">
+      <div class="container">
+        <div class="wif-stage-block wif-stage-block--reverse">
+
+          <div>
+            <div class="wif-stage-block__label">Stage 02</div>
+            <h2 class="wif-stage-block__title" id="growing-teams-heading">
+              When Adding People Creates More Work Instead of Less
+            </h2>
+            <div class="wif-pain-callout">
+              <p>You hired people to take things off your plate. Somehow you&rsquo;re spending more time coordinating, explaining, and checking in than you were before.</p>
+            </div>
+            <p class="wif-stage-block__body">
+              Adding team members changes how a business has to operate. The informal systems that worked when it was owner-led start breaking down — handoffs get missed, context gets lost, and keeping everyone aligned takes more overhead than the work itself.
+            </p>
+            <p class="wif-stage-block__body">
+              SuccessOBM gives growing businesses the structure to delegate properly — assign tasks by role, track what&rsquo;s open and overdue without chasing updates, and give staff the right level of access and context to do their work without you in the middle. Handoffs carry the information the next person needs. Work doesn&rsquo;t stop when it moves between people.
+            </p>
+            <a href="/features" class="wif-stage-block__link">
+              Explore team coordination features
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <div class="wif-fits-card" aria-label="Fit signals for growing businesses with staff">
+            <p class="wif-fits-card__heading">This fits if you recognise any of this&hellip;</p>
+            <ul class="wif-fits-list" role="list">
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>You&rsquo;re assigning work but still chasing status</strong> — you don&rsquo;t know what&rsquo;s done, what&rsquo;s overdue, or what&rsquo;s waiting without checking in directly.</span>
+              </li>
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>Tasks fall through when they move between people</strong> — no structured handoff means context gets lost and nobody knows what the other person left unfinished.</span>
+              </li>
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>Staff and contractors need clear ownership</strong> — right now tasks are assigned informally, and accountability depends on verbal agreements or follow-up messages.</span>
+              </li>
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>You want the whole team aligned without being in every conversation</strong> — shared task visibility so you can see progress without being the one who drives it.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         5. SEGMENT 03 — SERVICE-BASED BUSINESSES
+         Pain-first. Diagnostic H2. Text left / card right.
+         Focus: the gap between sales and delivery is where work falls apart.
+         ============================================================ -->
+    <section class="section section--surface" id="service-based" aria-labelledby="service-based-heading">
+      <div class="container">
+        <div class="wif-stage-block">
+
+          <div>
+            <div class="wif-stage-block__label">Service-Based</div>
+            <h2 class="wif-stage-block__title" id="service-based-heading">
+              When Client Work Gets Lost Between the Sale and the Delivery
+            </h2>
+            <div class="wif-pain-callout">
+              <p>The sale closes. Then somewhere between the quote, the approval, the scheduling, and the actual delivery — something slips. Clients chase you for updates. Handoffs are informal. The workflow exists in someone&rsquo;s head.</p>
+            </div>
+            <p class="wif-stage-block__body">
+              Service-based businesses run on sequential workflows — inquiry to quote, quote to approval, approval to scheduling, delivery to invoice, invoice to follow-up. When each of those steps happens in a different tool, or depends on someone remembering to move things forward, gaps are inevitable. Work gets duplicated. Client updates go out late or not at all. The person doing the delivery work doesn&rsquo;t have the context from the sale.
+            </p>
+            <p class="wif-stage-block__body">
+              SuccessOBM treats each client engagement as a set of connected tasks — visible, assigned, and moving forward. Sales and delivery share the same system, so nothing gets lost in the handoff. Quotes, scheduling, invoicing, and follow-up are part of the same workflow, not split across inboxes and spreadsheets.
+            </p>
+            <a href="/features" class="wif-stage-block__link">
+              See how service workflows run on SuccessOBM
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <div class="wif-fits-card" aria-label="Fit signals for service-based businesses">
+            <p class="wif-fits-card__heading">This fits if you recognise any of this&hellip;</p>
+            <ul class="wif-fits-list" role="list">
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>You quote in one tool, deliver in another, invoice somewhere else</strong> — the client&rsquo;s full journey is never in one place and something always falls through.</span>
+              </li>
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>Client updates and follow-up happen when someone remembers</strong> — not on schedule, not automatically, only when someone manually drives them.</span>
+              </li>
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>Handoffs between sales and delivery lose context</strong> — the person doing the work doesn&rsquo;t have what they need, and the client has to repeat themselves.</span>
+              </li>
+              <li class="wif-fit-item">
+                <span class="wif-fit-item__check" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="wif-fit-item__text"><strong>Quote-to-delivery visibility is missing</strong> — there&rsquo;s no shared view of where each client engagement stands from inquiry through invoicing.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         6. BUILT FOR MORE SCALE
+         Dark section — distinct visual treatment.
+         ============================================================ -->
+    <section class="section wif-continuity" id="built-for-scale" aria-labelledby="scale-heading">
+      <div class="container wif-continuity__inner">
+
+        <div class="section-header">
+          <p class="section-eyebrow section-eyebrow--accent">Planning to Scale</p>
+          <h2 class="wif-continuity__title" id="scale-heading">
+            When Complexity Is Growing Faster<br>Than Your Systems Can Handle
+          </h2>
+          <p class="wif-continuity__body">
+            More people, more clients, more workflows — the business is growing, but the systems underneath aren&rsquo;t ready for it. Complexity is arriving before structure does. And when that happens, the gaps get bigger, follow-up gets less reliable, and visibility gets worse, not better.
+          </p>
+          <p class="wif-continuity__body" style="margin-top: calc(var(--s-5) - var(--s-10));">
+            SuccessOBM is built to handle that transition without a rebuild. You can add team members, structure new workflows, and extend access to new roles — all within the same task system the business already runs on. What worked at smaller scale extends cleanly as the operation grows.
+          </p>
+        </div>
+
+        <ul class="wif-continuity-points" role="list">
+          <li class="wif-continuity-point">
+            <span class="wif-continuity-point__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </span>
+            <span class="wif-continuity-point__text">
+              <strong>More process without more chaos</strong>
+              Add workflows, assign accountability, and structure new areas of the business — without rebuilding what&rsquo;s already working.
+            </span>
+          </li>
+          <li class="wif-continuity-point">
+            <span class="wif-continuity-point__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <span class="wif-continuity-point__text">
+              <strong>Role-based visibility as the org grows</strong>
+              Each person sees what they need to see and manages what they&rsquo;re responsible for — without over-sharing access or under-communicating status.
+            </span>
+          </li>
+          <li class="wif-continuity-point">
+            <span class="wif-continuity-point__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+            </span>
+            <span class="wif-continuity-point__text">
+              <strong>Same task system as complexity increases</strong>
+              The structure that handled 5 things handles 50. You don&rsquo;t need a different platform when the business gets more complex — you extend what&rsquo;s already there.
+            </span>
+          </li>
+          <li class="wif-continuity-point">
+            <span class="wif-continuity-point__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </span>
+            <span class="wif-continuity-point__text">
+              <strong>Accountability without micromanagement</strong>
+              Task ownership is clear, progress is visible, and outcomes don&rsquo;t depend on check-ins. The business stays coordinated as it grows without the owner being in the middle of everything.
+            </span>
+          </li>
+        </ul>
+
+        <div>
+          <a href="/platform" class="btn btn--white btn--lg">See the Full Platform</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         8. WHAT CHANGES — pain-relief outcomes
+         Shows what the business looks like once it runs from
+         one connected platform. Uses shared outcome-item pattern.
+         ============================================================ -->
+    <section class="section section--surface" id="what-changes" aria-labelledby="changes-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">What Changes</p>
+          <h2 class="section-title" id="changes-heading">
+            What changes when work is organized as tasks with clear ownership
+          </h2>
+          <p class="section-lead">
+            Most of the friction comes from the same place: tasks without owners, follow-up that lives in memory, handoffs that lose context, and no shared view of what&rsquo;s open or overdue. Here&rsquo;s what changes when that&rsquo;s fixed.
+          </p>
+        </div>
+
+        <ul class="outcomes-grid" role="list">
+          <li class="outcome-item">
+            <div class="outcome-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 8 14"/></svg>
+            </div>
+            <div class="outcome-item__text">
+              <h3 class="outcome-item__title">Follow-up happens automatically, not when someone remembers</h3>
+              <p class="outcome-item__body">Agents attached to your tasks handle the follow-through. Follow-up emails go out. Quotes get sent. Reminders land at the right time. The right things happen without anyone manually driving each step.</p>
+            </div>
+          </li>
+          <li class="outcome-item">
+            <div class="outcome-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+            </div>
+            <div class="outcome-item__text">
+              <h3 class="outcome-item__title">You can see the whole business at once</h3>
+              <p class="outcome-item__body">Marketing, sales, and operations reporting in one view. No logging into four tools to piece together how things are going. Decisions made with the full picture, not part of it.</p>
+            </div>
+          </li>
+          <li class="outcome-item">
+            <div class="outcome-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="outcome-item__text">
+              <h3 class="outcome-item__title">Adding people adds capacity, not coordination overhead</h3>
+              <p class="outcome-item__body">Clear workflows, proper handoffs, and role-based access mean new team members can get to work. You stop being the person who explains everything twice and starts being the person who reviews outcomes.</p>
+            </div>
+          </li>
+          <li class="outcome-item">
+            <div class="outcome-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="outcome-item__text">
+              <h3 class="outcome-item__title">Handoffs carry context — nothing falls through</h3>
+              <p class="outcome-item__body">When work moves between people, the context moves with it. Tasks have owners. Processes have steps. Nothing relies on someone's memory or a message in a chat thread that nobody can find later.</p>
+            </div>
+          </li>
+          <li class="outcome-item">
+            <div class="outcome-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="outcome-item__text">
+              <h3 class="outcome-item__title">Everyone has the right access — not too much, not too little</h3>
+              <p class="outcome-item__body">Access is structured by role. Owners see everything. Staff and admins see what their work requires. Partners get visibility without full admin rights. No workarounds, no separate logins pieced together with spreadsheets.</p>
+            </div>
+          </li>
+          <li class="outcome-item">
+            <div class="outcome-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div class="outcome-item__text">
+              <h3 class="outcome-item__title">The same task system scales — you don&rsquo;t migrate when you grow</h3>
+              <p class="outcome-item__body">Adding people, restructuring workflows, or handling more clients doesn&rsquo;t require switching platforms. The task structure extends as the business grows — so you spend less time rebuilding systems and more time running the operation.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         9. CTA
+         ============================================================ -->
+    <section class="cta-section" id="get-started" aria-labelledby="cta-heading">
+      <div class="container cta-section__inner">
+        <h2 class="cta-section__title" id="cta-heading">
+          If this is your business, SuccessOBM was built for you
+        </h2>
+        <p class="cta-section__body">
+          If your business is running on too many tools, too much manual follow-up, and unclear ownership — SuccessOBM gives you the task-based structure to fix that. One place for the work. Clear ownership. Follow-through that doesn&rsquo;t depend on memory.
+        </p>
+        <div class="cta-section__actions">
+          <a href="/platform" class="btn btn--white btn--lg">See the Platform</a>
+          <a href="/contact"  class="btn btn--gold  btn--lg">Book a Demo</a>
+        </div>
+        <p class="cta-section__note">
+          No credit card required &bull; 14-day full access &bull; Cancel anytime
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         9. FAQ — page-specific fit questions
+         ============================================================ -->
+    <section class="section section--surface" id="faq" aria-labelledby="faq-heading">
+      <div class="container container--narrow">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">Questions</p>
+          <h2 class="section-title" id="faq-heading">
+            Common questions about fit
+          </h2>
+        </div>
+
+        <dl class="faq-list">
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="wif-faq-1">
+                Is SuccessOBM only for businesses at a certain size?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="wif-faq-1" class="faq-answer" hidden>
+              <p>No. SuccessOBM is built for businesses across a range of structures — from owner-led operations where one person is managing most things directly, to growing teams, service-based businesses managing client workflows, and businesses planning to scale. The task-based structure works at each of those levels, and you start with what you need today rather than setting up for a complexity you don&rsquo;t have yet.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="wif-faq-2">
+                Does SuccessOBM work if I manage most of the business myself?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="wif-faq-2" class="faq-answer" hidden>
+              <p>Yes. Owner-managed businesses are a core use case. When you&rsquo;re handling marketing, sales, operations, and client communication directly, having it all in one connected platform — with automated workflows running in the background — reduces the overhead of staying organized and means nothing important gets missed.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="wif-faq-3">
+                What happens when I start adding staff or contractors?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="wif-faq-3" class="faq-answer" hidden>
+              <p>SuccessOBM is built for that transition. As you bring on team members, you can assign roles, structure workflows for delegation, and give each person the right level of access — without rebuilding how the business runs. The platform handles more people and more coordination without requiring a new setup.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="wif-faq-4">
+                Can multiple admins and partners use SuccessOBM together?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="wif-faq-4" class="faq-answer" hidden>
+              <p>Yes. SuccessOBM supports role-based access for multiple admins, partners, and management team members — each with the visibility and permissions appropriate to their role. Multiple people can be actively involved in running the business without losing clarity about who is responsible for what.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="wif-faq-5">
+                What types of online businesses is SuccessOBM built for?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="wif-faq-5" class="faq-answer" hidden>
+              <p>SuccessOBM fits businesses where work is getting dropped, follow-up is inconsistent, ownership is unclear, or the business is spread across too many tools with no shared view of what&rsquo;s happening. It&rsquo;s particularly well-suited for owner-led businesses, growing teams, service-based businesses managing client workflows, and businesses where complexity is increasing faster than the current systems can handle.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="wif-faq-6">
+                Will I outgrow SuccessOBM as the business scales?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="wif-faq-6" class="faq-answer" hidden>
+              <p>SuccessOBM is built with growth continuity in mind. Rather than being designed for one specific stage, the platform is built to support businesses as they add more people, more workflows, and more operational complexity. The goal is that you can stay on one platform as the business grows — not be forced onto a different tool every time your structure changes.</p>
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo" aria-label="SuccessOBM — go to homepage">
+            <svg class="footer__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="98 72 122 137" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M164.08,80.65l3.98,1.11c14.44,8.84,28.86,17.67,43.26,26.48l.69,1.75v60.94l-.68,1.75-44.98,27.75c-3.71.82-10.62,1.42-14.09-.03l-45.69-28.25c-.51-20.93-.52-42.63-.01-63.58l43.95-26.81,3.98-1.1h9.59ZM167.05,145.61c-4.42-.01-8.16-.25-12.38-.29l-38.52-.4.02,20.93,39.08,23.59c3.01.23,5.64.26,8.59-.03l38.57-23.69v-51.09s-38.41-22.59-38.41-22.59l-9.06-.13-38.18,22.67-.31,20.8,50.54-.06-16.31-16.72,12.6-.04,23.98,16.66-.04,9.84-24.3,16.86c-4.16-.2-7.86.43-12.13-.38,5.96-6.66,10.46-9.46,16.27-15.95Z"/>
+            </svg>
+            <span class="footer__logo-text">SuccessOBM</span>
+          </a>
+          <p class="footer__tagline">Online business management platform for growing businesses.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <div class="footer__col">
+            <h4 class="footer__col-title">Product</h4>
+            <ul role="list">
+              <li><a href="/platform">Platform Overview</a></li>
+              <li><a href="/features">Features</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Company</h4>
+            <ul role="list">
+              <li><a href="/who-its-for">Who It&rsquo;s For</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/signup">Start Free Trial</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">&copy; <span id="current-year">2025</span> SuccessOBM. All rights reserved.</p>
+        <ul class="footer__legal-links" role="list">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/security">Security</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SuccessOBM | Task-Based Business Operating System</title>
+  <meta name="description" content="SuccessOBM is a task-based business operating system for growing online businesses. Organize marketing, sales, operations, and team work into tasks. Use agents to execute, follow up, and get work done consistently.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://successobm.com/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="SuccessOBM">
+  <meta property="og:url"         content="https://successobm.com/">
+  <meta property="og:title"       content="SuccessOBM | Online Business Management Platform">
+  <meta property="og:description" content="Manage marketing, sales, operations, and team workflows in one connected platform built for growing businesses.">
+  <meta property="og:locale"      content="en_US">
+  <!-- og:image — add when asset is ready -->
+  <!-- <meta property="og:image"     content="https://successobm.com/assets/og-image.png"> -->
+  <!-- <meta property="og:image:alt" content="SuccessOBM platform dashboard showing marketing, sales, and operations management"> -->
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="SuccessOBM | Online Business Management Platform">
+  <meta name="twitter:description" content="Manage marketing, sales, operations, and team workflows in one connected platform built for growing businesses.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://successobm.com/#organization",
+        "name": "SuccessOBM",
+        "url": "https://successobm.com",
+        "description": "Online business management platform for growing businesses."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://successobm.com/#website",
+        "url": "https://successobm.com",
+        "name": "SuccessOBM",
+        "publisher": { "@id": "https://successobm.com/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://successobm.com/#product",
+        "name": "SuccessOBM",
+        "url": "https://successobm.com",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Online business management platform that centralizes marketing, sales, operations, and team workflows for growing businesses.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "description": "14-day free trial. No credit card required.",
+          "availability": "https://schema.org/InStock"
+        },
+        "publisher": { "@id": "https://successobm.com/#organization" },
+        "featureList": [
+          "Marketing and Communications Hub",
+          "Sales and CRM",
+          "Workflow Automation",
+          "Task and Project Management",
+          "Business Analytics and Reporting",
+          "Team and Access Management"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ================================================================
+       Homepage — page-specific styles
+       ================================================================ */
+
+    /* ---- Workflow example — four area rows ---- */
+    .wf-rows {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+      margin-bottom: var(--s-10);
+    }
+
+    .wf-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-3);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: var(--r-xl);
+      padding: var(--s-4) var(--s-5);
+    }
+
+    @media (min-width: 600px) {
+      .wf-row {
+        grid-template-columns: 110px 1fr;
+        align-items: center;
+        gap: var(--s-5);
+      }
+    }
+
+    .wf-row__area {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.38);
+    }
+
+    .wf-row__steps {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--s-2);
+    }
+
+    /* Step pills */
+    .wf-pill {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: var(--r-full);
+      padding: 5px 13px;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.78);
+      white-space: nowrap;
+    }
+
+    /* Agent-handled steps — gold */
+    .wf-pill--agent {
+      border-color: rgba(245, 158, 11, 0.42);
+      background: rgba(245, 158, 11, 0.08);
+      color: rgba(245, 158, 11, 0.92);
+    }
+
+    /* Completion step — green */
+    .wf-pill--complete {
+      border-color: rgba(16, 185, 129, 0.42);
+      background: rgba(16, 185, 129, 0.07);
+      color: rgba(16, 185, 129, 0.92);
+    }
+
+    /* Arrow separators */
+    .wf-arrow {
+      color: rgba(255, 255, 255, 0.2);
+      font-size: 12px;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    /* Legend row */
+    .wf-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-6);
+      justify-content: center;
+      margin-bottom: var(--s-10);
+    }
+    .wf-legend-item {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-size: var(--text-xs);
+      color: rgba(255, 255, 255, 0.35);
+    }
+    .wf-legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Three callout notes */
+    .wf-notes {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-4);
+    }
+    @media (min-width: 640px) {
+      .wf-notes { grid-template-columns: repeat(3, 1fr); }
+    }
+    .wf-note {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: var(--r-xl);
+      padding: var(--s-5);
+    }
+    .wf-note__label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: var(--s-2);
+    }
+    .wf-note__body {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.52);
+      line-height: 1.65;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="/" class="nav__logo" aria-label="SuccessOBM — go to homepage">
+        <svg class="nav__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="98 72 122 137" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M164.08,80.65l3.98,1.11c14.44,8.84,28.86,17.67,43.26,26.48l.69,1.75v60.94l-.68,1.75-44.98,27.75c-3.71.82-10.62,1.42-14.09-.03l-45.69-28.25c-.51-20.93-.52-42.63-.01-63.58l43.95-26.81,3.98-1.1h9.59ZM167.05,145.61c-4.42-.01-8.16-.25-12.38-.29l-38.52-.4.02,20.93,39.08,23.59c3.01.23,5.64.26,8.59-.03l38.57-23.69v-51.09s-38.41-22.59-38.41-22.59l-9.06-.13-38.18,22.67-.31,20.8,50.54-.06-16.31-16.72,12.6-.04,23.98,16.66-.04,9.84-24.3,16.86c-4.16-.2-7.86.43-12.13-.38,5.96-6.66,10.46-9.46,16.27-15.95Z"/>
+        </svg>
+        <span class="nav__logo-text">SuccessOBM</span>
+      </a>
+
+      <button
+        class="nav__toggle"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list" role="list">
+          <li><a href="/platform" class="nav__link">Platform</a></li>
+          <li><a href="/features" class="nav__link">Features</a></li>
+          <li><a href="/pricing"  class="nav__link">Pricing</a></li>
+          <li><a href="/contact"  class="nav__link">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a href="/login"  class="btn btn--ghost">Log In</a>
+          <a href="/signup" class="btn btn--primary">Start Free Trial</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         1. HERO
+         One H1 — keyword-forward, audience-broad, above-fold CTA.
+         "solopreneurs" not used in headline per positioning brief.
+         ============================================================ -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__badge" aria-label="Product category">
+          Business Operating System
+        </div>
+        <h1 class="hero__headline" id="hero-heading">
+          Organize Every Business Task. Use Agents to Keep It Moving.
+        </h1>
+        <p class="hero__subheadline">
+          SuccessOBM is a task-based operating system for growing online businesses. It organizes your marketing, sales, operations, and admin work into tasks — and attaches agents to help start, execute, follow up, and complete them, so work actually gets done.
+        </p>
+        <div class="hero__actions">
+          <a href="/signup"       class="btn btn--primary btn--lg">Start Free Trial</a>
+          <a href="#how-it-works" class="btn btn--outline-light btn--lg">See How It Works</a>
+        </div>
+        <p class="hero__note">No credit card required &bull; Setup in minutes &bull; Cancel anytime</p>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         2. PROBLEM STATEMENT
+         ============================================================ -->
+    <section class="section section--light" id="problem" aria-labelledby="problem-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">The Problem</p>
+          <h2 class="section-title" id="problem-heading">
+            Most businesses grow faster than their systems do.
+          </h2>
+          <p class="section-lead">
+            As your online business grows, tools multiply, processes become manual, and no one has a clear view of what's happening across marketing, sales, and operations — all at once.
+          </p>
+        </div>
+        <ul class="pain-grid" role="list">
+          <li class="pain-card">
+            <div class="pain-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="7" height="7" rx="1"/><rect x="15" y="3" width="7" height="7" rx="1"/><rect x="2" y="14" width="7" height="7" rx="1"/><rect x="15" y="14" width="7" height="7" rx="1"/><line x1="9" y1="6.5" x2="15" y2="6.5"/><line x1="9" y1="17.5" x2="15" y2="17.5"/><line x1="5.5" y1="10" x2="5.5" y2="14"/><line x1="18.5" y1="10" x2="18.5" y2="14"/></svg>
+            </div>
+            <h3 class="pain-card__title">Scattered Tools Across Every Department</h3>
+            <p class="pain-card__body">Marketing runs on one platform, sales on another, operations somewhere else — and none of them share data, context, or a unified view of what's actually happening.</p>
+          </li>
+          <li class="pain-card">
+            <div class="pain-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="pain-card__title">Manual Work That Doesn't Scale</h3>
+            <p class="pain-card__body">Follow-ups, task assignments, and process steps all depend on someone remembering to do them. As the business grows, things get dropped and the workload becomes unsustainable.</p>
+          </li>
+          <li class="pain-card">
+            <div class="pain-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </div>
+            <h3 class="pain-card__title">No Unified View of the Business</h3>
+            <p class="pain-card__body">Important data is scattered across multiple tools. Without a single view, it's hard to know what's working, what's stalling, and where to focus your attention right now.</p>
+          </li>
+          <li class="pain-card">
+            <div class="pain-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h3 class="pain-card__title">Processes That Break as You Add People</h3>
+            <p class="pain-card__body">What works when it's just you breaks the moment you add staff, contractors, admins, or partners. Without a shared system, growth creates confusion instead of scale.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         3. WHAT SUCCESSOBM MANAGES
+         Four business pillars — marketing, sales, operations, team.
+         ============================================================ -->
+    <section class="section section--dark" id="platform" aria-labelledby="platform-heading">
+      <div class="container">
+        <div class="section-header section-header--centered section-header--on-dark">
+          <p class="section-eyebrow section-eyebrow--accent">The Platform</p>
+          <h2 class="section-title" id="platform-heading">
+            Every area of your business, managed from one platform
+          </h2>
+          <p class="section-lead">
+            Each area of the business gets its own task types, workflows, and agents — and they all share the same contacts, history, and status view. No separate systems, no manual bridging.
+          </p>
+        </div>
+        <ul class="pillar-grid" role="list">
+          <li class="pillar">
+            <div class="pillar__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3 class="pillar__title">Marketing</h3>
+            <p class="pillar__body">Turn marketing work into tasks — newsletters, social posts, blog content, follow-up emails, and SMS campaigns. Agents help draft, schedule, and send so your marketing pipeline keeps moving.</p>
+          </li>
+          <li class="pillar">
+            <div class="pillar__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+            </div>
+            <h3 class="pillar__title">Sales</h3>
+            <p class="pillar__body">Leads and inquiries become tasks — with quotes, follow-ups, proposals, and status updates handled through structured workflows. Agents send follow-up messages and move deals forward so no opportunity sits idle.</p>
+          </li>
+          <li class="pillar">
+            <div class="pillar__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="pillar__title">Operations</h3>
+            <p class="pillar__body">Inquiries, quotes, scheduling, fulfillment, and invoicing all flow through tasks. Each step is assigned, tracked, and moved forward — with agents handling reminders and updates so nothing stalls between handoffs.</p>
+          </li>
+          <li class="pillar">
+            <div class="pillar__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="pillar__title">Team &amp; Accountability</h3>
+            <p class="pillar__body">Assign tasks to staff by role, control what each person sees, and delegate workflows to admins and partners. As you add people, the right work goes to the right person — with ownership, status, and accountability built into every task.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         4. OUTCOMES / BENEFITS
+         ============================================================ -->
+    <section class="section" id="outcomes" aria-labelledby="outcomes-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">What You Get</p>
+          <h2 class="section-title" id="outcomes-heading">
+            Every task tracked. Every follow-up handled. Every step visible.
+          </h2>
+          <p class="section-lead">
+            Here's what changes when your business runs from tasks instead of inboxes, spreadsheets, and disconnected tools.
+          </p>
+        </div>
+        <ul class="outcomes-grid" role="list">
+          <li class="outcome-item">
+            <div class="outcome-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <div class="outcome-item__text">
+              <h3 class="outcome-item__title">Every piece of work has an owner, a status, and a next step</h3>
+              <p class="outcome-item__body">Inquiries, quotes, follow-ups, jobs, and invoices all live as tasks in SuccessOBM — each one assigned, tracked, and visible. No more hunting through inboxes or spreadsheets to find out where something is.</p>
+            </div>
+          </li>
+          <li class="outcome-item">
+            <div class="outcome-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="outcome-item__text">
+              <h3 class="outcome-item__title">Follow-up and reminders run automatically — not on memory</h3>
+              <p class="outcome-item__body">When a quote goes unanswered, a follow-up goes out. When a payment is overdue, a reminder is sent. When a job is complete, the customer gets an update. Agents handle the follow-through so you don't have to.</p>
+            </div>
+          </li>
+          <li class="outcome-item">
+            <div class="outcome-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6"  y1="20" x2="6"  y2="14"/><line x1="2"  y1="20" x2="22" y2="20"/></svg>
+            </div>
+            <div class="outcome-item__text">
+              <h3 class="outcome-item__title">See open tasks, overdue work, and stalled deals — in one view</h3>
+              <p class="outcome-item__body">One view shows your marketing pipeline, sales queue, and operations status at the same time. No logging into four tools to answer: what's actually happening right now, and what needs my attention?</p>
+            </div>
+          </li>
+          <li class="outcome-item">
+            <div class="outcome-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div class="outcome-item__text">
+              <h3 class="outcome-item__title">Add people, assign by role, keep everyone accountable</h3>
+              <p class="outcome-item__body">Staff see their task queue. Admins see their area. You see everything. As you add people, work gets assigned by role — so growth means more capacity, not more chaos and more check-ins.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         5. WHO IT'S FOR / GROWTH & ROLES
+         Moved before Features per brief section order.
+         Covers owner-led → staff → admins → scale.
+         ============================================================ -->
+    <section class="section section--surface" id="who-its-for" aria-labelledby="who-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">Who It's For</p>
+          <h2 class="section-title" id="who-heading">
+            Built for online businesses at every stage of growth
+          </h2>
+          <p class="section-lead">
+            Whether you're running everything yourself or managing a growing team with staff, admins, and partners — SuccessOBM gives you the structure to operate efficiently at every level.
+          </p>
+        </div>
+        <ul class="audience-grid" role="list">
+          <li class="audience-card">
+            <h3 class="audience-card__title">Owner-Led Businesses</h3>
+            <p class="audience-card__body">You manage marketing, sales, and operations yourself — or with a small team. SuccessOBM gives you one place to run it all, without the overhead of a full staff or a stack of disconnected tools.</p>
+            <ul class="audience-card__tags" aria-label="Key use cases">
+              <li>Centralized workflows</li>
+              <li>Marketing + sales in one place</li>
+              <li>Solo or small team</li>
+            </ul>
+          </li>
+          <li class="audience-card">
+            <h3 class="audience-card__title">Growing Teams</h3>
+            <p class="audience-card__body">As you add staff, contractors, admins, or partners, SuccessOBM provides the structure to delegate work, manage roles, and keep everyone aligned — without losing visibility or control.</p>
+            <ul class="audience-card__tags" aria-label="Key use cases">
+              <li>Role-based access</li>
+              <li>Team coordination</li>
+              <li>Delegation + visibility</li>
+            </ul>
+          </li>
+          <li class="audience-card">
+            <h3 class="audience-card__title">Service-Based Businesses</h3>
+            <p class="audience-card__body">From client acquisition to delivery, manage your marketing pipeline, client communications, and operational workflows in one connected system — so nothing slips between sales and execution.</p>
+            <ul class="audience-card__tags" aria-label="Key use cases">
+              <li>Client workflow management</li>
+              <li>Service delivery tracking</li>
+              <li>Communication hub</li>
+            </ul>
+          </li>
+          <li class="audience-card">
+            <h3 class="audience-card__title">Businesses Planning to Scale</h3>
+            <p class="audience-card__body">Add complexity, team members, and advanced workflows only when you need them. SuccessOBM supports multi-admin, partner, and management-level access as your business structure grows.</p>
+            <ul class="audience-card__tags" aria-label="Key use cases">
+              <li>Scalable processes</li>
+              <li>Multi-admin support</li>
+              <li>Built for complexity</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         6. CORE FEATURES
+         Business-function framing — not generic SaaS feature list.
+         ============================================================ -->
+    <section class="section" id="features" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">Features</p>
+          <h2 class="section-title" id="features-heading">
+            The tools your business needs, built into one platform
+          </h2>
+          <p class="section-lead">
+            Each feature maps to a real business task — creating, sending, tracking, following up, invoicing, assigning, or reporting. All of them share the same contacts, the same task system, and the same workspace.
+          </p>
+        </div>
+        <ul class="features-grid" role="list">
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Marketing &amp; Communications</h3>
+            <p class="feature-card__body">Send newsletters, follow-up email sequences, and SMS campaigns as tasks. Track what went out, to whom, and when — attached to contact records so your marketing and sales history live in the same place.</p>
+          </li>
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h3 class="feature-card__title">Sales &amp; CRM</h3>
+            <p class="feature-card__body">Every lead and inquiry becomes a tracked task with a status, an owner, and a follow-up schedule. Send quotes, log responses, and move contacts from new inquiry to closed deal without switching tools.</p>
+          </li>
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="feature-card__title">Workflow Automation</h3>
+            <p class="feature-card__body">Define the steps that should happen automatically: new inquiry arrives → create task. Quote sent → schedule follow-up. Job complete → send invoice. Set the rules once and the workflow runs every time.</p>
+          </li>
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3 class="feature-card__title">Task &amp; Job Management</h3>
+            <p class="feature-card__body">Every quote, job, delivery step, and client action item is a task — with an owner, a due date, and a current status. Teams see their own queue. You see the full board. Nothing requires a meeting to figure out where it stands.</p>
+          </li>
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6"  y1="20" x2="6"  y2="14"/><line x1="2"  y1="20" x2="22" y2="20"/></svg>
+            </div>
+            <h3 class="feature-card__title">Business Reporting</h3>
+            <p class="feature-card__body">See open tasks, completed jobs, outreach sent, invoices issued, and pipeline status — without a separate analytics tool. A status view for business owners, not a BI dashboard that needs an analyst to interpret it.</p>
+          </li>
+          <li class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="feature-card__title">Team &amp; Access Management</h3>
+            <p class="feature-card__body">Each person sees the tasks, contacts, and workflows they're responsible for. Staff see their assignments. Admins see more. Owners see everything. Add roles and people without rebuilding how the system works.</p>
+          </li>
+        </ul>
+        <div class="features-cta">
+          <a href="/features" class="btn btn--gold">See All Features</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         7. HOW IT WORKS
+         ============================================================ -->
+    <section class="section section--surface" id="how-it-works" aria-labelledby="how-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">How It Works</p>
+          <h2 class="section-title" id="how-heading">
+            From disconnected tools to one connected business system
+          </h2>
+          <p class="section-lead">
+            Most businesses are up and running with SuccessOBM the same day they sign up. Here's how it works.
+          </p>
+        </div>
+        <ol class="steps" aria-label="Three steps to get started with SuccessOBM">
+          <li class="step">
+            <div class="step__number" aria-hidden="true">1</div>
+            <div class="step__content">
+              <h3 class="step__title">Bring Your Business Work Into One Workspace</h3>
+              <p class="step__body">Connect your marketing, sales, and operations into SuccessOBM. Every inquiry, lead, project, and task lives in one place — no more jumping between tools to find out what's happening.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__number" aria-hidden="true">2</div>
+            <div class="step__content">
+              <h3 class="step__title">Organize Work Into Tasks and Workflows</h3>
+              <p class="step__body">Break down your marketing, sales, and operations into structured tasks. Define the steps — capture the lead, send the quote, schedule the job, send the invoice. Attach workflows so the right things happen in the right order, automatically.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__number" aria-hidden="true">3</div>
+            <div class="step__content">
+              <h3 class="step__title">Let Agents Move Work Forward</h3>
+              <p class="step__body">Agents attached to your tasks handle the follow-through — sending follow-up emails, creating next steps, scheduling reminders, and flagging what needs attention. Work progresses consistently, without you manually driving every step.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         8. WORKFLOW EXAMPLE
+         Four area rows: Marketing, Sales, Operations, Admin.
+         Gold pills = agent-handled. Green = completion step.
+         Shows that all work types run through the same task engine.
+         ============================================================ -->
+    <section class="section section--dark" id="workflow-example" aria-labelledby="workflow-heading">
+      <div class="container">
+
+        <div class="section-header section-header--centered section-header--on-dark">
+          <p class="section-eyebrow section-eyebrow--accent">How Work Moves</p>
+          <h2 class="section-title" id="workflow-heading">
+            Different kinds of work. One task system.
+          </h2>
+          <p class="section-lead">
+            Whether work starts as a marketing campaign, a new inquiry, a quote, a client job, or an invoice reminder — SuccessOBM turns it into tracked tasks and uses agents to help move each step forward.
+          </p>
+        </div>
+
+        <div class="wf-rows" role="list" aria-label="Workflow examples by business area">
+
+          <!-- Row 1: Marketing -->
+          <div class="wf-row" role="listitem">
+            <span class="wf-row__area">Marketing</span>
+            <div class="wf-row__steps" aria-label="Marketing workflow">
+              <span class="wf-pill">Idea</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill wf-pill--agent">Draft</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill">Review</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill wf-pill--agent">Schedule</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill wf-pill--complete">Published</span>
+            </div>
+          </div>
+
+          <!-- Row 2: Sales -->
+          <div class="wf-row" role="listitem">
+            <span class="wf-row__area">Sales</span>
+            <div class="wf-row__steps" aria-label="Sales workflow">
+              <span class="wf-pill">Inquiry</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill">Task</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill">Quote</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill wf-pill--agent">Follow-up</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill wf-pill--complete">Closed</span>
+            </div>
+          </div>
+
+          <!-- Row 3: Operations -->
+          <div class="wf-row" role="listitem">
+            <span class="wf-row__area">Operations</span>
+            <div class="wf-row__steps" aria-label="Operations workflow">
+              <span class="wf-pill">Approved</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill">Assign</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill">Fulfill</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill wf-pill--agent">Update Client</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill wf-pill--complete">Complete</span>
+            </div>
+          </div>
+
+          <!-- Row 4: Admin -->
+          <div class="wf-row" role="listitem">
+            <span class="wf-row__area">Admin</span>
+            <div class="wf-row__steps" aria-label="Admin workflow">
+              <span class="wf-pill">Invoice Due</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill wf-pill--agent">Reminder</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill">Payment</span>
+              <span class="wf-arrow" aria-hidden="true">›</span>
+              <span class="wf-pill wf-pill--complete">Closed</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="wf-legend" aria-label="Workflow key">
+          <span class="wf-legend-item">
+            <span class="wf-legend-dot" style="background:rgba(255,255,255,0.45);" aria-hidden="true"></span>
+            Task tracked in SuccessOBM
+          </span>
+          <span class="wf-legend-item">
+            <span class="wf-legend-dot" style="background:var(--c-gold);" aria-hidden="true"></span>
+            Handled by agent
+          </span>
+          <span class="wf-legend-item">
+            <span class="wf-legend-dot" style="background:#10B981;" aria-hidden="true"></span>
+            Step complete
+          </span>
+        </div>
+
+        <div class="wf-notes">
+          <div class="wf-note">
+            <p class="wf-note__label">Tasks</p>
+            <p class="wf-note__body">Every type of business work is organized into tasks with an owner, a status, and a next step — whether it's a blog post, a quote, a job, or an unpaid invoice.</p>
+          </div>
+          <div class="wf-note">
+            <p class="wf-note__label">Agents</p>
+            <p class="wf-note__body">Agents help draft, schedule, remind, follow up, and move work forward — handling the routine steps so nothing stalls while waiting on someone to remember.</p>
+          </div>
+          <div class="wf-note">
+            <p class="wf-note__label">Visibility</p>
+            <p class="wf-note__body">Owners and teams can see what is open, overdue, assigned, waiting, or complete — across every area of the business, in one view.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         9. WHY IT'S DIFFERENT
+         ============================================================ -->
+    <section class="section" id="why-different" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">Why SuccessOBM</p>
+          <h2 class="section-title" id="why-heading">
+            Why businesses choose SuccessOBM to manage their online operations
+          </h2>
+          <p class="section-lead">
+            Most business platforms are built for one department. SuccessOBM is built for the whole business.
+          </p>
+        </div>
+        <ul class="differentiators" role="list">
+          <li class="diff-item">
+            <div class="diff-item__number" aria-hidden="true">01</div>
+            <div class="diff-item__content">
+              <h3 class="diff-item__title">Built for the Whole Business, Not Just One Department</h3>
+              <p class="diff-item__body">Most tools solve one problem — CRM, project management, or communication — and leave you to connect the rest yourself. SuccessOBM is designed to manage marketing, sales, and operations in one system, with everything connected by design.</p>
+            </div>
+          </li>
+          <li class="diff-item">
+            <div class="diff-item__number" aria-hidden="true">02</div>
+            <div class="diff-item__content">
+              <h3 class="diff-item__title">Designed for Business Owners, Not IT Departments</h3>
+              <p class="diff-item__body">Business owners and operators configure, automate, and manage their entire operation without a developer or a long implementation project — using a visual builder designed for people who run businesses, not people who build software.</p>
+            </div>
+          </li>
+          <li class="diff-item">
+            <div class="diff-item__number" aria-hidden="true">03</div>
+            <div class="diff-item__content">
+              <h3 class="diff-item__title">One Platform Instead of a Disconnected Stack</h3>
+              <p class="diff-item__body">Stop paying for tools that don't share data. SuccessOBM replaces the fragmented stack with one workspace — reducing cost, eliminating context-switching, and keeping your marketing, sales, and operations data where it can actually be used.</p>
+            </div>
+          </li>
+          <li class="diff-item">
+            <div class="diff-item__number" aria-hidden="true">04</div>
+            <div class="diff-item__content">
+              <h3 class="diff-item__title">Agents Built Into Every Task — Not Bolted On</h3>
+              <p class="diff-item__body">Most platforms add AI as an afterthought. In SuccessOBM, agents are attached to tasks by design — they help start, execute, follow up, and complete work across marketing, sales, and operations. It's task execution that actually gets business work done.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         9. FAQ
+         Questions aligned with online business management positioning.
+         ============================================================ -->
+    <section class="section section--surface" id="faq" aria-labelledby="faq-heading">
+      <div class="container container--narrow">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">FAQ</p>
+          <h2 class="section-title" id="faq-heading">
+            Questions about SuccessOBM
+          </h2>
+        </div>
+        <dl class="faq-list">
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-1">
+                What exactly is SuccessOBM?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-1" class="faq-answer" hidden>
+              <p>SuccessOBM is a task-based business operating system for growing online businesses. It organizes your marketing, sales, operations, and admin work into tasks — and uses agents to help execute, follow up, and complete that work consistently. If your business has too many responsibilities spread across too many tools and too many places, SuccessOBM brings it all into one task-centered workspace.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-2">
+                Is it just a CRM or project management tool?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-2" class="faq-answer" hidden>
+              <p>No. While SuccessOBM includes CRM and task management, it's designed as a full business management platform — covering marketing, sales, operations, reporting, and team coordination in one place. Think of it less as a single-function tool and more as the operating system for your entire online business.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-3">
+                Does it work for a solo owner or a small team?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-3" class="faq-answer" hidden>
+              <p>Yes. SuccessOBM is useful from day one whether you're running marketing, sales, and operations yourself or working with a small team. You don't need a large staff or a complex setup to get value. Start with what you need and add more structure as your business grows.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-4">
+                Can it scale as I add staff, admins, and partners?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-4" class="faq-answer" hidden>
+              <p>Yes. SuccessOBM is built to grow with your business. You can manage roles, permissions, and access for staff, contractors, admins, and partners — giving each person the right level of visibility and control. As your team and business structure grow in complexity, SuccessOBM provides the operational foundation to manage that without starting over on a new platform.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-5">
+                Do I need technical knowledge to get started?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-5" class="faq-answer" hidden>
+              <p>No. SuccessOBM is designed for business owners and operators, not developers. The visual workflow builder, pre-built templates, and guided onboarding let you configure your marketing, sales, and operational workflows without any technical background or outside help required.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-6">
+                Is there a free trial?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-6" class="faq-answer" hidden>
+              <p>Yes. Every new account starts with a 14-day free trial with full access to the platform — no credit card required. You'll have everything you need to evaluate whether SuccessOBM is the right fit for your business before making any commitment.</p>
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         10. CTA — placed after FAQ so objections are handled first.
+         Secondary button uses gold — brand-forward, demo-focused.
+         ============================================================ -->
+    <section class="cta-section" id="get-started" aria-labelledby="cta-heading">
+      <div class="container cta-section__inner">
+        <h2 class="cta-section__title" id="cta-heading">
+          See what your business looks like when it's managed in one place
+        </h2>
+        <p class="cta-section__body">
+          Every inquiry, lead, quote, job, invoice, and follow-up — organized as tasks, executed by agents, tracked in one place. Start your trial or book a demo to see it with your own business workflow.
+        </p>
+        <div class="cta-section__actions">
+          <a href="/signup"  class="btn btn--white btn--lg">Start Free Trial</a>
+          <a href="/contact" class="btn btn--gold  btn--lg">Book a Demo</a>
+        </div>
+        <p class="cta-section__note">
+          No credit card required &bull; 14-day full access &bull; Cancel anytime
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo" aria-label="SuccessOBM — go to homepage">
+            <svg class="footer__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="98 72 122 137" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M164.08,80.65l3.98,1.11c14.44,8.84,28.86,17.67,43.26,26.48l.69,1.75v60.94l-.68,1.75-44.98,27.75c-3.71.82-10.62,1.42-14.09-.03l-45.69-28.25c-.51-20.93-.52-42.63-.01-63.58l43.95-26.81,3.98-1.1h9.59ZM167.05,145.61c-4.42-.01-8.16-.25-12.38-.29l-38.52-.4.02,20.93,39.08,23.59c3.01.23,5.64.26,8.59-.03l38.57-23.69v-51.09s-38.41-22.59-38.41-22.59l-9.06-.13-38.18,22.67-.31,20.8,50.54-.06-16.31-16.72,12.6-.04,23.98,16.66-.04,9.84-24.3,16.86c-4.16-.2-7.86.43-12.13-.38,5.96-6.66,10.46-9.46,16.27-15.95Z"/>
+            </svg>
+            <span class="footer__logo-text">SuccessOBM</span>
+          </a>
+          <p class="footer__tagline">Task-based operating system for growing online businesses.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <div class="footer__col">
+            <h4 class="footer__col-title">Product</h4>
+            <ul role="list">
+              <li><a href="/platform">Platform Overview</a></li>
+              <li><a href="/features">Features</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Company</h4>
+            <ul role="list">
+              <li><a href="/who-its-for">Who It's For</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/signup">Start Free Trial</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">&copy; <span id="current-year">2025</span> SuccessOBM. All rights reserved.</p>
+        <ul class="footer__legal-links" role="list">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/security">Security</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

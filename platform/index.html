@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SuccessOBM Platform | Online Business Management Platform Overview</title>
+  <meta name="description" content="SuccessOBM is an online business management platform that connects marketing, sales, operations, and team workflows in one workspace. See how the platform works.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://successobm.com/platform">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="SuccessOBM">
+  <meta property="og:url"         content="https://successobm.com/platform">
+  <meta property="og:title"       content="SuccessOBM Platform | Online Business Management Platform Overview">
+  <meta property="og:description" content="SuccessOBM connects marketing, sales, operations, and team workflows in one online business management platform. See how the platform works.">
+  <meta property="og:locale"      content="en_US">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="SuccessOBM Platform | Online Business Management Platform Overview">
+  <meta name="twitter:description" content="SuccessOBM connects marketing, sales, operations, and team workflows in one online business management platform.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://successobm.com/platform#webpage",
+        "url": "https://successobm.com/platform",
+        "name": "SuccessOBM Platform | Online Business Management Platform Overview",
+        "description": "SuccessOBM is an online business management platform that connects marketing, sales, operations, and team workflows in one workspace.",
+        "isPartOf": { "@id": "https://successobm.com/#website" },
+        "about": { "@id": "https://successobm.com/#product" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    /* ================================================================
+       Platform page — page-specific component styles
+       Prefix: .plat-* to avoid collision with shared styles.css
+       ================================================================ */
+
+    /* ---- Split hero layout (platform page only) ---- */
+    .hero--split {
+      text-align: left;
+    }
+    .hero--split .hero__inner {
+      max-width: 1140px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-12);
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .hero--split .hero__inner {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: var(--s-14);
+      }
+    }
+    /* Override shared centered-hero rules */
+    .hero--split .hero__subheadline {
+      margin-inline: 0;
+      max-width: 520px;
+    }
+    .hero--split .hero__actions {
+      justify-content: flex-start;
+    }
+    .hero--split .hero__badge {
+      margin-bottom: var(--s-5);
+    }
+
+    /* Right column wrapper */
+    .hero__split-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 899px) {
+      .hero__split-right { display: none; }
+    }
+
+    /* ---- Platform workspace panel ---- */
+    .plat-hero-panel {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(10, 18, 40, 0.72);
+      border: 1px solid rgba(37, 99, 235, 0.28);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(37, 99, 235, 0.1),
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 80px rgba(37, 99, 235, 0.07);
+    }
+
+    /* Gold accent line at top */
+    .plat-hero-panel::before {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(90deg, var(--c-gold), rgba(245,158,11,0.3));
+    }
+
+    .plat-hero-panel__topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.025);
+    }
+    .plat-hero-panel__workspace-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.38);
+    }
+    .plat-hero-panel__status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: rgba(245, 158, 11, 0.8);
+    }
+    .plat-hero-panel__pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #F59E0B;
+      flex-shrink: 0;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .plat-hero-panel__pulse {
+        animation: platPulse 2.4s ease-in-out infinite;
+      }
+    }
+    @keyframes platPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
+      50%       { box-shadow: 0 0 0 5px rgba(245, 158, 11, 0); }
+    }
+
+    /* 2-column module grid */
+    .plat-hero-panel__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .plat-hero-panel__module {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .plat-hero-panel__module:nth-child(even) {
+      border-right: none;
+    }
+    .plat-hero-panel__module:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+    .plat-hero-panel__mod-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .plat-hero-panel__mod-name {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.3;
+    }
+
+    /* Footer */
+    .plat-hero-panel__footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .plat-hero-panel__footer-icon {
+      height: 16px;
+      width: auto;
+      color: var(--c-gold);
+      flex-shrink: 0;
+    }
+    .plat-hero-panel__footer-text {
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.02em;
+    }
+
+    /* ---- Hero split: animation stagger ---- */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero--split .hero__split-left  { animation-delay:   0ms; }
+      .hero--split .hero__split-right { animation-delay: 160ms; }
+    }
+
+    /* ---- Section 2: Platform intro — split layout ---- */
+    .plat-intro {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-12);
+      align-items: center;
+    }
+    @media (min-width: 860px) {
+      .plat-intro {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: var(--s-16);
+      }
+    }
+    .plat-intro__eyebrow {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-primary);
+      margin-bottom: var(--s-3);
+    }
+    .plat-intro__heading {
+      font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: var(--c-text);
+      margin-bottom: var(--s-5);
+    }
+    .plat-intro__body {
+      font-size: var(--text-lg);
+      color: var(--c-text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--s-4);
+    }
+    .plat-intro__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+      margin-top: var(--s-6);
+    }
+
+    /* Contrast panel — right column */
+    .plat-contrast {
+      background: var(--c-white);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .plat-contrast__panel {
+      padding: var(--s-5) var(--s-6);
+    }
+    .plat-contrast__panel + .plat-contrast__panel {
+      border-top: 1px solid var(--c-border);
+    }
+    .plat-contrast__panel--before {
+      background: var(--c-surface);
+    }
+    .plat-contrast__label {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--s-4);
+    }
+    .plat-contrast__panel--before .plat-contrast__label { color: var(--c-text-muted); }
+    .plat-contrast__panel--after  .plat-contrast__label { color: var(--c-primary); }
+    .plat-contrast__items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+    }
+    .plat-contrast__item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--s-2);
+      font-size: var(--text-sm);
+      color: var(--c-text-body);
+      line-height: 1.5;
+    }
+    .plat-contrast__item svg { flex-shrink: 0; margin-top: 1px; }
+
+    /* ---- Section 3: Before/After visual comparison ---- */
+    .plat-ba {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-4);
+    }
+    @media (min-width: 720px) {
+      .plat-ba {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--s-6);
+      }
+    }
+    .plat-ba__panel {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      border: 1px solid;
+    }
+    .plat-ba__panel--before {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .plat-ba__panel--after {
+      background: rgba(37, 99, 235, 0.07);
+      border-color: rgba(37, 99, 235, 0.22);
+    }
+    .plat-ba__label {
+      padding: var(--s-4) var(--s-5) 0;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .plat-ba__panel--before .plat-ba__label { color: rgba(255, 255, 255, 0.3); }
+    .plat-ba__panel--after  .plat-ba__label { color: var(--c-accent); }
+    .plat-ba__diagram {
+      padding: var(--s-4) var(--s-5) var(--s-5);
+      display: flex;
+      justify-content: center;
+    }
+    .plat-ba__diagram svg {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+    }
+    .plat-ba__footer {
+      padding: 0 var(--s-5) var(--s-5);
+      font-size: var(--text-xs);
+      line-height: 1.5;
+    }
+    .plat-ba__panel--before .plat-ba__footer { color: rgba(255,255,255,0.35); }
+    .plat-ba__panel--after  .plat-ba__footer { color: rgba(255,255,255,0.55); }
+
+    /* ---- Section 4: Hub diagram — split layout ---- */
+    .plat-hub-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-12);
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .plat-hub-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--s-16);
+      }
+    }
+    .plat-hub__svg-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .plat-hub__svg-wrap svg {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+    }
+    .plat-hub__areas {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-5);
+    }
+    .plat-hub__area {
+      display: flex;
+      gap: var(--s-4);
+      align-items: flex-start;
+    }
+    .plat-hub__area-marker {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      margin-top: 7px;
+    }
+    .plat-hub__area-title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--c-white);
+      margin-bottom: 3px;
+    }
+    .plat-hub__area-body {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.52);
+      line-height: 1.6;
+    }
+
+    /* ---- Section 5: Data flow — split layout ---- */
+    .plat-flow-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-12);
+      align-items: center;
+    }
+    @media (min-width: 860px) {
+      .plat-flow-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--s-16);
+      }
+    }
+    .plat-flow-steps {
+      position: relative;
+      padding-left: var(--s-10);
+    }
+    .plat-flow-steps::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 20px;
+      bottom: 20px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--c-primary), var(--c-accent));
+      border-radius: var(--r-full);
+      opacity: 0.35;
+    }
+    .plat-flow-step {
+      position: relative;
+      padding-bottom: var(--s-8);
+    }
+    .plat-flow-step:last-child { padding-bottom: 0; }
+    .plat-flow-step__dot {
+      position: absolute;
+      left: calc(-1 * var(--s-10) + 11px);
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--c-primary);
+      border: 2px solid var(--c-white);
+      box-shadow: 0 0 0 2px var(--c-primary);
+    }
+    .plat-flow-step__overline {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-primary);
+      margin-bottom: var(--s-1);
+    }
+    .plat-flow-step__title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--c-text);
+      margin-bottom: var(--s-1);
+    }
+    .plat-flow-step__body {
+      font-size: var(--text-sm);
+      color: var(--c-text-muted);
+      line-height: 1.6;
+    }
+
+    /* ---- Section 6: Growth stages — horizontal timeline ---- */
+    .plat-growth-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+    }
+    @media (min-width: 768px) {
+      .plat-growth-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .plat-growth-stage {
+      padding: var(--s-6) var(--s-5);
+      background: var(--c-white);
+      border-bottom: 1px solid var(--c-border);
+      position: relative;
+    }
+    @media (min-width: 768px) {
+      .plat-growth-stage {
+        border-bottom: none;
+        border-right: 1px solid var(--c-border);
+      }
+      .plat-growth-stage:last-child { border-right: none; }
+    }
+    /* Progress bar at top — grows per stage */
+    .plat-growth-stage::before {
+      content: '';
+      display: block;
+      height: 3px;
+      border-radius: var(--r-full);
+      margin-bottom: var(--s-5);
+      background: linear-gradient(90deg, var(--c-primary), var(--c-accent));
+    }
+    .plat-growth-stage:nth-child(1)::before { width: 25%; }
+    .plat-growth-stage:nth-child(2)::before { width: 50%; }
+    .plat-growth-stage:nth-child(3)::before { width: 75%; }
+    .plat-growth-stage:nth-child(4)::before { width: 100%; opacity: 1; }
+    .plat-growth-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--c-primary), var(--c-primary-dark));
+      color: var(--c-white);
+      font-size: var(--text-sm);
+      font-weight: 800;
+      margin-bottom: var(--s-3);
+    }
+    .plat-growth-title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--c-text);
+      margin-bottom: var(--s-2);
+      line-height: 1.3;
+    }
+    .plat-growth-body {
+      font-size: var(--text-sm);
+      color: var(--c-text-muted);
+      line-height: 1.6;
+      margin-bottom: var(--s-3);
+    }
+    .plat-growth-tags {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-1);
+    }
+    .plat-growth-tags li {
+      font-size: var(--text-xs);
+      color: var(--c-primary);
+      font-weight: 500;
+    }
+    .plat-growth-tags li::before {
+      content: '→ ';
+      color: var(--c-text-muted);
+    }
+
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="/" class="nav__logo" aria-label="SuccessOBM — go to homepage">
+        <svg class="nav__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="98 72 122 137" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M164.08,80.65l3.98,1.11c14.44,8.84,28.86,17.67,43.26,26.48l.69,1.75v60.94l-.68,1.75-44.98,27.75c-3.71.82-10.62,1.42-14.09-.03l-45.69-28.25c-.51-20.93-.52-42.63-.01-63.58l43.95-26.81,3.98-1.1h9.59ZM167.05,145.61c-4.42-.01-8.16-.25-12.38-.29l-38.52-.4.02,20.93,39.08,23.59c3.01.23,5.64.26,8.59-.03l38.57-23.69v-51.09s-38.41-22.59-38.41-22.59l-9.06-.13-38.18,22.67-.31,20.8,50.54-.06-16.31-16.72,12.6-.04,23.98,16.66-.04,9.84-24.3,16.86c-4.16-.2-7.86.43-12.13-.38,5.96-6.66,10.46-9.46,16.27-15.95Z"/>
+        </svg>
+        <span class="nav__logo-text">SuccessOBM</span>
+      </a>
+
+      <button
+        class="nav__toggle"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list" role="list">
+          <li><a href="/platform" class="nav__link" aria-current="page">Platform</a></li>
+          <li><a href="/features" class="nav__link">Features</a></li>
+          <li><a href="/pricing"  class="nav__link">Pricing</a></li>
+          <li><a href="/contact"  class="nav__link">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a href="/login"  class="btn btn--ghost">Log In</a>
+          <a href="/signup" class="btn btn--primary">Start Free Trial</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         1. HERO — SPLIT LAYOUT
+         Left: eyebrow, H1, copy, CTAs.
+         Right: platform workspace panel (decorative, aria-hidden).
+         ============================================================ -->
+    <section class="hero hero--split" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+
+        <!-- LEFT: copy -->
+        <div class="hero__split-left">
+          <div class="hero__badge" aria-label="Page context">Platform Overview</div>
+          <h1 class="hero__headline" id="hero-heading">
+            Every Business Task, Organized and Executed — in One Platform.
+          </h1>
+          <p class="hero__subheadline">
+            SuccessOBM turns every business action into a structured task — with an owner, a status, a next step, and a deadline. Agents attach to those tasks to draft content, send follow-ups, remind teams, and route work forward. Marketing, sales, operations, and admin all move through the same task system.
+          </p>
+          <div class="hero__actions">
+            <a href="/signup"   class="btn btn--primary btn--lg">Start Free Trial</a>
+            <a href="/features" class="btn btn--outline-light btn--lg">Explore Features</a>
+          </div>
+          <p class="hero__note">No credit card required &bull; Full platform access &bull; Cancel anytime</p>
+        </div>
+
+        <!-- RIGHT: platform workspace panel (decorative) -->
+        <div class="hero__split-right" aria-hidden="true">
+          <div class="plat-hero-panel">
+
+            <div class="plat-hero-panel__topbar">
+              <span class="plat-hero-panel__workspace-label">Business Workspace</span>
+              <span class="plat-hero-panel__status">
+                <span class="plat-hero-panel__pulse"></span>
+                All areas connected
+              </span>
+            </div>
+
+            <div class="plat-hero-panel__grid">
+
+              <div class="plat-hero-panel__module">
+                <span class="plat-hero-panel__mod-dot" style="background:#60A5FA;"></span>
+                <span class="plat-hero-panel__mod-name">Marketing</span>
+              </div>
+              <div class="plat-hero-panel__module">
+                <span class="plat-hero-panel__mod-dot" style="background:#3B82F6;"></span>
+                <span class="plat-hero-panel__mod-name">Sales &amp; CRM</span>
+              </div>
+
+              <div class="plat-hero-panel__module">
+                <span class="plat-hero-panel__mod-dot" style="background:#2563EB;"></span>
+                <span class="plat-hero-panel__mod-name">Operations</span>
+              </div>
+              <div class="plat-hero-panel__module">
+                <span class="plat-hero-panel__mod-dot" style="background:#1D4ED8;"></span>
+                <span class="plat-hero-panel__mod-name">Workflow Automation</span>
+              </div>
+
+              <div class="plat-hero-panel__module">
+                <span class="plat-hero-panel__mod-dot" style="background:#93C5FD;"></span>
+                <span class="plat-hero-panel__mod-name">Team Coordination</span>
+              </div>
+              <div class="plat-hero-panel__module">
+                <span class="plat-hero-panel__mod-dot" style="background:#F59E0B;"></span>
+                <span class="plat-hero-panel__mod-name">Business Reporting</span>
+              </div>
+
+            </div>
+
+            <div class="plat-hero-panel__footer">
+              <svg class="plat-hero-panel__footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="98 72 122 137" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M164.08,80.65l3.98,1.11c14.44,8.84,28.86,17.67,43.26,26.48l.69,1.75v60.94l-.68,1.75-44.98,27.75c-3.71.82-10.62,1.42-14.09-.03l-45.69-28.25c-.51-20.93-.52-42.63-.01-63.58l43.95-26.81,3.98-1.1h9.59ZM167.05,145.61c-4.42-.01-8.16-.25-12.38-.29l-38.52-.4.02,20.93,39.08,23.59c3.01.23,5.64.26,8.59-.03l38.57-23.69v-51.09s-38.41-22.59-38.41-22.59l-9.06-.13-38.18,22.67-.31,20.8,50.54-.06-16.31-16.72,12.6-.04,23.98,16.66-.04,9.84-24.3,16.86c-4.16-.2-7.86.43-12.13-.38,5.96-6.66,10.46-9.46,16.27-15.95Z"/>
+              </svg>
+              <span class="plat-hero-panel__footer-text">SuccessOBM &middot; 6 areas &middot; One task system</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         2. WHAT THE PLATFORM IS — SPLIT LAYOUT
+         Text prose left. Contrast card right (scattered tools vs.
+         one platform). Replaces repeated centered outcome-items.
+         ============================================================ -->
+    <section class="section" id="what-it-is" aria-labelledby="what-heading">
+      <div class="container">
+        <div class="plat-intro">
+
+          <div class="plat-intro__text">
+            <p class="plat-intro__eyebrow">What It Is</p>
+            <h2 class="plat-intro__heading" id="what-heading">
+              Tasks are the backbone. Agents keep them moving.
+            </h2>
+            <p class="plat-intro__body">
+              Most tools track work in one place and hand off to the next manually. SuccessOBM is different: every business action — a new inquiry, a newsletter send, a service job, an invoice follow-up — becomes a task with an assigned owner, a status, a defined next step, and a deadline. Work doesn't live in someone's head or inbox — it's structured from the moment it enters the platform.
+            </p>
+            <p class="plat-intro__body">
+              Agents attach to those tasks to move work forward — drafting messages, sending reminders, creating next steps, and routing work to the right owner. The system carries it. You manage the outcome, not the process.
+            </p>
+            <div class="plat-intro__actions">
+              <a href="/features" class="btn btn--primary">See All Features</a>
+              <a href="/pricing"  class="btn btn--ghost">View Pricing</a>
+            </div>
+          </div>
+
+          <div class="plat-intro__visual" aria-hidden="true">
+            <div class="plat-contrast">
+
+              <div class="plat-contrast__panel plat-contrast__panel--before">
+                <p class="plat-contrast__label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                  Typical tool stack
+                </p>
+                <ul class="plat-contrast__items">
+                  <li class="plat-contrast__item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    5 or 6 separate tools to manage
+                  </li>
+                  <li class="plat-contrast__item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    Data siloed across platforms
+                  </li>
+                  <li class="plat-contrast__item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    Manual handoffs between teams
+                  </li>
+                  <li class="plat-contrast__item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    No unified view of performance
+                  </li>
+                  <li class="plat-contrast__item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    Growth adds more tools, more gaps
+                  </li>
+                </ul>
+              </div>
+
+              <div class="plat-contrast__panel plat-contrast__panel--after">
+                <p class="plat-contrast__label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  SuccessOBM
+                </p>
+                <ul class="plat-contrast__items">
+                  <li class="plat-contrast__item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Every business action becomes a structured task
+                  </li>
+                  <li class="plat-contrast__item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Tasks carry owner, status, next step, and history
+                  </li>
+                  <li class="plat-contrast__item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Agents handle follow-ups, reminders, and routing
+                  </li>
+                  <li class="plat-contrast__item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    All business areas share the same task context
+                  </li>
+                  <li class="plat-contrast__item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Growth adds people and process — not more tools
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         3. BEFORE/AFTER DIAGRAM — VISUAL COMPARISON
+         Dark section. Two SVG diagrams: scattered stack (before)
+         vs. connected hub (after). Replaces pain card grid.
+         ============================================================ -->
+    <section class="section section--dark" id="problem" aria-labelledby="problem-heading">
+      <div class="container">
+
+        <div class="section-header section-header--centered section-header--on-dark">
+          <p class="section-eyebrow section-eyebrow--accent">The Problem</p>
+          <h2 class="section-title" id="problem-heading">
+            Scattered tools vs. one task system
+          </h2>
+          <p class="section-lead">
+            Every tool you add creates another handoff your team has to manage manually. A CRM that doesn't know what marketing did. A task manager disconnected from the pipeline. An invoicing tool with no job history. SuccessOBM replaces that fragmentation with one system where every action is a task and every task carries its context.
+          </p>
+        </div>
+
+        <div class="plat-ba" role="group" aria-label="Visual comparison: disconnected tools vs. SuccessOBM platform">
+
+          <!-- BEFORE panel -->
+          <div class="plat-ba__panel plat-ba__panel--before">
+            <p class="plat-ba__label">Without SuccessOBM</p>
+            <div class="plat-ba__diagram">
+              <!-- SVG: 6 scattered tool boxes with dashed crossing arrows -->
+              <svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <marker id="chaos-arrow" markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto">
+                    <path d="M0,0 L0,5 L6,2.5 z" fill="rgba(148,163,184,0.7)"/>
+                  </marker>
+                </defs>
+                <!-- Row 1 boxes -->
+                <rect x="8"   y="18" width="82" height="32" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(148,163,184,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+                <rect x="119" y="18" width="82" height="32" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(148,163,184,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+                <rect x="230" y="18" width="82" height="32" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(148,163,184,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+                <!-- Row 2 boxes -->
+                <rect x="8"   y="140" width="82" height="32" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(148,163,184,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+                <rect x="119" y="140" width="82" height="32" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(148,163,184,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+                <rect x="230" y="140" width="82" height="32" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(148,163,184,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+                <!-- Box labels -->
+                <text x="49"  y="38" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="600" fill="rgba(148,163,184,0.8)">Marketing</text>
+                <text x="49"  y="48" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="7" fill="rgba(148,163,184,0.5)">Tool</text>
+                <text x="160" y="38" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="600" fill="rgba(148,163,184,0.8)">CRM</text>
+                <text x="160" y="48" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="7" fill="rgba(148,163,184,0.5)">Tool</text>
+                <text x="271" y="38" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="600" fill="rgba(148,163,184,0.8)">Task</text>
+                <text x="271" y="48" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="7" fill="rgba(148,163,184,0.5)">App</text>
+                <text x="49"  y="160" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="600" fill="rgba(148,163,184,0.8)">Email</text>
+                <text x="49"  y="170" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="7" fill="rgba(148,163,184,0.5)">Tool</text>
+                <text x="160" y="160" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="600" fill="rgba(148,163,184,0.8)">Operations</text>
+                <text x="160" y="170" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="7" fill="rgba(148,163,184,0.5)">Tool</text>
+                <text x="271" y="160" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="600" fill="rgba(148,163,184,0.8)">Analytics</text>
+                <text x="271" y="170" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="7" fill="rgba(148,163,184,0.5)">Tool</text>
+                <!-- Chaotic dashed arrows -->
+                <!-- R1C1 → R1C2 -->
+                <line x1="90" y1="34" x2="119" y2="34" stroke="rgba(148,163,184,0.45)" stroke-width="1.25" stroke-dasharray="3 2" marker-end="url(#chaos-arrow)"/>
+                <!-- R1C2 → R1C3 -->
+                <line x1="201" y1="34" x2="230" y2="34" stroke="rgba(148,163,184,0.45)" stroke-width="1.25" stroke-dasharray="3 2" marker-end="url(#chaos-arrow)"/>
+                <!-- R2C1 → R2C2 -->
+                <line x1="90" y1="156" x2="119" y2="156" stroke="rgba(148,163,184,0.45)" stroke-width="1.25" stroke-dasharray="3 2" marker-end="url(#chaos-arrow)"/>
+                <!-- R2C2 → R2C3 -->
+                <line x1="201" y1="156" x2="230" y2="156" stroke="rgba(148,163,184,0.45)" stroke-width="1.25" stroke-dasharray="3 2" marker-end="url(#chaos-arrow)"/>
+                <!-- R1C1 → R2C3 (diagonal crossing) -->
+                <line x1="80" y1="50" x2="238" y2="140" stroke="rgba(148,163,184,0.3)" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#chaos-arrow)"/>
+                <!-- R1C3 → R2C1 (other diagonal crossing) -->
+                <line x1="238" y1="50" x2="82" y2="140" stroke="rgba(148,163,184,0.3)" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#chaos-arrow)"/>
+                <!-- R1C2 → R2C2 (straight down) -->
+                <line x1="160" y1="50" x2="160" y2="140" stroke="rgba(148,163,184,0.35)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#chaos-arrow)"/>
+              </svg>
+            </div>
+            <p class="plat-ba__footer">6 separate tools &bull; No shared context &bull; Manual handoffs &bull; Gaps at every boundary</p>
+          </div>
+
+          <!-- AFTER panel -->
+          <div class="plat-ba__panel plat-ba__panel--after">
+            <p class="plat-ba__label">With SuccessOBM</p>
+            <div class="plat-ba__diagram">
+              <!-- SVG: hub-and-spoke diagram — 6 business areas → one center -->
+              <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <marker id="hub-arrow" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto">
+                    <path d="M0,0 L0,4 L5,2 z" fill="rgba(37,99,235,0.55)"/>
+                  </marker>
+                </defs>
+                <!--
+                  Hub center: (160, 150), r=44
+                  6 nodes at orbit r=105:
+                    0 (Marketing,   270°): (160,  45)
+                    1 (Sales,       330°): (251,  97)
+                    2 (Operations,   30°): (251, 203)
+                    3 (Reporting,    90°): (160, 255)
+                    4 (Team,        150°): ( 69, 203)
+                    5 (Automation,  210°): ( 69,  97)
+                -->
+                <!-- Spoke lines -->
+                <line x1="160" y1="106" x2="160" y2="74"  stroke="rgba(37,99,235,0.35)" stroke-width="1.5" marker-end="url(#hub-arrow)"/>
+                <line x1="198" y1="128" x2="226" y2="112" stroke="rgba(37,99,235,0.35)" stroke-width="1.5" marker-end="url(#hub-arrow)"/>
+                <line x1="198" y1="172" x2="226" y2="188" stroke="rgba(37,99,235,0.35)" stroke-width="1.5" marker-end="url(#hub-arrow)"/>
+                <line x1="160" y1="194" x2="160" y2="226" stroke="rgba(37,99,235,0.35)" stroke-width="1.5" marker-end="url(#hub-arrow)"/>
+                <line x1="122" y1="172" x2="94"  y2="188" stroke="rgba(37,99,235,0.35)" stroke-width="1.5" marker-end="url(#hub-arrow)"/>
+                <line x1="122" y1="128" x2="94"  y2="112" stroke="rgba(37,99,235,0.35)" stroke-width="1.5" marker-end="url(#hub-arrow)"/>
+                <!-- Hub circle — gold ring + dark fill -->
+                <circle cx="160" cy="150" r="46" fill="rgba(37,99,235,0.15)" stroke="rgba(245,158,11,0.6)" stroke-width="2"/>
+                <circle cx="160" cy="150" r="40" fill="rgba(30,58,138,0.8)"/>
+                <text x="160" y="146" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="800" fill="rgba(255,255,255,0.9)">Success</text>
+                <text x="160" y="159" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="800" fill="#F59E0B">OBM</text>
+                <!-- Node 0: Marketing (top, 160, 45) -->
+                <circle cx="160" cy="45" r="28" fill="rgba(37,99,235,0.45)" stroke="rgba(37,99,235,0.7)" stroke-width="1.25"/>
+                <text x="160" y="43" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="700" fill="rgba(255,255,255,0.9)">Marketing</text>
+                <!-- Node 1: Sales (top-right, 251, 97) -->
+                <circle cx="251" cy="97" r="28" fill="rgba(37,99,235,0.45)" stroke="rgba(37,99,235,0.7)" stroke-width="1.25"/>
+                <text x="251" y="95" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="700" fill="rgba(255,255,255,0.9)">Sales &amp;</text>
+                <text x="251" y="107" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="700" fill="rgba(255,255,255,0.9)">CRM</text>
+                <!-- Node 2: Operations (bottom-right, 251, 203) -->
+                <circle cx="251" cy="203" r="28" fill="rgba(37,99,235,0.45)" stroke="rgba(37,99,235,0.7)" stroke-width="1.25"/>
+                <text x="251" y="207" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="700" fill="rgba(255,255,255,0.9)">Operations</text>
+                <!-- Node 3: Reporting (bottom, 160, 255) -->
+                <circle cx="160" cy="255" r="28" fill="rgba(37,99,235,0.45)" stroke="rgba(37,99,235,0.7)" stroke-width="1.25"/>
+                <text x="160" y="259" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="700" fill="rgba(255,255,255,0.9)">Reporting</text>
+                <!-- Node 4: Team (bottom-left, 69, 203) -->
+                <circle cx="69" cy="203" r="28" fill="rgba(37,99,235,0.45)" stroke="rgba(37,99,235,0.7)" stroke-width="1.25"/>
+                <text x="69" y="207" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="700" fill="rgba(255,255,255,0.9)">Team</text>
+                <!-- Node 5: Automation (top-left, 69, 97) -->
+                <circle cx="69" cy="97" r="28" fill="rgba(37,99,235,0.45)" stroke="rgba(37,99,235,0.7)" stroke-width="1.25"/>
+                <text x="69" y="93" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="700" fill="rgba(255,255,255,0.9)">Workflow</text>
+                <text x="69" y="105" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="8.5" font-weight="700" fill="rgba(255,255,255,0.9)">Auto.</text>
+              </svg>
+            </div>
+            <p class="plat-ba__footer">One task system &bull; Owner, status &amp; next step on every task &bull; Agents handle the follow-through &bull; All areas share the same context</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         4. PLATFORM MAP — HUB DIAGRAM + DESCRIPTIONS
+         White section. Large hub SVG on the left, 6 area
+         descriptions on the right. Distinct from homepage pillars:
+         same information, completely different visual language.
+         ============================================================ -->
+    <section class="section" id="platform-map" aria-labelledby="map-heading">
+      <div class="container">
+
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">The Platform</p>
+          <h2 class="section-title" id="map-heading">
+            Six business areas. One task engine.
+          </h2>
+          <p class="section-lead">
+            SuccessOBM organizes business work into six areas — all driven by tasks, agents, and shared task context. Work moves through structured steps, and progress is visible across every area.
+          </p>
+        </div>
+
+        <div class="plat-hub-layout">
+
+          <!-- Hub SVG — larger, standalone on white background -->
+          <div class="plat-hub__svg-wrap" aria-hidden="true">
+            <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="hub-glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%"   stop-color="rgba(37,99,235,0.12)"/>
+                  <stop offset="100%" stop-color="rgba(37,99,235,0)"/>
+                </radialGradient>
+              </defs>
+              <!-- Glow behind hub -->
+              <circle cx="200" cy="190" r="100" fill="url(#hub-glow)"/>
+              <!--
+                Hub: (200, 190), r=52
+                Orbit: 130. Nodes r=36
+                  0 Marketing   270°: (200,  60)
+                  1 Sales        330°: (313, 125)
+                  2 Operations    30°: (313, 255)
+                  3 Reporting     90°: (200, 320)
+                  4 Team         150°: ( 87, 255)
+                  5 Automation   210°: ( 87, 125)
+              -->
+              <!-- Spoke lines (hub edge → node edge) -->
+              <line x1="200" y1="138" x2="200" y2="96"  stroke="#DBEAFE" stroke-width="1.5"/>
+              <line x1="245" y1="163" x2="280" y2="143" stroke="#DBEAFE" stroke-width="1.5"/>
+              <line x1="245" y1="217" x2="280" y2="237" stroke="#DBEAFE" stroke-width="1.5"/>
+              <line x1="200" y1="242" x2="200" y2="284" stroke="#DBEAFE" stroke-width="1.5"/>
+              <line x1="155" y1="217" x2="120" y2="237" stroke="#DBEAFE" stroke-width="1.5"/>
+              <line x1="155" y1="163" x2="120" y2="143" stroke="#DBEAFE" stroke-width="1.5"/>
+              <!-- Hub circle -->
+              <circle cx="200" cy="190" r="54" fill="#1E3A8A" stroke="#F59E0B" stroke-width="2.5"/>
+              <circle cx="200" cy="190" r="48" fill="#1E40AF"/>
+              <text x="200" y="184" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="800" fill="rgba(255,255,255,0.9)">Success</text>
+              <text x="200" y="200" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800" fill="#F59E0B">OBM</text>
+              <!-- Node 0: Marketing -->
+              <circle cx="200" cy="60"  r="36" fill="#2563EB" stroke="#BFDBFE" stroke-width="1"/>
+              <text x="200" y="63" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="white">Marketing</text>
+              <!-- Node 1: Sales & CRM -->
+              <circle cx="313" cy="125" r="36" fill="#2563EB" stroke="#BFDBFE" stroke-width="1"/>
+              <text x="313" y="122" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="white">Sales &amp;</text>
+              <text x="313" y="134" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="white">CRM</text>
+              <!-- Node 2: Operations -->
+              <circle cx="313" cy="255" r="36" fill="#2563EB" stroke="#BFDBFE" stroke-width="1"/>
+              <text x="313" y="258" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="white">Operations</text>
+              <!-- Node 3: Reporting -->
+              <circle cx="200" cy="320" r="36" fill="#2563EB" stroke="#BFDBFE" stroke-width="1"/>
+              <text x="200" y="323" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="white">Reporting</text>
+              <!-- Node 4: Team -->
+              <circle cx="87"  cy="255" r="36" fill="#2563EB" stroke="#BFDBFE" stroke-width="1"/>
+              <text x="87"  y="252" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="white">Team</text>
+              <text x="87"  y="263" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="white">Coord.</text>
+              <!-- Node 5: Automation -->
+              <circle cx="87"  cy="125" r="36" fill="#2563EB" stroke="#BFDBFE" stroke-width="1"/>
+              <text x="87"  y="122" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="white">Workflow</text>
+              <text x="87"  y="133" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="white">Auto.</text>
+            </svg>
+          </div>
+
+          <!-- Area descriptions -->
+          <div class="plat-hub__areas">
+            <div class="plat-hub__area">
+              <div class="plat-hub__area-marker" style="background:#2563EB;"></div>
+              <div>
+                <p class="plat-hub__area-title" style="color:var(--c-text);">Marketing</p>
+                <p class="plat-hub__area-body" style="color:var(--c-text-muted);">Each newsletter, social post, and outreach email is a task — with an owner, a review step, a scheduled send or publish date, and a completion status. Agents draft content and prep sends for review. Marketing work moves through the platform the same way every other work does: owned, tracked, and handed off when it's done.</p>
+              </div>
+            </div>
+            <div class="plat-hub__area">
+              <div class="plat-hub__area-marker" style="background:#2563EB;"></div>
+              <div>
+                <p class="plat-hub__area-title" style="color:var(--c-text);">Sales &amp; CRM</p>
+                <p class="plat-hub__area-body" style="color:var(--c-text-muted);">Leads and inquiries arrive as tasks. Quotes, follow-ups, proposals, and status updates move through a structured workflow — with agents sending follow-up messages so no opportunity sits idle.</p>
+              </div>
+            </div>
+            <div class="plat-hub__area">
+              <div class="plat-hub__area-marker" style="background:#2563EB;"></div>
+              <div>
+                <p class="plat-hub__area-title" style="color:var(--c-text);">Operations</p>
+                <p class="plat-hub__area-body" style="color:var(--c-text-muted);">Inquiries, quotes, scheduling, fulfillment, and invoicing — each step is a task, assigned and tracked. Agents send reminders and updates so nothing stalls between handoffs.</p>
+              </div>
+            </div>
+            <div class="plat-hub__area">
+              <div class="plat-hub__area-marker" style="background:#2563EB;"></div>
+              <div>
+                <p class="plat-hub__area-title" style="color:var(--c-text);">Workflow Automation</p>
+                <p class="plat-hub__area-body" style="color:var(--c-text-muted);">Business events trigger task sequences — a form submitted starts a follow-up queue, a quote sent fires a reminder, a job closed creates an invoice task. Task templates handle repeatable work consistently. Agents run the steps that repeat.</p>
+              </div>
+            </div>
+            <div class="plat-hub__area">
+              <div class="plat-hub__area-marker" style="background:#2563EB;"></div>
+              <div>
+                <p class="plat-hub__area-title" style="color:var(--c-text);">Team Coordination</p>
+                <p class="plat-hub__area-body" style="color:var(--c-text-muted);">Owners, staff, admins, and partners each see the tasks and work queues appropriate to their role. Assignments are visible. Handoffs are tracked. Everyone knows what's theirs and what's next — without chasing updates or checking in.</p>
+              </div>
+            </div>
+            <div class="plat-hub__area">
+              <div class="plat-hub__area-marker" style="background:#2563EB;"></div>
+              <div>
+                <p class="plat-hub__area-title" style="color:var(--c-text);">Business Reporting</p>
+                <p class="plat-hub__area-body" style="color:var(--c-text-muted);">See open tasks, overdue work, pipeline state, sent invoices, and delivery progress at a glance. Not just a BI dashboard — an operational view of what's moving, what's stalled, and what's been completed across the business.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         5. HOW THE PLATFORM CONNECTS — SPLIT + DATA FLOW DIAGRAM
+         Surface section. Text explanation left. Right side shows
+         the business data journey as a vertical flow diagram:
+         Marketing → Sales → Operations → Reporting.
+         Replaces centered numbered diff-items.
+         ============================================================ -->
+    <section class="section section--surface" id="how-it-connects" aria-labelledby="connects-heading">
+      <div class="container">
+        <div class="plat-flow-layout">
+
+          <!-- Left: text -->
+          <div>
+            <p class="section-eyebrow">The Connected System</p>
+            <h2 class="section-title" id="connects-heading">
+              How work moves through the platform
+            </h2>
+            <p class="section-lead" style="margin-bottom: var(--s-6);">
+              The value isn't each feature in isolation — it's work progression through them. Marketing creates tasks. Sales advances them. Operations fulfills them. Reporting surfaces their status. One record, one thread of task history from start to finish.
+            </p>
+            <p style="font-size:var(--text-base); color:var(--c-text-muted); line-height:1.7; margin-bottom:var(--s-6);">
+              A contact captured from a form arrives in sales as a task — with the inquiry, the source, and the context already attached. When that opportunity closes, an operations task is created. When the job is done, the invoice task fires. When it's paid, the record is complete. You don't manage the handoffs — the platform does.
+            </p>
+            <a href="/features" class="btn btn--primary">See How It Works in Features</a>
+          </div>
+
+          <!-- Right: data flow diagram -->
+          <div aria-label="Business data flow: Marketing to Sales to Operations to Reporting">
+            <div class="plat-flow-steps">
+
+              <div class="plat-flow-step">
+                <span class="plat-flow-step__dot" aria-hidden="true"></span>
+                <p class="plat-flow-step__overline">Step 1</p>
+                <p class="plat-flow-step__title">Marketing creates interest and captures it as work</p>
+                <p class="plat-flow-step__body">Newsletters go out, social posts publish, and when someone responds or submits a form, the contact and the context become a task in the system — ready for sales to pick up with full history attached.</p>
+              </div>
+
+              <div class="plat-flow-step">
+                <span class="plat-flow-step__dot" aria-hidden="true" style="background:var(--c-primary);box-shadow:0 0 0 2px var(--c-primary);"></span>
+                <p class="plat-flow-step__overline">Step 2</p>
+                <p class="plat-flow-step__title">Sales structures and advances each opportunity</p>
+                <p class="plat-flow-step__body">Every lead arrives with its source and context already attached. Quotes are created, follow-up tasks are assigned, and the pipeline moves through defined stages — with agents sending reminders so no opportunity sits idle.</p>
+              </div>
+
+              <div class="plat-flow-step">
+                <span class="plat-flow-step__dot" aria-hidden="true" style="background:var(--c-primary-dark);box-shadow:0 0 0 2px var(--c-primary-dark);"></span>
+                <p class="plat-flow-step__overline">Step 3</p>
+                <p class="plat-flow-step__title">Operations fulfills and communicates progress</p>
+                <p class="plat-flow-step__body">When a deal closes, the next task is created automatically — assigned to the right owner, with the job context attached. Delivery steps run in sequence. Agents send client updates without someone manually drafting each one.</p>
+              </div>
+
+              <div class="plat-flow-step" style="padding-bottom:0;">
+                <span class="plat-flow-step__dot" aria-hidden="true" style="background:var(--c-accent);box-shadow:0 0 0 2px var(--c-accent);"></span>
+                <p class="plat-flow-step__overline" style="color:var(--c-accent);">Step 4</p>
+                <p class="plat-flow-step__title">Reporting shows what's moving, stalled, and complete</p>
+                <p class="plat-flow-step__body">Open tasks, overdue follow-ups, pipeline stage, invoicing status, and completed work all surface in the same reporting view. No exporting, no cross-referencing separate tools. You see the state of the business — not just the data.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         6. GROWTH STAGES — HORIZONTAL TIMELINE
+         Four columns on desktop, each showing one growth stage
+         with a progress bar that visually fills left to right.
+         Replaces audience-card 2×2 grid.
+         ============================================================ -->
+    <section class="section" id="growth" aria-labelledby="growth-heading">
+      <div class="container">
+
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">Grows With You</p>
+          <h2 class="section-title" id="growth-heading">
+            Scales with your business from day one
+          </h2>
+          <p class="section-lead">
+            The same task system works whether one owner runs it all or a team of admins and partners shares the load. Growth means more people, more process, and more accountability — not a platform switch.
+          </p>
+        </div>
+
+        <ol class="plat-growth-grid" role="list" aria-label="Four stages of business growth supported by SuccessOBM">
+
+          <li class="plat-growth-stage">
+            <span class="plat-growth-num" aria-hidden="true">1</span>
+            <h3 class="plat-growth-title">Starting Out</h3>
+            <p class="plat-growth-body">Running marketing, sales, and operations yourself — or with one other person. Every task is tracked, every follow-up is handled, and every piece of work has an owner and a status. Same system, no overhead.</p>
+            <ul class="plat-growth-tags" aria-label="Key capabilities">
+              <li>Tasks tracked from day one</li>
+              <li>Marketing + sales + ops</li>
+              <li>No setup complexity</li>
+            </ul>
+          </li>
+
+          <li class="plat-growth-stage">
+            <span class="plat-growth-num" aria-hidden="true">2</span>
+            <h3 class="plat-growth-title">Adding Staff</h3>
+            <p class="plat-growth-body">Bringing in staff, contractors, or operational support. Assign tasks by role, set visibility so each person sees their own queue, and track what's been delegated without chasing updates.</p>
+            <ul class="plat-growth-tags" aria-label="Key capabilities">
+              <li>Role-based access</li>
+              <li>Task assignment by role</li>
+              <li>Queue-based visibility</li>
+            </ul>
+          </li>
+
+          <li class="plat-growth-stage">
+            <span class="plat-growth-num" aria-hidden="true">3</span>
+            <h3 class="plat-growth-title">Building Structure</h3>
+            <p class="plat-growth-body">Managing admins, department leads, or partners alongside your core team. Each role sees the tasks and context appropriate to them — ownership and accountability stay clear even as the org gets more complex.</p>
+            <ul class="plat-growth-tags" aria-label="Key capabilities">
+              <li>Multi-admin management</li>
+              <li>Partner access</li>
+              <li>Departmental workflows</li>
+            </ul>
+          </li>
+
+          <li class="plat-growth-stage">
+            <span class="plat-growth-num" aria-hidden="true">4</span>
+            <h3 class="plat-growth-title">Operating at Scale</h3>
+            <p class="plat-growth-body">Running a complex operation across multiple roles, task queues, and business areas. Advanced automation, full reporting on task and pipeline state, and role-structured visibility — all in the same system you started with.</p>
+            <ul class="plat-growth-tags" aria-label="Key capabilities">
+              <li>Advanced automation</li>
+              <li>Task and pipeline reporting</li>
+              <li>Complex permissions</li>
+            </ul>
+          </li>
+
+        </ol>
+
+        <div class="features-cta">
+          <a href="/who-its-for" class="btn btn--primary">See Who It's For</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         7. CTA
+         ============================================================ -->
+    <section class="cta-section" id="get-started" aria-labelledby="cta-heading">
+      <div class="container cta-section__inner">
+        <h2 class="cta-section__title" id="cta-heading">
+          Ready to run your business on one task system?
+        </h2>
+        <p class="cta-section__body">
+          Start a free trial and see what it looks like when marketing, sales, operations, and admin all move through the same task system — with agents handling the follow-through.
+        </p>
+        <div class="cta-section__actions">
+          <a href="/signup"  class="btn btn--white btn--lg">Start Free Trial</a>
+          <a href="/contact" class="btn btn--gold  btn--lg">Book a Demo</a>
+        </div>
+        <p class="cta-section__note">
+          No credit card required &bull; 14-day full access &bull; Cancel anytime
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         8. FAQ
+         ============================================================ -->
+    <section class="section section--surface" id="faq" aria-labelledby="faq-heading">
+      <div class="container container--narrow">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">FAQ</p>
+          <h2 class="section-title" id="faq-heading">
+            Questions about the SuccessOBM platform
+          </h2>
+        </div>
+        <dl class="faq-list">
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-1">
+                What exactly does the SuccessOBM platform include?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-1" class="faq-answer" hidden>
+              <p>SuccessOBM is an online business management platform that brings marketing, sales, operations, workflow automation, team coordination, and business reporting into one connected workspace. It's designed to manage how your whole business runs — with every area sharing the same data, context, and visibility.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-2">
+                How is this different from a CRM, project manager, or marketing tool?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-2" class="faq-answer" hidden>
+              <p>Those tools solve one part of the problem. A CRM manages contacts. A project manager tracks tasks. A marketing platform runs campaigns. SuccessOBM connects all of those functions — so marketing, sales, and operations share context, data flows between departments automatically, and you manage the whole business from one place.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-3">
+                Does marketing, sales, and operations data actually connect?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-3" class="faq-answer" hidden>
+              <p>Yes — that's the core design. When a lead moves from marketing into sales, the full history comes with it. When a deal closes, an operations workflow triggers automatically. When work is completed, it feeds into reporting. Every part of the platform shares the same underlying data, so handoffs happen within one system rather than across separate tools.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-4">
+                How quickly can a business get up and running?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-4" class="faq-answer" hidden>
+              <p>Most businesses are up and running the same day they sign up. Guided onboarding, pre-built workflow templates, and a visual setup process are designed to get your marketing, sales, and operations configured quickly — without outside help or a technical implementation project.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-5">
+                Can the platform handle multiple admins, partners, or management roles?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-5" class="faq-answer" hidden>
+              <p>Yes. SuccessOBM supports role-based access for owners, staff, admins, and partners — with granular control over what each person can see and do. As your business grows in complexity, you can manage tiered access, department-level permissions, and partner or management-level visibility without a separate system.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faq-6">
+                Where should I go next?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faq-6" class="faq-answer" hidden>
+              <p>For a detailed look at the specific tools, visit the <a href="/features">Features page</a>. To evaluate plans and cost, head to <a href="/pricing">Pricing</a>. To speak with someone or see a walkthrough, <a href="/contact">book a demo</a>. Or start a 14-day free trial and explore the platform yourself — no credit card required.</p>
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo" aria-label="SuccessOBM — go to homepage">
+            <svg class="footer__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="98 72 122 137" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M164.08,80.65l3.98,1.11c14.44,8.84,28.86,17.67,43.26,26.48l.69,1.75v60.94l-.68,1.75-44.98,27.75c-3.71.82-10.62,1.42-14.09-.03l-45.69-28.25c-.51-20.93-.52-42.63-.01-63.58l43.95-26.81,3.98-1.1h9.59ZM167.05,145.61c-4.42-.01-8.16-.25-12.38-.29l-38.52-.4.02,20.93,39.08,23.59c3.01.23,5.64.26,8.59-.03l38.57-23.69v-51.09s-38.41-22.59-38.41-22.59l-9.06-.13-38.18,22.67-.31,20.8,50.54-.06-16.31-16.72,12.6-.04,23.98,16.66-.04,9.84-24.3,16.86c-4.16-.2-7.86.43-12.13-.38,5.96-6.66,10.46-9.46,16.27-15.95Z"/>
+            </svg>
+            <span class="footer__logo-text">SuccessOBM</span>
+          </a>
+          <p class="footer__tagline">Task-based operating system for growing online businesses.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <div class="footer__col">
+            <h4 class="footer__col-title">Product</h4>
+            <ul role="list">
+              <li><a href="/platform">Platform Overview</a></li>
+              <li><a href="/features">Features</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Company</h4>
+            <ul role="list">
+              <li><a href="/who-its-for">Who It's For</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/signup">Start Free Trial</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">&copy; <span id="current-year">2025</span> SuccessOBM. All rights reserved.</p>
+        <ul class="footer__legal-links" role="list">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/security">Security</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
