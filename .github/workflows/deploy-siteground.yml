@@ -1,0 +1,22 @@
+name: Deploy to SiteGround
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SG_HOST }}
+          username: ${{ secrets.SG_USER }}
+          port: ${{ secrets.SG_PORT }}
+          key: ${{ secrets.SG_SSH_KEY }}
+          script: |
+            cd ~/www/successobm.com/public_html
+            git pull origin main
