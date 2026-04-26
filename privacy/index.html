@@ -82,7 +82,7 @@
       <div class="container legal-hero__inner">
         <p class="legal-hero__meta">Legal &middot; Privacy Policy</p>
         <h1>Privacy Policy</h1>
-        <p class="legal-hero__lead"><strong>Effective date:</strong> April 26, 2026. <strong>Last updated:</strong> April 26, 2026. This Privacy Policy describes how the legal entity operating under the trade name <strong>SuccessOBM</strong> (&ldquo;<strong>we</strong>,&rdquo; &ldquo;<strong>us</strong>&rdquo;) collects, uses, discloses, and protects information in connection with <strong>successobm.com</strong>, <strong>app.successobm.com</strong>, and <strong>forms.successobm.com</strong> (collectively, the &ldquo;<strong>Sites</strong>&rdquo;) and our multi-tenant software platform and related services (the &ldquo;<strong>Services</strong>&rdquo;).</p>
+        <p class="legal-hero__lead"><strong>Effective date:</strong> April 26, 2026. <strong>Last updated:</strong> April 27, 2026. This Privacy Policy describes how the legal entity operating under the trade name <strong>SuccessOBM</strong> (&ldquo;<strong>we</strong>,&rdquo; &ldquo;<strong>us</strong>&rdquo;) collects, uses, discloses, and protects information in connection with <strong>successobm.com</strong>, <strong>app.successobm.com</strong>, and <strong>forms.successobm.com</strong> (collectively, the &ldquo;<strong>Sites</strong>&rdquo;) and our multi-tenant software platform and related services (the &ldquo;<strong>Services</strong>&rdquo;).</p>
       </div>
     </div>
 
@@ -133,7 +133,7 @@
 
           <h3>3.4 Integrations you connect</h3>
           <ul>
-            <li><strong>Google (Gmail; Google Calendar):</strong> Depending on the OAuth scopes Customer approves, we may access and store message metadata and content, thread identifiers, labels, attachments (if enabled), calendar event details, attendee information, availability, and tokens required to sync data. <strong>Section 7.1</strong> lists scopes we may request, associated data categories, purposes, storage, and revocation.</li>
+            <li><strong>Google (Gmail send connection):</strong> If a User connects a Gmail account to send email through the Services, we use the Google OAuth scopes listed in <strong>Section 7</strong>. We request access <strong>only</strong> to send mail via the connected account and to read the connected account&rsquo;s <strong>email address</strong> for display and binding the integration. We do <strong>not</strong> access Google Calendar, do <strong>not</strong> read or modify mailbox contents via Google APIs, and do <strong>not</strong> use Google for platform login.</li>
             <li><strong>Twilio (SMS):</strong> Phone numbers, message content, delivery status, error codes, and carrier-related metadata necessary to send and troubleshoot SMS.</li>
             <li><strong>Other integrations:</strong> Data made available by third-party APIs Customer authorizes.</li>
           </ul>
@@ -172,72 +172,50 @@
           <p><strong>Training.</strong> Unless we expressly notify Customer otherwise in writing or in-product, SuccessOBM does not permit subprocessors to use your Customer Content or End User personal data to train generalized artificial intelligence models for their own unrelated products. If we introduce optional features that involve training, we will provide clear notice and, where required, obtain consent or offer opt-out mechanisms.</p>
           <p>AI outputs may be inaccurate. Customers should review outputs before external use, especially for regulated communications. See <a href="/terms">Terms of Service</a> (AI disclaimer).</p>
 
-          <h2>7. Google user data; OAuth scopes; Limited Use</h2>
-          <p>When a Customer connects Google services, SuccessOBM&rsquo;s Google OAuth client requests only the scopes necessary for the features the Customer enables. The application may request <strong>one or more</strong> of the scopes below (the exact set shown in the Google consent screen is controlling).</p>
+          <h2>7. Google user data; Gmail send connection (OAuth); Limited Use</h2>
+          <p>When a User connects a Gmail account so the Services can send email through that account, SuccessOBM&rsquo;s Google OAuth client requests <strong>exactly two scopes</strong>, and no others: <code>https://www.googleapis.com/auth/userinfo.email</code> and <code>https://www.googleapis.com/auth/gmail.send</code>. The same scopes appear together on the Google consent screen for that connection. SuccessOBM does <strong>not</strong> implement incremental or add-on OAuth scope requests for Google in production.</p>
+          <p><strong>Not used for platform login.</strong> SuccessOBM does <strong>not</strong> use Google as a sign-in or authentication method for access to <strong>app.successobm.com</strong>. The Google OAuth flow is used <strong>only</strong> to authorize a <strong>send-mail</strong> integration and to obtain the connected account&rsquo;s email address for display and binding.</p>
+          <p><strong>No Calendar access.</strong> SuccessOBM does <strong>not</strong> request Google Calendar scopes, does <strong>not</strong> read or write Calendar data, and does <strong>not</strong> access Google Calendar APIs.</p>
+          <p><strong>No mailbox read or modify.</strong> SuccessOBM does <strong>not</strong> request Gmail read or modify scopes. We do <strong>not</strong> use Google APIs to list, read, search, import, label, archive, or change existing messages in the user&rsquo;s mailbox. Only <strong>sending</strong> new messages through Gmail&rsquo;s send API is authorized.</p>
 
-          <h3>7.1 Gmail and Google Calendar &mdash; requested OAuth scopes, data, purposes, storage, and revocation</h3>
+          <h3>7.1 Requested OAuth scopes; data accessed; purposes; storage; limitations</h3>
           <div class="legal-table-wrap" role="region" aria-label="Google OAuth scopes table">
           <table>
             <thead>
               <tr>
-                <th scope="col">OAuth scope (Google API)</th>
-                <th scope="col">What data is accessed</th>
-                <th scope="col">Why it is accessed (purpose)</th>
+                <th scope="col">OAuth scope</th>
+                <th scope="col">What Google permits / what we access</th>
+                <th scope="col">Why it is required</th>
                 <th scope="col">What SuccessOBM stores</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><code>openid</code>, <code>email</code>, <code>profile</code> (Sign-in with Google / OpenID Connect)</td>
-                <td>Google account identifier, name, profile photo URL, and email address associated with the connected account.</td>
-                <td>To authenticate the Google account, display which account is connected to the workspace, and associate OAuth tokens with the correct User.</td>
-                <td>Account identifiers, email, display name, refresh and access tokens (encrypted or otherwise secured), token expiry, and connection timestamps.</td>
-              </tr>
-              <tr>
-                <td><code>https://www.googleapis.com/auth/gmail.readonly</code></td>
-                <td>Read-only access to Gmail message metadata and content (including headers, bodies, labels, and thread identifiers) within the mailboxes Customer chooses to sync.</td>
-                <td>To ingest inbound mail into the workspace CRM, display correspondence on contact records, power task and workflow features tied to email, and provide AI Features that summarize or draft based on retrieved context where Customer enables those features.</td>
-                <td>Message metadata, thread IDs, labels, plaintext or HTML bodies (as configured), attachment references or stored attachments if Customer enables download, sync cursors or history tokens, and retrieval timestamps necessary to maintain sync.</td>
-              </tr>
-              <tr>
-                <td><code>https://www.googleapis.com/auth/gmail.modify</code></td>
-                <td>Read/write access to Gmail messages and labels (excluding permanent deletion outside the scope&rsquo;s permissions) for threads the Services modify.</td>
-                <td>To mark messages as read or processed, apply workspace labels, thread actions, or other automation Customer configures that requires write access beyond read-only.</td>
-                <td>Same as read-only where read occurs, plus logs of modification actions performed by the Services and updated sync state.</td>
+                <td><code>https://www.googleapis.com/auth/userinfo.email</code></td>
+                <td>The email address of the Google account that authorized the connection (as returned by Google&rsquo;s userinfo endpoint for the authorized user).</td>
+                <td>To identify and display which Gmail address is linked to the workspace User, to bind OAuth tokens to that integration record, and to distinguish multiple connections where applicable.</td>
+                <td>The connected email address; OAuth refresh and access tokens (secured); token expiry; connection timestamps; and internal identifiers for the integration. We do <strong>not</strong> use this scope to access mailbox contents.</td>
               </tr>
               <tr>
                 <td><code>https://www.googleapis.com/auth/gmail.send</code></td>
-                <td>Permission to send email as the authenticated user in accordance with Gmail sending APIs.</td>
-                <td>To send outbound email initiated or approved by Customer or Users through the Services (for example, one-to-one messages or sequences tied to contact records).</td>
-                <td>Outbox records, delivery status, message identifiers returned by Google, and content Customer or Users submit for sending.</td>
-              </tr>
-              <tr>
-                <td><code>https://www.googleapis.com/auth/calendar.readonly</code></td>
-                <td>Read-only access to calendar list and events the Customer authorizes (including titles, times, descriptions, locations, recurrence rules, attendees, and conference data if present).</td>
-                <td>To display availability, surface meetings in the workspace, attach calendar context to tasks or contacts, and support reminders where Customer enables those features.</td>
-                <td>Event identifiers, timing, titles, attendee email addresses or display names, recurrence metadata, and sync tokens or cursors needed to maintain calendar sync.</td>
-              </tr>
-              <tr>
-                <td><code>https://www.googleapis.com/auth/calendar.events</code></td>
-                <td>Read and write access to calendar events on calendars Customer selects.</td>
-                <td>To create, update, or cancel events and invitations initiated through the Services (for example, scheduling workflows or booking links Customer configures).</td>
-                <td>Same as read-only storage categories, plus records of create/update/delete operations performed by the Services and server responses from Google.</td>
-              </tr>
-              <tr>
-                <td><code>https://www.googleapis.com/auth/calendar</code></td>
-                <td>Broader calendar access (list calendars and events, and modify events) where a combined scope is requested for product simplicity.</td>
-                <td>Same combined purposes as <code>calendar.readonly</code> and <code>calendar.events</code> when Customer enables full calendar integration.</td>
-                <td>Same categories as the readonly and events rows, consolidated per Customer configuration.</td>
+                <td>Permission to call Gmail APIs to <strong>send</strong> email as the authorizing user. This scope does <strong>not</strong> authorize reading inbox content, thread metadata from existing mail, or modifying messages.</td>
+                <td>To deliver outbound messages that Customer or Users compose or send through the Services using the connected Gmail account as the sender, in line with workspace messaging features.</td>
+                <td>OAuth tokens as above; send operation logs (including message identifiers or error details returned by Google when applicable); and the message content and recipient data that Users submit for sending, retained as part of normal communications records in the Services.</td>
               </tr>
             </tbody>
           </table>
           </div>
-          <p><strong>Revocation.</strong> Users may revoke SuccessOBM&rsquo;s access at any time by (a) using Google Account permissions at <a href="https://myaccount.google.com/permissions" rel="noopener noreferrer">https://myaccount.google.com/permissions</a> to remove the SuccessOBM application, and (b) disconnecting the integration in <strong>app.successobm.com</strong> where that control is offered. Revocation stops new access promptly; we delete or disable stored OAuth tokens consistent with Section 10 and product behavior. Revocation may disable Gmail- or Calendar-dependent features.</p>
+          <p><strong>Reviewer note (scope minimization).</strong> The implementation is limited to <strong>send</strong> plus <strong>connected-account email identification</strong>. No broader Gmail or Google Workspace data scopes are requested.</p>
 
-          <h3>7.2 Limited Use and additional commitments</h3>
+          <h3>7.2 Disconnect, revocation, and token removal</h3>
+          <p><strong>In-app disconnect.</strong> When a User disconnects the Gmail integration in <strong>app.successobm.com</strong>, SuccessOBM removes the connection from the product and <strong>deletes or invalidates the stored OAuth credentials</strong> (refresh and access tokens and related integration metadata) associated with that link so that the Services no longer send mail through that Google account.</p>
+          <p><strong>Google-side revocation.</strong> Users may also revoke the SuccessOBM application entirely in Google Account settings at <a href="https://myaccount.google.com/permissions" rel="noopener noreferrer">https://myaccount.google.com/permissions</a>, which revokes authorization at Google. We recommend using <strong>both</strong> in-app disconnect (to clear SuccessOBM&rsquo;s records) and Google revocation if the user wishes to ensure no residual app authorization remains visible in their Google account.</p>
+          <p>After disconnect or revocation, the Services will not perform further Gmail API calls for that connection.</p>
+
+          <h3>7.3 Limited Use and additional commitments</h3>
           <p>SuccessOBM&rsquo;s use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the <strong>Limited Use requirements</strong>. Without limiting the Policy itself, we commit that our use of Google user data is limited as follows:</p>
           <ul>
-            <li>We use Google user data only to provide or improve <strong>user-facing features</strong> of the Services that are prominent in our product and disclosed in this Policy (for example, displaying synced email or calendar information to authorized Users within the workspace, sending communications Customer initiates where integrated, and operating productivity features Customer enables).</li>
+            <li>We use Google user data only to provide or improve <strong>user-facing features</strong> disclosed in this Policy: showing the connected Gmail address in the product and <strong>sending email</strong> that Customer or Users initiate through the Services via the Gmail API using that connection.</li>
             <li>We do not sell Google user data.</li>
             <li>We do not use Google user data for serving advertisements, except for limited use cases permitted under Google&rsquo;s policy (for example, as necessary to provide features that include advertising functionality explicitly requested by the user, if ever offered in compliance with Google requirements).</li>
             <li>We do not use Google user data for purposes unrelated to the Services&rsquo; user-facing features without obtaining your prior affirmative agreement.</li>
