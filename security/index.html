@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security | SuccessOBM</title>
+  <meta name="description" content="Security practices for SuccessOBM — successobm.com, app.successobm.com, and forms.successobm.com.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://successobm.com/security">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SuccessOBM">
+  <meta property="og:url" content="https://successobm.com/security">
+  <meta property="og:title" content="Security | SuccessOBM">
+  <meta property="og:description" content="How SuccessOBM protects the platform, customer data, and integrations.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    .legal-hero { padding-block: var(--s-14) var(--s-8); background: var(--c-surface); border-bottom: 1px solid var(--c-border); }
+    .legal-hero__inner { max-width: 820px; }
+    .legal-hero__meta { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-muted); margin-bottom: var(--s-3); }
+    .legal-hero h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 800; color: var(--c-text); margin: 0 0 var(--s-4); line-height: 1.2; }
+    .legal-hero__lead { font-size: var(--text-sm); color: var(--c-text-muted); line-height: 1.65; margin: 0; max-width: 720px; }
+    .legal-wrap { padding-block: var(--s-10) var(--s-16); background: var(--c-white); }
+    .legal-doc { max-width: 820px; margin-inline: auto; font-size: var(--text-sm); color: var(--c-text); line-height: 1.7; }
+    .legal-doc h2 { font-size: var(--text-lg); font-weight: 700; color: var(--c-text); margin: var(--s-10) 0 var(--s-4); padding-top: var(--s-2); border-top: 1px solid var(--c-border); }
+    .legal-doc h2:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+    .legal-doc h3 { font-size: var(--text-base); font-weight: 650; margin: var(--s-8) 0 var(--s-3); color: var(--c-text); }
+    .legal-doc p { margin: 0 0 var(--s-4); }
+    .legal-doc ul, .legal-doc ol { margin: 0 0 var(--s-4); padding-left: 1.35rem; }
+    .legal-doc li { margin-bottom: var(--s-2); }
+    .legal-doc li:last-child { margin-bottom: 0; }
+    .legal-doc strong { font-weight: 600; }
+    .legal-doc a { color: var(--c-primary); text-underline-offset: 2px; }
+    .legal-doc .legal-note { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--r-lg); padding: var(--s-4) var(--s-5); margin: var(--s-6) 0; font-size: var(--text-xs); color: var(--c-text-muted); line-height: 1.6; }
+    .legal-doc .legal-address { font-style: normal; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="/" class="nav__logo" aria-label="SuccessOBM — go to homepage">
+        <svg class="nav__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="98 72 122 137" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M164.08,80.65l3.98,1.11c14.44,8.84,28.86,17.67,43.26,26.48l.69,1.75v60.94l-.68,1.75-44.98,27.75c-3.71.82-10.62,1.42-14.09-.03l-45.69-28.25c-.51-20.93-.52-42.63-.01-63.58l43.95-26.81,3.98-1.1h9.59ZM167.05,145.61c-4.42-.01-8.16-.25-12.38-.29l-38.52-.4.02,20.93,39.08,23.59c3.01.23,5.64.26,8.59-.03l38.57-23.69v-51.09s-38.41-22.59-38.41-22.59l-9.06-.13-38.18,22.67-.31,20.8,50.54-.06-16.31-16.72,12.6-.04,23.98,16.66-.04,9.84-24.3,16.86c-4.16-.2-7.86.43-12.13-.38,5.96-6.66,10.46-9.46,16.27-15.95Z"/>
+        </svg>
+        <span class="nav__logo-text">SuccessOBM</span>
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list" role="list">
+          <li><a href="/platform" class="nav__link">Platform</a></li>
+          <li><a href="/features" class="nav__link">Features</a></li>
+          <li><a href="/pricing" class="nav__link">Pricing</a></li>
+          <li><a href="/contact" class="nav__link">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a href="/login" class="btn btn--ghost">Log In</a>
+          <a href="/signup" class="btn btn--primary">Start Free Trial</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <div class="legal-hero">
+      <div class="container legal-hero__inner">
+        <p class="legal-hero__meta">Trust &middot; Security</p>
+        <h1>Security</h1>
+        <p class="legal-hero__lead"><strong>Effective date:</strong> April 26, 2026. <strong>Last updated:</strong> April 26, 2026. This page summarizes how <strong>SuccessOBM</strong> approaches security for the Sites (<strong>successobm.com</strong>, <strong>app.successobm.com</strong>, <strong>forms.successobm.com</strong>) and the Services. It supplements the <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a> and is not a contractual warranty of a specific control or certification unless expressly stated in a separate agreement.</p>
+      </div>
+    </div>
+
+    <div class="legal-wrap">
+      <div class="container">
+        <article class="legal-doc" aria-label="Security overview">
+
+          <p class="legal-note">No system is perfectly secure. We implement reasonable safeguards appropriate to the nature of the Services and the data processed. Customers remain responsible for account hygiene, role configuration, integration credentials, and lawful use, as described in the Terms.</p>
+
+          <h2>1. Organizational security</h2>
+          <p>We maintain access and authorization policies designed to limit SuccessOBM personnel access to production systems and Customer Content to what is reasonably necessary to operate, secure, and support the Services, subject to the human-access limitations for Google user data stated in the <a href="/privacy">Privacy Policy</a>. Personnel with such access are subject to confidentiality obligations.</p>
+
+          <h2>2. Infrastructure and hosting</h2>
+          <p>The Services run on cloud infrastructure provided by vetted vendors. We use industry-standard configurations for network isolation, patching, and monitoring appropriate to our environment. Physical and environmental controls are provided by those vendors under their certifications and attestations.</p>
+
+          <h2>3. Encryption and transmission</h2>
+          <p>We use encryption in transit (for example, TLS) for browser and API connections to the Services in accordance with current industry practice. Sensitive credentials such as OAuth tokens are stored using protections appropriate to their risk (including encryption at rest where applicable).</p>
+
+          <h2>4. Authentication and access control</h2>
+          <p>Workspace access requires authentication. Customers configure roles and permissions for staff and contractors. We support security features such as session management and account-level controls as made available in-product. Customers must revoke access for former Users and protect passwords, API keys, and integration authorizations.</p>
+
+          <h2>5. Logging, monitoring, and abuse prevention</h2>
+          <p>We maintain logging and monitoring to detect unauthorized access, abuse, spam, and phishing patterns, including for hosted forms. We may block or throttle activity that presents security or compliance risk. Retention of security logs is described in the <a href="/privacy">Privacy Policy</a>.</p>
+
+          <h2>6. Vulnerability management and incidents</h2>
+          <p>We assess and remediate security vulnerabilities according to risk. If we become aware of a breach of SuccessOBM-controlled personal data that requires notification under applicable law, we will provide notices consistent with our legal obligations. Customers should report suspected vulnerabilities or incidents to <a href="mailto:security@successobm.com">security@successobm.com</a> and abuse to <a href="mailto:abuse@successobm.com">abuse@successobm.com</a>.</p>
+
+          <h2>7. Subprocessors and integrations</h2>
+          <p>We use subprocessors (for example, hosting, email/SMS delivery, payments, AI inference) that meet contractual security and confidentiality requirements. Customer-configured integrations (Google, Twilio, Stripe, and others) are subject to those providers&rsquo; security practices once data leaves the Services pursuant to Customer configuration. See the <a href="/privacy">Privacy Policy</a> for subprocessors and data flows.</p>
+
+          <h2>8. Customer responsibilities</h2>
+          <p>Security is shared. Customers are responsible for: accurate account information; enabling appropriate roles; removing compromised credentials; complying with the <a href="/acceptable-use">Acceptable Use Policy</a>; and ensuring that data they collect via forms or messaging complies with applicable law.</p>
+
+          <h2>9. Contact</h2>
+          <p class="legal-address"><strong>SuccessOBM</strong><br>
+          1 Embarcadero Ctr #1200<br>
+          San Francisco, CA 94111<br>
+          United States<br>
+          Security: <a href="mailto:security@successobm.com">security@successobm.com</a><br>
+          Privacy: <a href="mailto:privacy@successobm.com">privacy@successobm.com</a><br>
+          Legal: <a href="mailto:legal@successobm.com">legal@successobm.com</a></p>
+
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo" aria-label="SuccessOBM — go to homepage">
+            <svg class="footer__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="98 72 122 137" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M164.08,80.65l3.98,1.11c14.44,8.84,28.86,17.67,43.26,26.48l.69,1.75v60.94l-.68,1.75-44.98,27.75c-3.71.82-10.62,1.42-14.09-.03l-45.69-28.25c-.51-20.93-.52-42.63-.01-63.58l43.95-26.81,3.98-1.1h9.59ZM167.05,145.61c-4.42-.01-8.16-.25-12.38-.29l-38.52-.4.02,20.93,39.08,23.59c3.01.23,5.64.26,8.59-.03l38.57-23.69v-51.09s-38.41-22.59-38.41-22.59l-9.06-.13-38.18,22.67-.31,20.8,50.54-.06-16.31-16.72,12.6-.04,23.98,16.66-.04,9.84-24.3,16.86c-4.16-.2-7.86.43-12.13-.38,5.96-6.66,10.46-9.46,16.27-15.95Z"/>
+            </svg>
+            <span class="footer__logo-text">SuccessOBM</span>
+          </a>
+          <p class="footer__tagline">Online business management platform for growing businesses.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <div class="footer__col">
+            <h4 class="footer__col-title">Product</h4>
+            <ul role="list">
+              <li><a href="/platform">Platform Overview</a></li>
+              <li><a href="/features">Features</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Company</h4>
+            <ul role="list">
+              <li><a href="/who-its-for">Who It's For</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/signup">Start Free Trial</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">&copy; <span id="current-year">2026</span> SuccessOBM. All rights reserved.</p>
+        <ul class="footer__legal-links" role="list">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/communication-policy">Communication Consent</a></li>
+          <li><a href="/acceptable-use">Acceptable Use</a></li>
+          <li><a href="/security" aria-current="page">Security</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
