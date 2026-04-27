@@ -311,28 +311,69 @@
       max-width: 300px;
     }
 
-    /* Subtle coming-soon note — remove when form submission is wired */
-    .ctc-form__soon-note {
+    .ctc-honeypot {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .ctc-form__message {
+      display: none;
+      margin-bottom: var(--s-5);
+      padding: var(--s-4) var(--s-5);
+      border-radius: var(--r-md);
+      font-size: var(--text-sm);
+      line-height: 1.55;
+    }
+
+    .ctc-form__message.is-visible {
+      display: block;
+    }
+
+    .ctc-form__message--success {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+    }
+
+    .ctc-form__message--error {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+    }
+
+    .ctc-form__email-consent {
       display: flex;
-      align-items: center;
-      gap: var(--s-2);
-      margin-top: var(--s-4);
-      padding-top: var(--s-4);
-      border-top: 1px solid var(--c-border);
+      align-items: flex-start;
+      gap: var(--s-3);
+      margin-bottom: var(--s-4);
+    }
+
+    .ctc-form__email-consent input {
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    .ctc-form__email-consent label {
       font-size: var(--text-xs);
       color: var(--c-text-muted);
       line-height: 1.5;
+      font-weight: 400;
+      cursor: pointer;
     }
 
-    .ctc-form__soon-note svg {
-      flex-shrink: 0;
-      opacity: 0.5;
+    .ctc-form--disabled .ctc-form__input,
+    .ctc-form--disabled .ctc-form__select,
+    .ctc-form--disabled .ctc-form__textarea,
+    .ctc-form--disabled .ctc-form__email-consent input {
+      opacity: 0.65;
+      pointer-events: none;
     }
 
-    .ctc-form__soon-note a {
-      color: var(--c-primary);
-      text-decoration: underline;
-      text-underline-offset: 2px;
+    .ctc-form--disabled .ctc-form__email-consent label {
+      cursor: default;
     }
 
     /* ------------------------------------------------------------------
@@ -451,12 +492,6 @@
 
 
     <!-- ===== 2. PANEL — Book a Demo / Start Free Trial ===== -->
-    <!-- Front-end only. Form submission not wired to backend yet. -->
-    <!-- TODO: POST to backend / CRM endpoint -->
-    <!-- TODO: create SuccessOBM contact/lead on submit -->
-    <!-- TODO: tag source = "website/contact-page" -->
-    <!-- TODO: create follow-up task for admin review -->
-    <!-- TODO: notify admin on new submission -->
     <section class="section section--surface" id="contact-form" aria-label="Get started — free trial or demo request">
       <div class="container">
         <div class="ctc-panel">
@@ -497,10 +532,6 @@
           <!-- Panel body -->
           <div class="ctc-panel__body">
 
-            <!-- Hidden field — synced by tab JS -->
-            <!-- TODO: use inquiry_type to route inquiry / trigger conditional CRM logic -->
-            <input type="hidden" id="ctc-inquiry-type" name="inquiry_type" value="demo">
-
             <!-- Demo path — visible by default -->
             <div class="ctc-demo-path">
 
@@ -513,6 +544,22 @@
                 novalidate
                 aria-label="Demo request form"
               >
+
+                <input type="hidden" id="ctc-inquiry-type" name="inquiry_type" value="demo">
+
+                <p id="ctc-form-success" class="ctc-form__message ctc-form__message--success" role="status" aria-hidden="true" tabindex="-1"></p>
+                <p id="ctc-form-error" class="ctc-form__message ctc-form__message--error" role="alert" aria-hidden="true" tabindex="-1"></p>
+
+                <label for="ctc-website-confirm" class="ctc-honeypot" aria-hidden="true">Leave this field blank</label>
+                <input
+                  type="text"
+                  id="ctc-website-confirm"
+                  name="honeypot"
+                  class="ctc-honeypot ctc-form__input"
+                  tabindex="-1"
+                  autocomplete="off"
+                  aria-hidden="true"
+                >
 
                 <!-- Name + Business Name -->
                 <div class="ctc-form__row">
@@ -618,23 +665,21 @@
 
                 <div class="ctc-form__divider" aria-hidden="true"></div>
 
+                <div class="ctc-form__email-consent">
+                  <input type="checkbox" id="ctc-email-consent" name="email_consent" value="true">
+                  <label for="ctc-email-consent">Send me occasional product updates. You can unsubscribe any time. See our <a href="/communication-policy" style="color:var(--c-primary);text-decoration:underline;text-underline-offset:2px;">Communication Consent</a>.</label>
+                </div>
+
                 <div class="ctc-form__footer">
                   <p class="ctc-form__privacy">
                     Your information is used only to respond to your request.
                     See our <a href="/privacy" style="color:var(--c-primary);text-decoration:underline;text-underline-offset:2px;">Privacy Policy</a>.
                   </p>
-                  <!-- TODO: wire submit to backend -->
-                  <button type="submit" class="btn btn--primary btn--lg">
+                  <button type="submit" id="ctc-form-submit" class="btn btn--primary btn--lg">
                     Request a Demo
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                   </button>
                 </div>
-
-                <!-- Remove when form is wired -->
-                <p class="ctc-form__soon-note">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                  Submissions open soon — reach out directly at <a href="mailto:hello@successobm.com">hello@successobm.com</a>.
-                </p>
 
               </form>
             </div>
@@ -861,10 +906,12 @@
     /**
      * Contact page — supplemental JS
      * 1. Tab selection — toggles demo/trial panel content + syncs hidden input
-     * 2. Form submit guard — not wired to backend yet
+     * 2. Demo form — POST to public intake API (JSON)
      */
     (function () {
       'use strict';
+
+      var INTAKE_URL = 'https://app.successobm.com/api/public/intake/demo-request';
 
       var tabs         = document.querySelectorAll('.ctc-tab');
       var inquiryInput = document.getElementById('ctc-inquiry-type');
@@ -904,16 +951,150 @@
         }
       });
 
-      /* Form submit guard — NOT wired to backend */
-      /* TODO: replace with actual submit handler (POST to CRM, create lead, notify admin) */
-      var form = document.getElementById('ctc-form');
-      if (form) {
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          // TODO: implement submission handler here
-        });
+      var form     = document.getElementById('ctc-form');
+      var elOk     = document.getElementById('ctc-form-success');
+      var elErr    = document.getElementById('ctc-form-error');
+      var btnSubmit = document.getElementById('ctc-form-submit');
+      var submitting = false;
+      var defaultBtnHtml = btnSubmit ? btnSubmit.innerHTML : '';
+
+      function trim(v) { return (v == null ? '' : String(v)).trim(); }
+
+      function setMessage(el, text, isErr) {
+        if (!el) return;
+        if (text) {
+          el.textContent = text;
+          el.classList.add('is-visible');
+          el.setAttribute('aria-hidden', 'false');
+        } else {
+          el.textContent = '';
+          el.classList.remove('is-visible');
+          el.setAttribute('aria-hidden', 'true');
+        }
+        if (isErr && el === elErr && text) {
+          el.focus();
+        }
       }
 
+      function friendlyError(status, data) {
+        if (status === 429) {
+          return "You've sent a few requests in a short time. Please wait a few minutes and try again.";
+        }
+        if (status >= 500) {
+          return "Something went wrong on our end. Please try again in a moment, or email hello@successobm.com and we'll help.";
+        }
+        if (data && typeof data === 'object') {
+          if (typeof data.message === 'string' && data.message) return data.message;
+          if (typeof data.error === 'string' && data.error) return data.error;
+          if (data.errors && typeof data.errors === 'object') {
+            var first = null;
+            Object.keys(data.errors).some(function (k) {
+              var v = data.errors[k];
+              if (Array.isArray(v) && v[0]) { first = v[0]; return true; }
+              if (typeof v === 'string' && v) { first = v; return true; }
+              return false;
+            });
+            if (first) return first;
+          }
+        }
+        if (status === 0) {
+          return "We couldn't reach the server. Check your connection and try again.";
+        }
+        if (status === 400 || status === 403 || status === 422) {
+          return "Some information couldn't be accepted. Check the fields above and try again.";
+        }
+        return "We couldn't send your request. Check your details and try again, or contact hello@successobm.com.";
+      }
+
+      if (form && btnSubmit) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (submitting) return;
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          setMessage(elOk, '');
+          setMessage(elErr, '');
+
+          var nameEl  = document.getElementById('ctc-name');
+          var emailEl = document.getElementById('ctc-email');
+          var bizEl   = document.getElementById('ctc-business');
+          var siteEl  = document.getElementById('ctc-website');
+          var teamEl  = document.getElementById('ctc-team-size');
+          var msgEl   = document.getElementById('ctc-message');
+          var potEl   = document.getElementById('ctc-website-confirm');
+          var consent = document.getElementById('ctc-email-consent');
+
+          var payload = {
+            name: trim(nameEl && nameEl.value),
+            email: trim(emailEl && emailEl.value),
+            business_name: trim(bizEl && bizEl.value),
+            website: trim(siteEl && siteEl.value),
+            team_size: teamEl && teamEl.value != null ? String(teamEl.value).trim() : '',
+            message: trim(msgEl && msgEl.value),
+            inquiry_type: inquiryInput ? String(inquiryInput.value).trim() : 'demo',
+            page_url: window.location.href,
+            source_url: document.referrer || '',
+            honeypot: potEl ? String(potEl.value || '') : ''
+          };
+          if (consent && consent.checked) {
+            payload.email_consent = true;
+          }
+
+          submitting = true;
+          btnSubmit.disabled = true;
+          form.setAttribute('aria-busy', 'true');
+          var sendingLabel = 'Sending…';
+          btnSubmit.textContent = sendingLabel;
+
+          fetch(INTAKE_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            credentials: 'omit',
+            mode: 'cors'
+          })
+            .then(function (res) {
+              return res.text().then(function (text) {
+                var data = null;
+                if (text) {
+                  try { data = JSON.parse(text); } catch (ignore) { data = null; }
+                }
+                return { res: res, data: data };
+              });
+            })
+            .then(function (_ref) {
+              var res = _ref.res;
+              var data = _ref.data;
+              if (res.ok && data && data.ok === true) {
+                setMessage(elErr, '');
+                var okText = (data && typeof data.message === 'string' && data.message) ? data.message
+                  : "Thanks — we received your demo request. We'll be in touch by email soon.";
+                setMessage(elOk, okText, false);
+                form.classList.add('ctc-form--disabled');
+                btnSubmit.disabled = true;
+                btnSubmit.textContent = 'Sent';
+                if (elOk) elOk.focus();
+                return;
+              }
+              setMessage(elErr, friendlyError(res.status, data), true);
+            })
+            .catch(function () {
+              setMessage(elErr, friendlyError(0, null), true);
+            })
+            .finally(function () {
+              form.removeAttribute('aria-busy');
+              submitting = false;
+              if (form.classList.contains('ctc-form--disabled')) {
+                return;
+              }
+              btnSubmit.disabled = false;
+              btnSubmit.innerHTML = defaultBtnHtml;
+            });
+        });
+      }
     }());
   </script>
 
