@@ -207,6 +207,49 @@
       color: rgba(255, 255, 255, 0.52);
       line-height: 1.65;
     }
+
+    /* Hero — key benefit strip */
+    .hero-benefits {
+      list-style: none;
+      margin: var(--s-6) 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+      text-align: center;
+    }
+
+    .hero-benefits__item {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.5;
+      padding: var(--s-4) var(--s-5);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--r-lg);
+    }
+
+    @media (min-width: 768px) {
+      .hero-benefits {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--s-4);
+      }
+
+      .hero-benefits__item {
+        flex: 1 1 0;
+        min-width: min(100%, 200px);
+        max-width: 280px;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-benefits {
+        animation-delay: 400ms;
+      }
+    }
   </style>
 </head>
 <body>
@@ -259,19 +302,24 @@
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__badge" aria-label="Product category">
-          Business Operating System
+          Business Execution System
         </div>
         <h1 class="hero__headline" id="hero-heading">
-          Organize Every Business Task. Use AI to Keep It Moving.
+          The Operating System That Executes Your Business
         </h1>
         <p class="hero__subheadline">
-          SuccessOBM is a task-based operating system for growing online businesses. It organizes your marketing, sales, operations, and admin work into tasks — and attaches agents to help start, execute, follow up, and complete them, so work actually gets done.
+          SuccessOBM replaces your scattered tools with one system that handles tasks, communication, follow-ups, and workflows — from sending emails and SMS to managing jobs — so nothing gets dropped and everything moves forward.
         </p>
         <div class="hero__actions">
           <a href="/waitlist/"       class="btn btn--primary btn--lg">Request Early Access</a>
           <a href="#how-it-works" class="btn btn--outline-light btn--lg">See How It Works</a>
         </div>
-        <p class="hero__note">Early access onboarding &bull; Guided demos available &bull; No pressure sales</p>
+        <p class="hero__note">Guided onboarding &bull; Built for real business workflows &bull; No pressure demos</p>
+        <ul class="hero-benefits" role="list" aria-label="What SuccessOBM helps you do">
+          <li class="hero-benefits__item">Send emails, SMS, and forms from one system</li>
+          <li class="hero-benefits__item">Turn every inquiry into a tracked task</li>
+          <li class="hero-benefits__item">Automate follow-ups and workflows</li>
+        </ul>
       </div>
     </section>
 
