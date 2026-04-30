@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SuccessOBM Features | Capture, Organize, Execute, and Automate Business Tasks</title>
-  <meta name="description" content="SuccessOBM helps businesses capture inquiries, organize contacts, execute outreach, send quotes and invoices, and automate repeatable workflows — all from one connected platform.">
+  <title>SuccessOBM Features | Business Execution System</title>
+  <meta name="description" content="What you can do in SuccessOBM: tasks and reminders, email and SMS from workflows, forms, CRM records, marketing content, scheduling and follow-up, and team roles — action-based features for running your business day to day.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://successobm.com/features">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="SuccessOBM">
   <meta property="og:url"         content="https://successobm.com/features">
-  <meta property="og:title"       content="SuccessOBM Features | Capture, Organize, Execute, and Automate Business Tasks">
-  <meta property="og:description" content="See how SuccessOBM handles the full loop of business task execution — from intake forms and contact records through email, SMS, quotes, invoices, and workflow automation.">
+  <meta property="og:title"       content="SuccessOBM Features | Business Execution System">
+  <meta property="og:description" content="Features built around real work: send email and SMS from tasks, manage customers, create content, assign work, schedule follow-ups, and track status — from one place.">
   <meta property="og:locale"      content="en_US">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="SuccessOBM Features | Capture, Organize, Execute, and Automate Business Tasks">
-  <meta name="twitter:description" content="SuccessOBM is built around business task execution — intake, contacts, email, SMS, newsletters, quotes, invoices, and automated workflows in one platform.">
+  <meta name="twitter:title"       content="SuccessOBM Features | Business Execution System">
+  <meta name="twitter:description" content="Action-based features for running your business: tasks, communication, CRM, content, scheduling, and team access in one execution-focused system.">
 
   <script type="application/ld+json">
   {
@@ -28,8 +28,8 @@
         "@type": "WebPage",
         "@id": "https://successobm.com/features#webpage",
         "url": "https://successobm.com/features",
-        "name": "SuccessOBM Features | Capture, Organize, Execute, and Automate Business Tasks",
-        "description": "Core capabilities of SuccessOBM — one platform for capturing business inquiries, organizing contacts, executing outreach, sending quotes and invoices, and automating workflows.",
+        "name": "SuccessOBM Features | Business Execution System",
+        "description": "Overview of SuccessOBM capabilities — tasks and reminders, email SMS and forms, CRM, marketing content workspace, scheduling and follow-up, roles and team access.",
         "isPartOf": { "@id": "https://successobm.com/#website" },
         "about": { "@id": "https://successobm.com/#product" }
       },
@@ -38,18 +38,14 @@
         "@id": "https://successobm.com/#product",
         "name": "SuccessOBM",
         "applicationCategory": "BusinessApplication",
-        "description": "Online business management platform built around task execution — capture work, organize it, execute it, monetize it, and automate it from one connected workspace.",
+        "description": "Business execution system where tasks, communication, follow-ups, and workflows come together so teams can send email and SMS, manage customers, create content, assign work, and track status from one workspace.",
         "featureList": [
-          "Business form and contact intake",
-          "Contact and lead record management",
-          "Email and SMS outreach execution",
-          "Newsletter and marketing campaign management",
-          "Social media content management",
-          "Task and follow-up management",
-          "Quote and invoice creation",
-          "Trigger-based workflow automation",
-          "Agent-based business task execution",
-          "Gmail send via OAuth (connected account)"
+          "Tasks and Reminders",
+          "Email SMS and Forms",
+          "CRM and Customer Records",
+          "Marketing Content Workspace",
+          "Scheduling and Follow-Up",
+          "Roles Permissions and Team Access"
         ],
         "url": "https://successobm.com"
       }
@@ -64,460 +60,81 @@
   <link rel="stylesheet" href="../css/styles.css">
 
   <style>
-    /* ================================================================
-       Features page — page-specific component styles
-       Prefix: .feat-* to avoid collision with shared styles.css
-       ================================================================ */
+    /* Features page — execution-focused layout (.feat-* prefix) */
 
-
-    /* ---- Hero pill strip — phase overview ---- */
-
-    .feat-hero-areas {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--s-2);
-      margin-top: var(--s-8);
-      padding-top: var(--s-8);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    .feat-hero-extra {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.58);
+      line-height: 1.65;
+      max-width: 42rem;
+      margin-inline: auto;
+      margin-top: var(--s-5);
     }
 
-    .feat-hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--s-2);
-      padding: var(--s-2) var(--s-4);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--r-full);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      color: rgba(255, 255, 255, 0.72);
-      white-space: nowrap;
+    /* ---- Core actions ---- */
+
+    .feat-actions-intro {
+      text-align: center;
+      margin-bottom: var(--s-8);
     }
 
-    .feat-hero-pill__dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-
-    /* ---- Split layout — text column + panel column ---- */
-
-    .feat-split {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--s-12);
-      align-items: start;
-    }
-
-    @media (min-width: 900px) {
-      .feat-split {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--s-16);
-        align-items: center;
-      }
-
-      .feat-split--reverse .feat-split__text {
-        order: 2;
-      }
-
-      .feat-split--reverse .feat-split__panel {
-        order: 1;
-      }
-    }
-
-    .feat-split__heading {
-      font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      line-height: 1.2;
-      color: var(--c-text);
-      margin-bottom: var(--s-4);
-    }
-
-    .feat-split__lead {
-      font-size: var(--text-lg);
-      color: var(--c-text-muted);
-      line-height: 1.7;
-      margin-bottom: var(--s-4);
-    }
-
-    .feat-split__body {
-      font-size: var(--text-base);
-      color: var(--c-text-muted);
-      line-height: 1.7;
-      margin-bottom: var(--s-4);
-    }
-
-    .feat-split__body:last-of-type {
+    .feat-actions-intro .section-title {
       margin-bottom: 0;
     }
 
-
-    /* ---- Capability panel (used inside feat-split columns) ---- */
-
-    .feat-cap-panel {
-      background: var(--c-white);
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-xl);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .feat-cap-panel--on-surface {
-      background: var(--c-white);
-    }
-
-    .feat-cap-panel__header {
-      padding: var(--s-5) var(--s-6) var(--s-4);
-      border-bottom: 1px solid var(--c-border);
-      background: var(--c-surface);
-    }
-
-    .feat-cap-panel__label {
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--c-primary);
-    }
-
-    .feat-cap-panel__heading {
-      font-size: var(--text-base);
-      font-weight: 700;
-      color: var(--c-text);
-      margin-top: var(--s-1);
-    }
-
-    .feat-cap-list {
-      list-style: none;
-      padding: var(--s-5) var(--s-6);
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-3);
-    }
-
-    .feat-cap-item {
-      display: flex;
-      gap: var(--s-3);
-      align-items: flex-start;
-      font-size: var(--text-sm);
-      color: var(--c-text-body);
-      line-height: 1.55;
-    }
-
-    .feat-cap-item__icon {
-      flex-shrink: 0;
-      margin-top: 1px;
-      color: var(--c-primary);
-    }
-
-    .feat-cap-item__icon--gold {
-      color: var(--c-gold-dark);
-    }
-
-    .feat-cap-divider {
-      margin: var(--s-1) var(--s-6);
-      height: 1px;
-      background: var(--c-border);
-    }
-
-    .feat-cap-divider__label {
-      padding: var(--s-3) var(--s-6) 0;
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--c-text-muted);
-    }
-
-
-    /* ---- Automate / Agent section (dark) ---- */
-
-    .feat-agent-layout {
+    .feat-action-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--s-8);
-    }
-
-    @media (min-width: 900px) {
-      .feat-agent-layout {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: var(--s-12);
-        align-items: start;
-      }
-    }
-
-    .feat-agent-main {
-      background: rgba(37, 99, 235, 0.1);
-      border: 1px solid rgba(37, 99, 235, 0.3);
-      border-radius: var(--r-xl);
-      padding: var(--s-8) var(--s-6);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feat-agent-main::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--c-gold), rgba(245, 158, 11, 0.2));
-    }
-
-    .feat-agent-main__eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--s-2);
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--c-accent);
-      margin-bottom: var(--s-4);
-    }
-
-    .feat-agent-main__eyebrow-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--c-gold);
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .feat-agent-main__eyebrow-dot {
-        animation: featPulse 2.4s ease-in-out infinite;
-      }
-    }
-
-    @keyframes featPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
-      50%       { box-shadow: 0 0 0 5px rgba(245, 158, 11, 0); }
-    }
-
-    .feat-agent-main__heading {
-      font-size: var(--text-xl);
-      font-weight: 800;
-      color: var(--c-white);
-      margin-bottom: var(--s-3);
-      line-height: 1.25;
-    }
-
-    .feat-agent-main__body {
-      font-size: var(--text-base);
-      color: rgba(255, 255, 255, 0.65);
-      line-height: 1.7;
-      margin-bottom: var(--s-4);
-    }
-
-    .feat-agent-main__caps {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-2);
-      margin-top: var(--s-5);
-      padding-top: var(--s-5);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .feat-agent-main__cap {
-      display: flex;
       gap: var(--s-3);
-      align-items: flex-start;
-      font-size: var(--text-sm);
-      color: rgba(255, 255, 255, 0.72);
-      line-height: 1.55;
+      max-width: 820px;
+      margin-inline: auto;
+      list-style: none;
+      padding: 0;
     }
 
-    .feat-agent-main__cap-icon {
-      flex-shrink: 0;
-      margin-top: 1px;
-      color: var(--c-accent);
-    }
-
-    .feat-agent-cards {
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-4);
-    }
-
-    .feat-agent-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      border-radius: var(--r-lg);
-      padding: var(--s-5) var(--s-5);
-      transition: background-color var(--t-base), border-color var(--t-base);
-    }
-
-    .feat-agent-card:hover {
-      background: rgba(255, 255, 255, 0.07);
-      border-color: rgba(255, 255, 255, 0.15);
-    }
-
-    .feat-agent-card__icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      background: rgba(37, 99, 235, 0.25);
-      border-radius: var(--r-md);
-      color: var(--c-accent);
-      margin-bottom: var(--s-3);
-    }
-
-    .feat-agent-card__title {
-      font-size: var(--text-sm);
-      font-weight: 700;
-      color: var(--c-white);
-      margin-bottom: var(--s-2);
-    }
-
-    .feat-agent-card__body {
-      font-size: var(--text-sm);
-      color: rgba(255, 255, 255, 0.52);
-      line-height: 1.6;
-    }
-
-
-    /* ---- Execute Work — 2-col task cards ---- */
-
-    .feat-2col {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--s-5);
-    }
-
-    @media (min-width: 680px) {
-      .feat-2col {
+    @media (min-width: 560px) {
+      .feat-action-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    .feat-2col-card {
-      padding: var(--s-7) var(--s-6);
+    .feat-action-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--s-3);
+      padding: var(--s-4) var(--s-5);
       background: var(--c-white);
       border: 1px solid var(--c-border);
-      border-radius: var(--r-xl);
-      transition: box-shadow var(--t-base), transform var(--t-base), border-color var(--t-base);
-    }
-
-    .feat-2col-card:hover {
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-2px);
-      border-color: var(--c-primary-light);
-    }
-
-    .feat-2col-card__icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: var(--c-primary-light);
       border-radius: var(--r-lg);
-      color: var(--c-primary);
-      margin-bottom: var(--s-5);
-    }
-
-    .feat-2col-card__title {
-      font-size: var(--text-lg);
-      font-weight: 700;
-      color: var(--c-text);
-      margin-bottom: var(--s-3);
-    }
-
-    .feat-2col-card__body {
       font-size: var(--text-sm);
-      color: var(--c-text-muted);
-      line-height: 1.7;
-      margin-bottom: var(--s-4);
-    }
-
-    .feat-2col-card__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--s-2);
-      list-style: none;
-    }
-
-    .feat-2col-card__tag {
-      padding: var(--s-1) var(--s-3);
-      background: var(--c-surface);
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-full);
-      font-size: var(--text-xs);
-      font-weight: 500;
       color: var(--c-text-body);
+      line-height: 1.5;
     }
 
-
-    /* ---- Connected flow — 3-point icon row ---- */
-
-    .feat-connect-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--s-6);
-      max-width: 960px;
-      margin-inline: auto;
-    }
-
-    @media (min-width: 720px) {
-      .feat-connect-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .feat-connect-point {
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-4);
-      padding: var(--s-6);
-      background: var(--c-surface);
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-xl);
-    }
-
-    .feat-connect-point__icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: var(--c-gold-light);
-      border-radius: var(--r-lg);
-      color: var(--c-gold-dark);
+    .feat-action-item__mark {
       flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      margin-top: 0.45em;
+      border-radius: 50%;
+      background: var(--c-primary);
     }
 
-    .feat-connect-point__title {
-      font-size: var(--text-base);
-      font-weight: 700;
-      color: var(--c-text);
+    /* ---- Feature groups (narrow prose) ---- */
+
+    .feat-groups .section-header .section-lead:last-child {
+      margin-bottom: 0;
     }
 
-    .feat-connect-point__body {
-      font-size: var(--text-sm);
-      color: var(--c-text-muted);
-      line-height: 1.65;
-    }
-
-
-    /* ---- Execute Work — workflow flow strip ---- */
+    /* ---- Workflow strip ---- */
 
     .feat-flow-strip {
       background: var(--c-surface);
       border: 1px solid var(--c-border);
       border-radius: var(--r-xl);
       padding: var(--s-6);
-      max-width: 860px;
-      margin: var(--s-12) auto 0;
+      max-width: 720px;
+      margin-inline: auto;
     }
 
     .feat-flow-strip__label {
@@ -527,12 +144,14 @@
       text-transform: uppercase;
       color: var(--c-text-muted);
       margin-bottom: var(--s-4);
+      text-align: center;
     }
 
     .feat-flow-strip__steps {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      justify-content: center;
       gap: var(--s-2);
     }
 
@@ -549,12 +168,6 @@
       white-space: nowrap;
     }
 
-    .feat-flow-pill--agent {
-      border-color: rgba(245, 158, 11, 0.4);
-      background: var(--c-gold-light);
-      color: var(--c-gold-dark);
-    }
-
     .feat-flow-pill--complete {
       border-color: rgba(16, 185, 129, 0.4);
       background: rgba(16, 185, 129, 0.08);
@@ -568,34 +181,15 @@
       user-select: none;
     }
 
-    .feat-flow-strip__legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--s-4);
-      margin-top: var(--s-4);
-      padding-top: var(--s-4);
-      border-top: 1px solid var(--c-border);
-    }
+    /* ---- Execution callout ---- */
 
-    @media (min-width: 640px) {
-      .feat-flow-strip__legend {
-        gap: var(--s-6);
-      }
-    }
-
-    .feat-flow-legend-item {
-      display: flex;
-      align-items: center;
-      gap: var(--s-2);
-      font-size: var(--text-xs);
-      color: var(--c-text-muted);
-    }
-
-    .feat-flow-legend-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
+    .feat-execution-tagline {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--c-text);
+      margin-top: var(--s-6);
+      margin-bottom: 0;
+      line-height: 1.45;
     }
 
   </style>
@@ -640,531 +234,175 @@
   </header>
 
 
-  <main id="main-content">
+  <main id="main-content" class="feat-groups">
 
-    <!-- ============================================================
-         1. HERO
-         Centered layout. Badge, H1, subhead, CTAs.
-         Pill strip names the 5 task-flow phases — gives an immediate
-         picture of how the platform is organized around execution.
-         ============================================================ -->
+    <!-- 1. Hero -->
     <section class="hero" id="hero" aria-labelledby="hero-heading">
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__inner">
 
-        <div class="hero__badge" aria-label="Page context">Platform Features</div>
+        <div class="hero__badge" aria-label="Product category">Business Execution System</div>
 
         <h1 class="hero__headline" id="hero-heading">
-          The Platform Built Around<br>Business Task Execution
+          Features built to execute real business work
         </h1>
 
         <p class="hero__subheadline">
-          Capture inquiries. Organize contacts. Send emails, SMS, and newsletters. Create quotes and invoices. Automate follow-up. SuccessOBM organizes and executes the tasks required to run a business online — so everything from first contact to payment happens in one place.
+          SuccessOBM is not just a collection of tools. It is a system where tasks, communication, follow-ups, and workflows come together to help you run your business day to day.
+        </p>
+
+        <p class="feat-hero-extra">
+          Send emails, send SMS, manage customers, create content, assign work, and keep everything moving — from one place.
         </p>
 
         <div class="hero__actions">
-          <a href="/waitlist/"   class="btn btn--primary btn--lg">Request Early Access</a>
-          <a href="/pricing"  class="btn btn--outline-light btn--lg">View Pricing</a>
+          <a href="/waitlist/" class="btn btn--primary btn--lg">Request Early Access</a>
+          <a href="/contact" class="btn btn--outline-light btn--lg">Book a Demo</a>
         </div>
 
-        <p class="hero__note">No credit card required &bull; Full platform access &bull; Cancel anytime</p>
-
-        <!-- Task-flow phase pill strip -->
-        <div class="feat-hero-areas" role="list" aria-label="Task-flow phases covered on this page">
-          <span class="feat-hero-pill" role="listitem">
-            <span class="feat-hero-pill__dot" style="background: #60A5FA;" aria-hidden="true"></span>
-            Capture Work
-          </span>
-          <span class="feat-hero-pill" role="listitem">
-            <span class="feat-hero-pill__dot" style="background: #3B82F6;" aria-hidden="true"></span>
-            Organize Work
-          </span>
-          <span class="feat-hero-pill" role="listitem">
-            <span class="feat-hero-pill__dot" style="background: #2563EB;" aria-hidden="true"></span>
-            Execute Work
-          </span>
-          <span class="feat-hero-pill" role="listitem">
-            <span class="feat-hero-pill__dot" style="background: #F59E0B;" aria-hidden="true"></span>
-            Monetize Work
-          </span>
-          <span class="feat-hero-pill" role="listitem">
-            <span class="feat-hero-pill__dot" style="background: #D97706;" aria-hidden="true"></span>
-            Automate &amp; Scale
-          </span>
-        </div>
+        <p class="hero__note">Guided onboarding &bull; Built for real business workflows &bull; No pressure demos</p>
 
       </div>
     </section>
 
 
-    <!-- ============================================================
-         2. CAPTURE WORK
-         Forms, contact intake, inquiries, new business requests.
-         Split layout: text left, capability panel right.
-         ============================================================ -->
-    <section class="section section--surface" id="capture" aria-labelledby="capture-heading">
+    <!-- 2. Core action strip -->
+    <section class="section section--surface" id="what-you-can-do" aria-labelledby="actions-heading">
       <div class="container">
-        <div class="feat-split">
+        <div class="feat-actions-intro">
+          <h2 class="section-title" id="actions-heading">What you can do inside SuccessOBM</h2>
+        </div>
+        <ul class="feat-action-grid" role="list">
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Send emails directly from tasks</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Send SMS messages to customers</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Create and send forms</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Turn inquiries into tracked tasks</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Assign work to team members</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Schedule follow-ups and reminders</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Create social posts and content</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Track status across your business</li>
+        </ul>
+      </div>
+    </section>
 
-          <div class="feat-split__text">
-            <p class="section-eyebrow">Capture Work</p>
-            <h2 class="feat-split__heading" id="capture-heading">
-              Every business task starts with capturing it
-            </h2>
-            <p class="feat-split__lead">
-              New work arrives as form submissions, contact inquiries, service requests, and new business leads. The moment it lands, SuccessOBM turns it into an actionable record — assigned, tracked, and ready to move, not sitting in an inbox waiting to be noticed.
-            </p>
-            <p class="feat-split__body">
-              A form submission becomes a contact record with a task attached. An inquiry becomes a lead in your pipeline with a next step defined. Nothing sits in a holding state — incoming activity enters the platform as work, with ownership and status from the start.
-            </p>
-          </div>
 
-          <div class="feat-split__panel">
-            <div class="feat-cap-panel feat-cap-panel--on-surface" role="region" aria-label="Capture capabilities">
-
-              <div class="feat-cap-panel__header">
-                <p class="feat-cap-panel__label">Capture Work</p>
-                <p class="feat-cap-panel__heading">How new work enters the platform</p>
-              </div>
-
-              <ul class="feat-cap-list" role="list">
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Business forms and intake submissions
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Contact and lead capture from inquiries
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  New business requests turned into platform records
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Gmail send — outbound email from a connected Gmail account (OAuth)
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Subscriber and audience capture for marketing lists
-                </li>
-              </ul>
-
-            </div>
-          </div>
-
+    <!-- A. Tasks & Reminders -->
+    <section class="section" id="tasks-reminders" aria-labelledby="tasks-reminders-heading">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <p class="section-eyebrow">Tasks &amp; Reminders</p>
+          <h2 class="section-title" id="tasks-reminders-heading">Every action starts as a task</h2>
+          <p class="section-lead">Create tasks for inquiries, follow-ups, jobs, reminders, and internal work. Each task has an owner, status, and next step so nothing gets lost or forgotten.</p>
         </div>
       </div>
     </section>
 
 
-    <!-- ============================================================
-         3. ORGANIZE WORK
-         Contact records, context, statuses, assignments, pipeline.
-         Split reversed: panel left, text right on desktop.
-         ============================================================ -->
-    <section class="section" id="organize" aria-labelledby="organize-heading">
-      <div class="container">
-        <div class="feat-split feat-split--reverse">
-
-          <div class="feat-split__panel">
-            <div class="feat-cap-panel" role="region" aria-label="Organize capabilities">
-
-              <div class="feat-cap-panel__header">
-                <p class="feat-cap-panel__label">Organize Work</p>
-                <p class="feat-cap-panel__heading">What each task record contains</p>
-              </div>
-
-              <ul class="feat-cap-list" role="list">
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Owner — who is responsible for this task
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Status — open, in progress, overdue, or complete
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Next step — what happens before this closes
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Deadline — due date with overdue flagging
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Contact context — the client or lead this work belongs to
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Role visibility — staff queue vs. full owner view
-                </li>
-              </ul>
-
-            </div>
-          </div>
-
-          <div class="feat-split__text">
-            <p class="section-eyebrow">Organize Work</p>
-            <h2 class="feat-split__heading" id="organize-heading">
-              Every task has an owner, a status, and a next step
-            </h2>
-            <p class="feat-split__lead">
-              A captured inquiry becomes a task record — with an owner, a status, a deadline, and a defined next step. Your team sees what's assigned to them. You see what's open, what's overdue, and what's stalled across the whole business.
-            </p>
-            <p class="feat-split__body">
-              Staff see their own queue. Owners and admins see the full picture. Filter by status, owner, or business area to find what needs attention — without chasing people or digging through email threads.
-            </p>
-          </div>
-
+    <!-- B. Email, SMS & Forms -->
+    <section class="section section--surface" id="email-sms-forms" aria-labelledby="email-sms-forms-heading">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <p class="section-eyebrow">Email, SMS &amp; Forms</p>
+          <h2 class="section-title" id="email-sms-forms-heading">Communicate directly from your workflow</h2>
+          <p class="section-lead">Send emails, SMS messages, and forms without leaving the system. Communication is tied to tasks and customers so you always have context and history.</p>
         </div>
       </div>
     </section>
 
 
-    <!-- ============================================================
-         4. EXECUTE WORK
-         Email, SMS, newsletters, social media, tasks, follow-up.
-         Centered section with 4 feat-2col cards (2x2 at desktop).
-         ============================================================ -->
-    <section class="section section--surface" id="execute" aria-labelledby="execute-heading">
-      <div class="container">
+    <!-- C. CRM & Customer Records -->
+    <section class="section" id="crm-customers" aria-labelledby="crm-heading">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <p class="section-eyebrow">CRM &amp; Customer Records</p>
+          <h2 class="section-title" id="crm-heading">Keep your customers connected to the work</h2>
+          <p class="section-lead">Store customer information and connect it to tasks, communication, and history. Every interaction is tied to the customer record so you can see what has happened and what comes next.</p>
+        </div>
+      </div>
+    </section>
 
+
+    <!-- D. Marketing Content Workspace -->
+    <section class="section section--surface" id="marketing-content" aria-labelledby="marketing-content-heading">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <p class="section-eyebrow">Marketing Content Workspace</p>
+          <h2 class="section-title" id="marketing-content-heading">Create and manage content from one place</h2>
+          <p class="section-lead">Manage social posts, blogs, newsletters, and announcements inside SuccessOBM. Draft, review, schedule, and publish content as part of your normal workflow.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- E. Scheduling & Follow-Up -->
+    <section class="section" id="scheduling-follow-up" aria-labelledby="scheduling-heading">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <p class="section-eyebrow">Scheduling &amp; Follow-Up</p>
+          <h2 class="section-title" id="scheduling-heading">Keep work moving without relying on memory</h2>
+          <p class="section-lead">Schedule follow-ups, reminders, and future actions. Agents help execute routine steps such as reminders and follow-through where enabled.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- F. Roles, Permissions & Team Access -->
+    <section class="section section--surface" id="roles-team" aria-labelledby="roles-heading">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <p class="section-eyebrow">Roles, Permissions &amp; Team Access</p>
+          <h2 class="section-title" id="roles-heading">Give the right people the right view</h2>
+          <p class="section-lead">Assign tasks, control access by role, and manage how staff, admins, and owners interact with the system. Everyone sees the work relevant to them.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Execution explanation -->
+    <section class="section" id="execution" aria-labelledby="execution-heading">
+      <div class="container container--narrow">
         <div class="section-header section-header--centered">
-          <p class="section-eyebrow">Execute Work</p>
-          <h2 class="section-title" id="execute-heading">
-            This is where the work actually gets done
-          </h2>
-          <p class="section-lead">
-            Execution is the heart of SuccessOBM. Every task has an owner, a status, a deadline, and a next step. Agents help draft, schedule, remind, and follow up — so business work moves forward without someone manually pushing each step. Email outreach, newsletter sends, social posts, client follow-up, and operational tasks all run through the same system.
-          </p>
+          <h2 class="section-title" id="execution-heading">This is not just task management</h2>
+          <p class="section-lead">SuccessOBM is designed to execute work, not just track it. Tasks can include communication, follow-ups, scheduling, and next steps — all in one place.</p>
+          <p class="feat-execution-tagline">Work does not just get tracked — it gets executed.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="feat-2col" role="list">
 
-          <article class="feat-2col-card" role="listitem">
-            <div class="feat-2col-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <h3 class="feat-2col-card__title">Email &amp; SMS Outreach</h3>
-            <p class="feat-2col-card__body">Send individual emails and SMS directly from a contact record — with the history, context, and next step visible alongside the message. Agents can draft follow-ups and send reminders on a defined schedule, so outreach keeps moving without manual tracking at every step.</p>
-            <ul class="feat-2col-card__tags" role="list" aria-label="Included capabilities">
-              <li class="feat-2col-card__tag">Contact-connected sending</li>
-              <li class="feat-2col-card__tag">Follow-up sequences</li>
-              <li class="feat-2col-card__tag">Agent-drafted messages</li>
-              <li class="feat-2col-card__tag">Scheduled reminders</li>
-            </ul>
-          </article>
-
-          <article class="feat-2col-card" role="listitem">
-            <div class="feat-2col-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3 class="feat-2col-card__title">Newsletters &amp; Campaigns</h3>
-            <p class="feat-2col-card__body">Newsletter sending is a tracked business task — with an owner, a review step, a scheduled send date, and a completion status. Campaigns draw from the contact records already in the platform, so you're not managing a separate list in a separate tool. Agents help draft content and prep sends for review.</p>
-            <ul class="feat-2col-card__tags" role="list" aria-label="Included capabilities">
-              <li class="feat-2col-card__tag">Newsletter creation &amp; sending</li>
-              <li class="feat-2col-card__tag">Agent-assisted drafting</li>
-              <li class="feat-2col-card__tag">Review &amp; schedule workflow</li>
-              <li class="feat-2col-card__tag">CRM-connected audiences</li>
-            </ul>
-          </article>
-
-          <article class="feat-2col-card" role="listitem">
-            <div class="feat-2col-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </div>
-            <h3 class="feat-2col-card__title">Social Media</h3>
-            <p class="feat-2col-card__body">Each post is a task — with an assigned owner, a review step, and a scheduled publish date. Agents can draft content based on topic or campaign context. No clipboard-to-scheduler workflows, no disconnected content calendar tools. Social content runs through the same task system as everything else.</p>
-            <ul class="feat-2col-card__tags" role="list" aria-label="Included capabilities">
-              <li class="feat-2col-card__tag">Task-based content workflow</li>
-              <li class="feat-2col-card__tag">Agent-drafted posts</li>
-              <li class="feat-2col-card__tag">Review &amp; publish scheduling</li>
-              <li class="feat-2col-card__tag">Team-assigned content tasks</li>
-            </ul>
-          </article>
-
-          <article class="feat-2col-card" role="listitem">
-            <div class="feat-2col-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </div>
-            <h3 class="feat-2col-card__title">Task &amp; Follow-up Management</h3>
-            <p class="feat-2col-card__body">Every piece of operational work — a service delivery step, a client follow-up, an internal coordination task — is tracked with an owner, status, deadline, and next step. Nothing falls through because someone is busy or because follow-up lived in someone's inbox. Agents handle scheduled reminders and automatic follow-up sequences.</p>
-            <ul class="feat-2col-card__tags" role="list" aria-label="Included capabilities">
-              <li class="feat-2col-card__tag">Owner &amp; deadline tracking</li>
-              <li class="feat-2col-card__tag">Status &amp; next-step visibility</li>
-              <li class="feat-2col-card__tag">Agent-handled follow-up</li>
-              <li class="feat-2col-card__tag">Full team task view</li>
-            </ul>
-          </article>
-
-        </div>
-
-        <!-- Workflow example strip -->
-        <div class="feat-flow-strip" role="region" aria-label="Workflow example: inquiry to paid">
-          <p class="feat-flow-strip__label">Example workflow — Inquiry to Payment</p>
+    <!-- Mini workflow example -->
+    <section class="section section--surface" id="example-flow" aria-labelledby="example-flow-label">
+      <div class="container">
+        <div class="feat-flow-strip" role="region" aria-labelledby="example-flow-label">
+          <p class="feat-flow-strip__label" id="example-flow-label">Example</p>
           <div class="feat-flow-strip__steps" aria-label="Workflow steps">
             <span class="feat-flow-pill">Inquiry</span>
             <span class="feat-flow-arrow" aria-hidden="true">›</span>
-            <span class="feat-flow-pill">Task Created</span>
+            <span class="feat-flow-pill">Task created</span>
             <span class="feat-flow-arrow" aria-hidden="true">›</span>
-            <span class="feat-flow-pill">Quote Sent</span>
+            <span class="feat-flow-pill">Email sent</span>
             <span class="feat-flow-arrow" aria-hidden="true">›</span>
-            <span class="feat-flow-pill feat-flow-pill--agent">Follow-up</span>
+            <span class="feat-flow-pill">Follow-up scheduled</span>
             <span class="feat-flow-arrow" aria-hidden="true">›</span>
-            <span class="feat-flow-pill">Quote Approved</span>
-            <span class="feat-flow-arrow" aria-hidden="true">›</span>
-            <span class="feat-flow-pill">Invoice Sent</span>
-            <span class="feat-flow-arrow" aria-hidden="true">›</span>
-            <span class="feat-flow-pill feat-flow-pill--agent">Payment Reminder</span>
-            <span class="feat-flow-arrow" aria-hidden="true">›</span>
-            <span class="feat-flow-pill feat-flow-pill--complete">Paid</span>
+            <span class="feat-flow-pill feat-flow-pill--complete">Job completed</span>
           </div>
-          <div class="feat-flow-strip__legend" aria-label="Workflow key">
-            <span class="feat-flow-legend-item">
-              <span class="feat-flow-legend-dot" style="background: var(--c-primary-light); border: 1px solid var(--c-border);" aria-hidden="true"></span>
-              Task tracked
-            </span>
-            <span class="feat-flow-legend-item">
-              <span class="feat-flow-legend-dot" style="background: var(--c-gold);" aria-hidden="true"></span>
-              Agent-handled
-            </span>
-            <span class="feat-flow-legend-item">
-              <span class="feat-flow-legend-dot" style="background: #10B981;" aria-hidden="true"></span>
-              Complete
-            </span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ============================================================
-         5. MONETIZE WORK
-         Quotes, invoices, revenue-related actions.
-         Split layout: text left, capability panel right.
-         Honest framing: quotes/invoices are platform features;
-         payment tracking integration is part of the direction.
-         ============================================================ -->
-    <section class="section" id="monetize" aria-labelledby="monetize-heading">
-      <div class="container">
-        <div class="feat-split">
-
-          <div class="feat-split__text">
-            <p class="section-eyebrow">Monetize Work</p>
-            <h2 class="feat-split__heading" id="monetize-heading">
-              Send the quote. Generate the invoice. Get paid.
-            </h2>
-            <p class="feat-split__lead">
-              Most businesses lose revenue not because they do poor work — but because quoting, invoicing, and follow-up live in a separate tool that's disconnected from where the actual work is managed. SuccessOBM closes that gap.
-            </p>
-            <p class="feat-split__body">
-              A quote is created from a contact record — tied to the client, the conversation, and the work context. An invoice follows the same path. Follow-up tasks attach so nothing sits unpaid because someone forgot to chase it.
-            </p>
-          </div>
-
-          <div class="feat-split__panel">
-            <div class="feat-cap-panel feat-cap-panel--on-surface" role="region" aria-label="Monetize capabilities">
-
-              <div class="feat-cap-panel__header">
-                <p class="feat-cap-panel__label">Monetize Work</p>
-                <p class="feat-cap-panel__heading">Revenue-related business tasks</p>
-              </div>
-
-              <ul class="feat-cap-list" role="list">
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Quote creation and management
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Invoice generation tied to client records
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Follow-up on outstanding quotes and invoices
-                </li>
-              </ul>
-
-              <p class="feat-cap-divider__label">In development</p>
-
-              <ul class="feat-cap-list" role="list">
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon feat-cap-item__icon--gold" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                  Payment status tracking and revenue visibility
-                </li>
-                <li class="feat-cap-item">
-                  <svg class="feat-cap-item__icon feat-cap-item__icon--gold" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                  Client billing history connected to contact records
-                </li>
-              </ul>
-
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
 
-    <!-- ============================================================
-         6. AUTOMATE & SCALE WORK
-         Dark section. Trigger-based workflows, repeatable task
-         templates, agent-based execution. Reframes the AI layer
-         around task automation rather than vague "AI management."
-         ============================================================ -->
-    <section class="section section--dark" id="automate" aria-labelledby="automate-heading">
-      <div class="container">
-
-        <div class="section-header section-header--centered section-header--on-dark">
-          <p class="section-eyebrow section-eyebrow--accent">Automate &amp; Scale</p>
-          <h2 class="section-title" id="automate-heading">
-            Real business events trigger the next step automatically
-          </h2>
-          <p class="section-lead">
-            A new contact arrives — a follow-up task starts. A quote goes out — a reminder fires if it isn't opened. A job completes — the invoice task is created. SuccessOBM's automation is built around the actual events in your task system, not a generic workflow builder you have to configure from scratch.
-          </p>
-        </div>
-
-        <div class="feat-agent-layout">
-
-          <!-- Workflow automation main card -->
-          <div class="feat-agent-main" role="region" aria-labelledby="automation-heading">
-            <p class="feat-agent-main__eyebrow">
-              <span class="feat-agent-main__eyebrow-dot" aria-hidden="true"></span>
-              Workflow Automation
-            </p>
-            <h3 class="feat-agent-main__heading" id="automation-heading">
-              Trigger-based automation, task templates, and agent execution
-            </h3>
-            <p class="feat-agent-main__body">
-              Define what happens when a business event fires — a form submitted, a quote sent, a task marked complete — and the platform runs the next step. Task templates make repeatable work consistent. Agents execute the steps that run across contacts, tasks, and communications at scale.
-            </p>
-            <ul class="feat-agent-main__caps" role="list" aria-label="Automation capabilities">
-              <li class="feat-agent-main__cap">
-                <svg class="feat-agent-main__cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                Triggers fire on platform events — form submitted, quote sent, task complete
-              </li>
-              <li class="feat-agent-main__cap">
-                <svg class="feat-agent-main__cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                Task templates — same steps, same owner, same sequence every time
-              </li>
-              <li class="feat-agent-main__cap">
-                <svg class="feat-agent-main__cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                Growing task library — more automatable business tasks added over time
-              </li>
-              <li class="feat-agent-main__cap">
-                <svg class="feat-agent-main__cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                Agents run the steps that repeat — follow-ups, reminders, drafts, routing
-              </li>
-            </ul>
-          </div>
-
-          <!-- Agent execution cards -->
-          <div class="feat-agent-cards" role="region" aria-label="Automation agents being developed">
-
-            <div class="feat-agent-card">
-              <div class="feat-agent-card__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <h3 class="feat-agent-card__title">Follow-up &amp; Outreach Agents</h3>
-              <p class="feat-agent-card__body">When a quote goes out, a reminder fires on day three if it hasn't been opened. When a job closes, a check-in goes out on schedule. Follow-up tasks that would otherwise be missed run automatically — triggered by what actually happened in the task system.</p>
-            </div>
-
-            <div class="feat-agent-card">
-              <div class="feat-agent-card__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-              </div>
-              <h3 class="feat-agent-card__title">Workflow Step Execution</h3>
-              <p class="feat-agent-card__body">Workflows advance on their own — assigning the next task to the right owner, moving a lead to the next stage, sending a status update to the client. Each step runs based on what completed before it, not on someone remembering to check.</p>
-            </div>
-
-            <div class="feat-agent-card">
-              <div class="feat-agent-card__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              </div>
-              <h3 class="feat-agent-card__title">Master Agent — Connected to the Task Engine</h3>
-              <p class="feat-agent-card__body">The Master Agent works inside the task system — not alongside it. Ask it to surface what's overdue, kick off a follow-up sequence, route a new inquiry to the right owner, or check what's outstanding on a client account. It's being built as the task execution interface across the whole platform.</p>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ============================================================
-         7. HOW THE FLOW WORKS TOGETHER
-         White section. 3-point connector showing how the task phases
-         reinforce each other — not just a "features list" closer.
-         ============================================================ -->
-    <section class="section" id="connected" aria-labelledby="connected-heading">
-      <div class="container">
-
-        <div class="section-header section-header--centered">
-          <p class="section-eyebrow">One Connected Platform</p>
-          <h2 class="section-title" id="connected-heading">
-            One record. Every phase. No re-entering data.
-          </h2>
-          <p class="section-lead">
-            Most business tools break the workflow at the handoff — data captured in one tool has to be re-entered in the next. SuccessOBM doesn't work that way. The contact record created when someone submits a form is the same record you send email from, quote from, invoice from, and automate follow-up for.
-          </p>
-        </div>
-
-        <div class="feat-connect-grid" role="list">
-
-          <div class="feat-connect-point" role="listitem">
-            <div class="feat-connect-point__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-            </div>
-            <h3 class="feat-connect-point__title">One contact. Every business action.</h3>
-            <p class="feat-connect-point__body">A contact captured from a form becomes the record you send email from, build a quote for, invoice, and automate follow-up against — all without copying data between tools. The contact record is the thread the whole business runs on.</p>
-          </div>
-
-          <div class="feat-connect-point" role="listitem">
-            <div class="feat-connect-point__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3 class="feat-connect-point__title">Every task tied to its context</h3>
-            <p class="feat-connect-point__body">An email sent, a quote created, a service delivered — every business task is tracked inside the platform and connected to the contact and work it belongs to. No "check the other tool to see what happened."</p>
-          </div>
-
-          <div class="feat-connect-point" role="listitem">
-            <div class="feat-connect-point__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-            </div>
-            <h3 class="feat-connect-point__title">Automation fires on real events</h3>
-            <p class="feat-connect-point__body">Triggers fire on platform events — a form submitted, a quote opened, a task marked complete — and automation runs using the actual contact records and business context already in the system. No imported dummy data. No disconnected sequences.</p>
-          </div>
-
-        </div>
-
-        <div class="features-cta">
-          <a href="/platform" class="btn btn--primary">See the Full Platform Overview</a>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ============================================================
-         8. CTA
-         Standard blue gradient CTA section.
-         ============================================================ -->
+    <!-- CTA -->
     <section class="cta-section" id="get-started" aria-labelledby="cta-heading">
       <div class="container cta-section__inner">
         <h2 class="cta-section__title" id="cta-heading">
-          Ready to manage business tasks from one connected platform?
+          Run your business from one system
         </h2>
         <p class="cta-section__body">
-          Request early access and see what it looks like when capturing inquiries, organizing contacts, sending outreach, creating quotes, generating invoices, and automating follow-up all happen in the same platform. Works whether you're running everything yourself or managing a growing team.
+          Bring your tasks, customers, communication, and workflows into one place and start operating with structure.
         </p>
         <div class="cta-section__actions">
-          <a href="/waitlist/"  class="btn btn--white btn--lg">Request Early Access</a>
-          <a href="/contact" class="btn btn--gold  btn--lg">Book a Demo</a>
+          <a href="/waitlist/" class="btn btn--white btn--lg">Request Early Access</a>
+          <a href="/contact" class="btn btn--gold btn--lg">Book a Demo</a>
         </div>
         <p class="cta-section__note">
           No payment required to request access &bull; Guided demos available &bull; We'll email next steps
