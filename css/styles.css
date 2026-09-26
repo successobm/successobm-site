@@ -409,11 +409,17 @@ button {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile nav menu */
+/* Mobile nav menu
+   Anchored to the sticky header: its backdrop-filter makes the header the
+   containing block, so viewport-relative `position: fixed` insets collapse. */
 .nav__menu {
   display: none;
-  position: fixed;
-  inset: 68px 0 0 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 68px);
+  height: calc(100dvh - 68px);
   background-color: var(--c-white);
   padding: var(--s-6) var(--s-5);
   border-top: 1px solid var(--c-border);
@@ -454,8 +460,9 @@ button {
   gap: var(--s-3);
 }
 
-/* Desktop nav */
-@media (min-width: 768px) {
+/* Desktop nav — the widest nav (who-its-for, 5 links) needs ~1066px to fit
+   without overflow or wrapping; below this the hamburger menu is used. */
+@media (min-width: 1100px) {
   .nav__toggle {
     display: none;
   }
@@ -463,6 +470,7 @@ button {
   .nav__menu {
     display: flex;
     position: static;
+    height: auto;
     flex-direction: row;
     align-items: center;
     padding: 0;
