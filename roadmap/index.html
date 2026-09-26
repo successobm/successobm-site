@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SuccessOBM Roadmap | What We&rsquo;re Exploring and Building</title>
+  <meta name="description" content="See what SuccessOBM is exploring, what we&rsquo;re building, and what has been completed. Roadmap items may change as the product and customer needs evolve.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://successobm.com/roadmap/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="SuccessOBM">
+  <meta property="og:url"         content="https://successobm.com/roadmap/">
+  <meta property="og:title"       content="SuccessOBM Roadmap | What We&rsquo;re Exploring and Building">
+  <meta property="og:description" content="See what SuccessOBM is exploring, what we&rsquo;re building, and what has been completed. Roadmap items may change as the product and customer needs evolve.">
+  <meta property="og:locale"      content="en_US">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="SuccessOBM Roadmap | What We&rsquo;re Exploring and Building">
+  <meta name="twitter:description" content="See what SuccessOBM is exploring, what we&rsquo;re building, and what has been completed. Roadmap items may change as the product and customer needs evolve.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://successobm.com/roadmap/#webpage",
+        "url": "https://successobm.com/roadmap/",
+        "name": "SuccessOBM Roadmap | What We're Exploring and Building",
+        "description": "Public SuccessOBM product roadmap showing items that are being explored, planned, in progress, or complete. Roadmap items may change and are not release commitments.",
+        "isPartOf": { "@id": "https://successobm.com/#website" },
+        "about": { "@id": "https://successobm.com/#product" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    /* Roadmap page (.rm-* prefix) */
+
+    .rm-hero-extra {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.58);
+      line-height: 1.65;
+      max-width: 36rem;
+      margin-inline: auto;
+    }
+
+    /* Links set inside light-on-dark text (hero, CTA note) */
+    .rm-inline-link {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .rm-inline-link:hover {
+      color: var(--c-white);
+    }
+
+    /* Status badge — one modifier per roadmap status */
+    .rm-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      padding: var(--s-1) var(--s-3);
+      border: 1px solid transparent;
+      border-radius: var(--r-full);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    .rm-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: var(--r-full);
+      background-color: currentColor;
+      flex-shrink: 0;
+    }
+
+    .rm-badge--exploring   { background-color: var(--c-gold-light);    border-color: #FDE68A; color: #92400E; }
+    .rm-badge--planned     { background-color: var(--c-primary-light); border-color: #BFDBFE; color: var(--c-primary-deeper); }
+    .rm-badge--in-progress { background-color: #E0E7FF;                border-color: #C7D2FE; color: #3730A3; }
+    .rm-badge--complete    { background-color: #ECFDF5;                border-color: #A7F3D0; color: #065F46; }
+
+    /* Status definitions */
+    .rm-legend {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-5);
+    }
+
+    @media (min-width: 640px) {
+      .rm-legend { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .rm-legend { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .rm-legend__item {
+      padding: var(--s-6);
+      background-color: var(--c-white);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-xl);
+    }
+
+    .rm-legend__item dt {
+      margin-bottom: var(--s-3);
+    }
+
+    .rm-legend__item dd {
+      font-size: var(--text-sm);
+      color: var(--c-text-muted);
+      line-height: 1.65;
+    }
+
+    /* Roadmap board — one column per status */
+    .rm-board {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-6);
+      align-items: start;
+    }
+
+    @media (min-width: 640px) {
+      .rm-board { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .rm-board { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .rm-column {
+      padding: var(--s-5);
+      background-color: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-xl);
+    }
+
+    .rm-column__title {
+      margin-bottom: var(--s-4);
+      font-size: var(--text-base);
+    }
+
+    .rm-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-4);
+      list-style: none;
+    }
+
+    .rm-card {
+      padding: var(--s-5);
+      background-color: var(--c-white);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .rm-card__title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--c-text);
+      line-height: 1.35;
+      margin-bottom: var(--s-2);
+    }
+
+    .rm-card__body {
+      font-size: var(--text-sm);
+      color: var(--c-text-body);
+      line-height: 1.65;
+    }
+
+    .rm-card__body + .rm-card__body {
+      margin-top: var(--s-3);
+    }
+
+    .rm-card__status {
+      margin-top: var(--s-4);
+      padding-top: var(--s-3);
+      border-top: 1px solid var(--c-border);
+      font-size: var(--text-xs);
+      color: var(--c-text-muted);
+      line-height: 1.6;
+    }
+
+    .rm-empty {
+      padding: var(--s-5);
+      border: 1px dashed var(--c-border);
+      border-radius: var(--r-lg);
+      font-size: var(--text-sm);
+      color: var(--c-text-muted);
+      line-height: 1.6;
+    }
+
+    .rm-empty a,
+    .rm-board-note a {
+      color: var(--c-primary);
+      font-weight: 600;
+    }
+
+    .rm-board-note {
+      margin-top: var(--s-10);
+      text-align: center;
+      font-size: var(--text-sm);
+      color: var(--c-text-muted);
+      line-height: 1.65;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="/" class="nav__logo" aria-label="SuccessOBM — go to homepage">
+        <svg class="nav__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="98 72 122 137" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M164.08,80.65l3.98,1.11c14.44,8.84,28.86,17.67,43.26,26.48l.69,1.75v60.94l-.68,1.75-44.98,27.75c-3.71.82-10.62,1.42-14.09-.03l-45.69-28.25c-.51-20.93-.52-42.63-.01-63.58l43.95-26.81,3.98-1.1h9.59ZM167.05,145.61c-4.42-.01-8.16-.25-12.38-.29l-38.52-.4.02,20.93,39.08,23.59c3.01.23,5.64.26,8.59-.03l38.57-23.69v-51.09s-38.41-22.59-38.41-22.59l-9.06-.13-38.18,22.67-.31,20.8,50.54-.06-16.31-16.72,12.6-.04,23.98,16.66-.04,9.84-24.3,16.86c-4.16-.2-7.86.43-12.13-.38,5.96-6.66,10.46-9.46,16.27-15.95Z"/>
+        </svg>
+        <span class="nav__logo-text">SuccessOBM</span>
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list" role="list">
+          <li><a href="/platform" class="nav__link">Platform</a></li>
+          <li><a href="/features" class="nav__link">Features</a></li>
+          <li><a href="/waitlist/" class="nav__link">Early Access</a></li>
+          <li><a href="/contact" class="nav__link">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a href="https://app.successobm.com/login" class="btn btn--ghost">Log In</a>
+          <a href="/waitlist/" class="btn btn--primary">Request Early Access</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- 1. Hero -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+
+        <div class="hero__badge">Product Roadmap</div>
+
+        <h1 class="hero__headline" id="hero-heading">
+          Where SuccessOBM is headed
+        </h1>
+
+        <p class="hero__subheadline">
+          See what we&rsquo;re exploring, what we&rsquo;re building, and what has been completed.
+        </p>
+
+        <p class="rm-hero-extra">
+          Roadmap items may change as the product and our customers&rsquo; needs evolve. For what SuccessOBM does today, see <a href="/features" class="rm-inline-link">Features</a>.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- 2. Status definitions -->
+    <section class="section section--surface" id="statuses" aria-labelledby="statuses-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">How to read the roadmap</p>
+          <h2 class="section-title" id="statuses-heading">What each status means</h2>
+        </div>
+        <dl class="rm-legend">
+          <div class="rm-legend__item">
+            <dt><span class="rm-badge rm-badge--exploring">Exploring</span></dt>
+            <dd>Ideas we&rsquo;re evaluating. They aren&rsquo;t committed or scheduled.</dd>
+          </div>
+          <div class="rm-legend__item">
+            <dt><span class="rm-badge rm-badge--planned">Planned</span></dt>
+            <dd>Approved direction that isn&rsquo;t in active development yet and has no promised release date.</dd>
+          </div>
+          <div class="rm-legend__item">
+            <dt><span class="rm-badge rm-badge--in-progress">In Progress</span></dt>
+            <dd>Currently being worked on, but not yet generally available.</dd>
+          </div>
+          <div class="rm-legend__item">
+            <dt><span class="rm-badge rm-badge--complete">Complete</span></dt>
+            <dd>Finished capabilities, available within their documented access and workspace limitations.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+
+    <!-- 3. Roadmap board
+         Each status column uses the same .rm-list / .rm-card markup.
+         To move an item, cut its <li class="rm-card"> into the target
+         column's .rm-list. When a column gains its first item, remove its
+         .rm-empty paragraph; when a column loses its last item, restore it. -->
+    <section class="section section--light" id="roadmap" aria-labelledby="roadmap-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">Roadmap</p>
+          <h2 class="section-title" id="roadmap-heading">The SuccessOBM roadmap</h2>
+        </div>
+
+        <div class="rm-board">
+
+          <section class="rm-column" id="exploring" aria-labelledby="exploring-heading">
+            <h3 class="rm-column__title" id="exploring-heading"><span class="rm-badge rm-badge--exploring">Exploring</span></h3>
+            <ul class="rm-list" role="list">
+              <li class="rm-card">
+                <h4 class="rm-card__title">Name Your OBM</h4>
+                <p class="rm-card__body">
+                  We&rsquo;re exploring a way for you to choose a name for your own online business manager, so your workspace feels personal to your business.
+                </p>
+                <p class="rm-card__body">
+                  Gordon is the name of Eric&rsquo;s internal OBM &mdash; picked with a head chef calling orders to the kitchen in mind. Your OBM won&rsquo;t be required to use that name.
+                </p>
+                <p class="rm-card__status">Being explored. Not currently available, and there is no announced release date.</p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="rm-column" id="planned" aria-labelledby="planned-heading">
+            <h3 class="rm-column__title" id="planned-heading"><span class="rm-badge rm-badge--planned">Planned</span></h3>
+            <ul class="rm-list" role="list"></ul>
+            <p class="rm-empty">No public roadmap items are listed here yet.</p>
+          </section>
+
+          <section class="rm-column" id="in-progress" aria-labelledby="in-progress-heading">
+            <h3 class="rm-column__title" id="in-progress-heading"><span class="rm-badge rm-badge--in-progress">In Progress</span></h3>
+            <ul class="rm-list" role="list"></ul>
+            <p class="rm-empty">No public roadmap items are listed here yet.</p>
+          </section>
+
+          <section class="rm-column" id="complete" aria-labelledby="complete-heading">
+            <h3 class="rm-column__title" id="complete-heading"><span class="rm-badge rm-badge--complete">Complete</span></h3>
+            <ul class="rm-list" role="list"></ul>
+            <p class="rm-empty">Completed roadmap entries will appear here as items move through the roadmap.</p>
+          </section>
+
+        </div>
+
+        <p class="rm-board-note">
+          The roadmap shows direction, not release commitments. For current capabilities and limitations, see <a href="/features">Features</a>.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- 4. CTA -->
+    <section class="cta-section" id="get-started" aria-labelledby="cta-heading">
+      <div class="container cta-section__inner">
+        <h2 class="cta-section__title" id="cta-heading">
+          See what SuccessOBM can do today
+        </h2>
+        <p class="cta-section__body">
+          Access is guided and invitation-based. Join the interest list or book a demo to see how SuccessOBM works today.
+        </p>
+        <div class="cta-section__actions">
+          <a href="/waitlist/" class="btn btn--white btn--lg">Join the Interest List</a>
+          <a href="/contact" class="btn btn--gold btn--lg">Book a Demo</a>
+        </div>
+        <p class="cta-section__note">
+          Prefer to read first? <a href="/platform" class="rm-inline-link">Explore the Platform</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo" aria-label="SuccessOBM — go to homepage">
+            <svg class="footer__logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="98 72 122 137" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M164.08,80.65l3.98,1.11c14.44,8.84,28.86,17.67,43.26,26.48l.69,1.75v60.94l-.68,1.75-44.98,27.75c-3.71.82-10.62,1.42-14.09-.03l-45.69-28.25c-.51-20.93-.52-42.63-.01-63.58l43.95-26.81,3.98-1.1h9.59ZM167.05,145.61c-4.42-.01-8.16-.25-12.38-.29l-38.52-.4.02,20.93,39.08,23.59c3.01.23,5.64.26,8.59-.03l38.57-23.69v-51.09s-38.41-22.59-38.41-22.59l-9.06-.13-38.18,22.67-.31,20.8,50.54-.06-16.31-16.72,12.6-.04,23.98,16.66-.04,9.84-24.3,16.86c-4.16-.2-7.86.43-12.13-.38,5.96-6.66,10.46-9.46,16.27-15.95Z"/>
+            </svg>
+            <span class="footer__logo-text">SuccessOBM</span>
+          </a>
+          <p class="footer__tagline">Your online business manager for owner-led small businesses.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <div class="footer__col">
+            <h4 class="footer__col-title">Product</h4>
+            <ul role="list">
+              <li><a href="/platform">Platform Overview</a></li>
+              <li><a href="/features">Features</a></li>
+              <li><a href="/roadmap/" aria-current="page">Roadmap</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Company</h4>
+            <ul role="list">
+              <li><a href="/who-its-for">Who It's For</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/waitlist/">Request Early Access</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">&copy; <span id="current-year">2026</span> SuccessOBM. All rights reserved.</p>
+        <ul class="footer__legal-links" role="list">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/communication-policy">Communication Consent</a></li>
+          <li><a href="/acceptable-use">Acceptable Use</a></li>
+          <li><a href="/security">Security</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
