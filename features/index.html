@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SuccessOBM Features | Business Execution System</title>
+  <title>SuccessOBM Features | Your Online Business Manager</title>
   <meta name="description" content="What you can do in SuccessOBM: tasks and reminders, email and SMS from workflows, forms, CRM records, marketing content, scheduling and follow-up, and team roles — action-based features for running your business day to day.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://successobm.com/features">
@@ -12,13 +12,13 @@
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="SuccessOBM">
   <meta property="og:url"         content="https://successobm.com/features">
-  <meta property="og:title"       content="SuccessOBM Features | Business Execution System">
+  <meta property="og:title"       content="SuccessOBM Features | Your Online Business Manager">
   <meta property="og:description" content="Features built around real work: send email and SMS from tasks, manage customers, create content, assign work, schedule follow-ups, and track status — from one place.">
   <meta property="og:locale"      content="en_US">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="SuccessOBM Features | Business Execution System">
-  <meta name="twitter:description" content="Action-based features for running your business: tasks, communication, CRM, content, scheduling, and team access in one execution-focused system.">
+  <meta name="twitter:title"       content="SuccessOBM Features | Your Online Business Manager">
+  <meta name="twitter:description" content="Features for running your business: tasks, communication, customer records, quotes and invoices, marketing content, scheduling, and team access in one system.">
 
   <script type="application/ld+json">
   {
@@ -28,7 +28,7 @@
         "@type": "WebPage",
         "@id": "https://successobm.com/features#webpage",
         "url": "https://successobm.com/features",
-        "name": "SuccessOBM Features | Business Execution System",
+        "name": "SuccessOBM Features | Your Online Business Manager",
         "description": "Overview of SuccessOBM capabilities — tasks and reminders, email SMS and forms, CRM, marketing content workspace, scheduling and follow-up, roles and team access.",
         "isPartOf": { "@id": "https://successobm.com/#website" },
         "about": { "@id": "https://successobm.com/#product" }
@@ -38,7 +38,7 @@
         "@id": "https://successobm.com/#product",
         "name": "SuccessOBM",
         "applicationCategory": "BusinessApplication",
-        "description": "Business execution system where tasks, communication, follow-ups, and workflows come together so teams can send email and SMS, manage customers, create content, assign work, and track status from one workspace.",
+        "description": "Online business manager for owner-led small businesses — one system for customers, communication, orders, money, marketing, and the work that keeps the business moving.",
         "featureList": [
           "Tasks and Reminders",
           "Email SMS and Forms",
@@ -192,6 +192,20 @@
       line-height: 1.45;
     }
 
+    /* ---- FAQ answer lists ---- */
+
+    .faq-answer ul {
+      margin: var(--s-3) 0;
+      padding-left: 1.25rem;
+    }
+
+    .faq-answer li {
+      font-size: var(--text-base);
+      color: var(--c-text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--s-2);
+    }
+
   </style>
 </head>
 <body>
@@ -222,7 +236,7 @@
         <ul class="nav__list" role="list">
           <li><a href="/platform"    class="nav__link">Platform</a></li>
           <li><a href="/features"    class="nav__link" aria-current="page">Features</a></li>
-          <li><a href="/pricing"     class="nav__link">Pricing</a></li>
+          <li><a href="/waitlist/"   class="nav__link">Early Access</a></li>
           <li><a href="/contact"     class="nav__link">Contact</a></li>
         </ul>
         <div class="nav__actions">
@@ -241,18 +255,18 @@
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__inner">
 
-        <div class="hero__badge" aria-label="Product category">Business Execution System</div>
+        <div class="hero__badge" aria-label="Product category">Online Business Manager</div>
 
         <h1 class="hero__headline" id="hero-heading">
-          Features built to execute real business work
+          What your online business manager helps you run
         </h1>
 
         <p class="hero__subheadline">
-          SuccessOBM is not just a collection of tools. It is a system where tasks, communication, follow-ups, and workflows come together to help you run your business day to day.
+          SuccessOBM brings customers, communication, orders, money, marketing, and operational work into one system. Your online business manager can answer questions using connected business information, prepare bounded work, and request approval before consequential actions.
         </p>
 
         <p class="feat-hero-extra">
-          Send emails, send SMS, manage customers, create content, assign work, and keep everything moving — from one place.
+          Send email and SMS, manage customers, create quotes and invoices, prepare marketing content, assign work, and track status — from one place. Available features vary by workspace.
         </p>
 
         <div class="hero__actions">
@@ -278,7 +292,7 @@
           <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Create and send forms</li>
           <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Turn inquiries into tracked tasks</li>
           <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Assign work to team members</li>
-          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Schedule follow-ups and reminders</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Schedule supported sends and set reminders</li>
           <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Create social posts and content</li>
           <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Track status across your business</li>
         </ul>
@@ -328,7 +342,7 @@
         <div class="section-header">
           <p class="section-eyebrow">Marketing Content Workspace</p>
           <h2 class="section-title" id="marketing-content-heading">Create and manage content from one place</h2>
-          <p class="section-lead">Manage social posts, blogs, newsletters, and announcements inside SuccessOBM. Draft, review, schedule, and publish content as part of your normal workflow.</p>
+          <p class="section-lead">Manage social posts, blogs, newsletters, and announcements inside SuccessOBM. Draft and review content, then publish to supported destinations — WordPress blogs, and Facebook, Instagram, and LinkedIn with approval controls — or send newsletters and announcements to your subscribers.</p>
         </div>
       </div>
     </section>
@@ -340,7 +354,7 @@
         <div class="section-header">
           <p class="section-eyebrow">Scheduling &amp; Follow-Up</p>
           <h2 class="section-title" id="scheduling-heading">Keep work moving without relying on memory</h2>
-          <p class="section-lead">Schedule follow-ups, reminders, and future actions. Agents help execute routine steps such as reminders and follow-through where enabled.</p>
+          <p class="section-lead">Schedule supported sends — such as announcements, emails, and blog posts — and set reminders so follow-up stays visible on the task instead of living in memory.</p>
         </div>
       </div>
     </section>
@@ -362,9 +376,9 @@
     <section class="section" id="execution" aria-labelledby="execution-heading">
       <div class="container container--narrow">
         <div class="section-header section-header--centered">
-          <h2 class="section-title" id="execution-heading">This is not just task management</h2>
-          <p class="section-lead">SuccessOBM is designed to execute work, not just track it. Tasks can include communication, follow-ups, scheduling, and next steps — all in one place.</p>
-          <p class="feat-execution-tagline">Work does not just get tracked — it gets executed.</p>
+          <h2 class="section-title" id="execution-heading">More than a task list</h2>
+          <p class="section-lead">Tasks in SuccessOBM can carry communication, quotes, invoices, scheduling, and next steps — all in one place. Your OBM helps prepare the work, and you stay in control of what goes out.</p>
+          <p class="feat-execution-tagline">Your OBM prepares the work. You approve what matters.</p>
         </div>
       </div>
     </section>
@@ -428,12 +442,21 @@
           <div class="faq-item">
             <dt>
               <button class="faq-toggle" aria-expanded="false" aria-controls="faqf-1">
-                What business tasks can SuccessOBM actually execute today?
+                What can SuccessOBM do today?
                 <span class="faq-toggle__icon" aria-hidden="true"></span>
               </button>
             </dt>
             <dd id="faqf-1" class="faq-answer" hidden>
-              <p>Core execution capabilities include task creation and management, contact and lead record management, quote and invoice creation, newsletter and campaign sending, and email outreach connected to contact records. You can connect a Gmail account to <strong>send</strong> mail from that address through the platform (OAuth; send-only; no inbox sync). Trigger-based workflow automation, SMS, social media management, and agent-based execution are being built as part of the platform's near-term direction. Where a feature is in progress, we say so rather than presenting the platform as something it isn't yet.</p>
+              <p>Current capability areas include:</p>
+              <ul>
+                <li><strong>Work:</strong> tasks and work management, with owners, statuses, and reminders.</li>
+                <li><strong>Customers:</strong> customer records, forms, and subscriber management.</li>
+                <li><strong>Communication:</strong> email sending, with inbound replies handled as task messages; SMS with consent controls.</li>
+                <li><strong>Money and orders:</strong> quotes with public quote approval, invoices with Stripe payment links, staff-triggered refunds, purchase orders sent to vendors, and QuickBooks synchronization initiated by staff.</li>
+                <li><strong>Marketing:</strong> newsletters and announcements, WordPress blog drafting and publishing, and Facebook, Instagram, and LinkedIn publishing with approval controls.</li>
+                <li><strong>Ask your OBM:</strong> questions about supported business information — such as customers, orders, open invoices, products, and open work — answered from connected records.</li>
+              </ul>
+              <p>Not every capability is enabled for every workspace. We&rsquo;ll walk through what applies to your business during guided onboarding.</p>
             </dd>
           </div>
 
@@ -452,12 +475,12 @@
           <div class="faq-item">
             <dt>
               <button class="faq-toggle" aria-expanded="false" aria-controls="faqf-3">
-                What does workflow automation look like in practice?
+                Does SuccessOBM run my business automatically?
                 <span class="faq-toggle__icon" aria-hidden="true"></span>
               </button>
             </dt>
             <dd id="faqf-3" class="faq-answer" hidden>
-              <p>Automation in SuccessOBM works on a trigger-and-action model: when something happens in the platform — a form is submitted, a quote is sent, a task is completed — a defined set of actions runs automatically. That might be sending a follow-up email, creating a task for a team member, moving a lead to the next pipeline stage, or starting a new workflow. The goal is that repeatable business tasks run consistently without someone manually managing each step. This capability is actively being built out.</p>
+              <p>No. Your online business manager can answer questions using connected business information and prepare bounded work, such as a draft message or a proposed send. For supported flows, it requests your approval before consequential actions are carried out, and approval-gated execution exists only for those bounded flows. Sends you schedule — such as announcements, emails, or blog posts — go out at the time you set. SuccessOBM does not have unrestricted authority to act on your behalf, and not every workflow is supported.</p>
             </dd>
           </div>
 
@@ -469,19 +492,27 @@
               </button>
             </dt>
             <dd id="faqf-4" class="faq-answer" hidden>
-              <p>For businesses using a standalone quoting or invoicing tool that's separate from where they manage contacts and tasks, SuccessOBM is designed to replace that separation. Quotes and invoices are created inside the platform, tied to the client record, and followed up on as tasks — so the full loop from new business to payment lives in one place. Payment gateway integration and advanced billing features are part of the platform direction as it develops.</p>
+              <p>For many owner-led businesses, it can. Quotes and invoices are created inside SuccessOBM and tied to the customer record and task. Customers can approve quotes through a public approval link, and invoices can include Stripe payment links. Staff can issue refunds, send purchase orders to vendors, and start a QuickBooks synchronization. Whether it fully replaces your current tool depends on your billing needs — we&rsquo;ll review that with you in a demo.</p>
             </dd>
           </div>
 
           <div class="faq-item">
             <dt>
               <button class="faq-toggle" aria-expanded="false" aria-controls="faqf-5">
-                What features are available now vs. still being built?
+                What are the current limitations?
                 <span class="faq-toggle__icon" aria-hidden="true"></span>
               </button>
             </dt>
             <dd id="faqf-5" class="faq-answer" hidden>
-              <p>Task management, contact and lead records, quote and invoice creation, newsletter sending, and Gmail send (connected account, OAuth) are the current platform foundation. Trigger-based workflow automation, SMS outreach, social media management, and agent-based task execution are actively in development. The AI Master Agent is being built as a task coordination and execution interface across the platform. We've tried to be straightforward throughout this page about what's live, what's in progress, and what's part of the direction — because that's more useful than pretending everything is already built.</p>
+              <p>We&rsquo;d rather be clear about what isn&rsquo;t available yet:</p>
+              <ul>
+                <li>WooCommerce order import is manual and read-only.</li>
+                <li>Google Business Profile publishing is not enabled.</li>
+                <li>Supplier ordering is not available.</li>
+                <li>Your OBM does not have unrestricted authority to change records or take actions; approval-gated execution covers only specific, bounded flows.</li>
+                <li>Not every capability listed on this page is enabled for every workspace.</li>
+              </ul>
+              <p>Our longer-term direction is an online business manager that coordinates specialized agents across the business. That full vision is not available today, and we&rsquo;ll say so plainly as it develops.</p>
             </dd>
           </div>
 
@@ -502,7 +533,7 @@
             </svg>
             <span class="footer__logo-text">SuccessOBM</span>
           </a>
-          <p class="footer__tagline">Task-based operating system for growing online businesses.</p>
+          <p class="footer__tagline">Your online business manager for owner-led small businesses.</p>
         </div>
         <nav class="footer__nav" aria-label="Footer navigation">
           <div class="footer__col">
@@ -510,7 +541,6 @@
             <ul role="list">
               <li><a href="/platform">Platform Overview</a></li>
               <li><a href="/features">Features</a></li>
-              <li><a href="/pricing">Pricing</a></li>
             </ul>
           </div>
           <div class="footer__col">
