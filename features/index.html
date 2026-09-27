@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SuccessOBM Features | Your Online Business Manager</title>
-  <meta name="description" content="What you can do in SuccessOBM: tasks and reminders, email and SMS from workflows, forms, CRM records, marketing content, scheduling and follow-up, and team roles — action-based features for running your business day to day.">
+  <title>SuccessOBM Features | What Your Online Business Manager Handles Today</title>
+  <meta name="description" content="Current SuccessOBM capabilities: ask your OBM, customers, email and SMS, quotes and invoices, marketing, scheduling and team access, plus approval requirements and current limitations.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://successobm.com/features">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="SuccessOBM">
   <meta property="og:url"         content="https://successobm.com/features">
-  <meta property="og:title"       content="SuccessOBM Features | Your Online Business Manager">
-  <meta property="og:description" content="Features built around real work: send email and SMS from tasks, manage customers, create content, assign work, schedule follow-ups, and track status — from one place.">
+  <meta property="og:title"       content="SuccessOBM Features | What Your Online Business Manager Handles Today">
+  <meta property="og:description" content="Current SuccessOBM capabilities: ask your OBM, customers, email and SMS, quotes and invoices, marketing, scheduling and team access, plus approval requirements and current limitations.">
   <meta property="og:locale"      content="en_US">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="SuccessOBM Features | Your Online Business Manager">
-  <meta name="twitter:description" content="Features for running your business: tasks, communication, customer records, quotes and invoices, marketing content, scheduling, and team access in one system.">
+  <meta name="twitter:title"       content="SuccessOBM Features | What Your Online Business Manager Handles Today">
+  <meta name="twitter:description" content="Current SuccessOBM capabilities: ask your OBM, customers, email and SMS, quotes and invoices, marketing, scheduling and team access, plus approval requirements and current limitations.">
 
   <script type="application/ld+json">
   {
@@ -28,8 +28,8 @@
         "@type": "WebPage",
         "@id": "https://successobm.com/features#webpage",
         "url": "https://successobm.com/features",
-        "name": "SuccessOBM Features | Your Online Business Manager",
-        "description": "Overview of SuccessOBM capabilities — tasks and reminders, email SMS and forms, CRM, marketing content workspace, scheduling and follow-up, roles and team access.",
+        "name": "SuccessOBM Features | What Your Online Business Manager Handles Today",
+        "description": "Current SuccessOBM capabilities — ask your OBM, customer and communication records, quotes and invoices, marketing content, tasks and scheduling, and role-based team access — plus current limitations.",
         "isPartOf": { "@id": "https://successobm.com/#website" },
         "about": { "@id": "https://successobm.com/#product" }
       },
@@ -38,14 +38,16 @@
         "@id": "https://successobm.com/#product",
         "name": "SuccessOBM",
         "applicationCategory": "BusinessApplication",
-        "description": "Online business manager for owner-led small businesses — one system for customers, communication, orders, money, marketing, and the work that keeps the business moving.",
+        "description": "Online business manager for owner-led small businesses. Your OBM answers supported questions from connected business records, prepares bounded work, and requests approval before consequential actions in supported flows.",
         "featureList": [
+          "Ask Your OBM",
           "Tasks and Reminders",
-          "Email SMS and Forms",
+          "Email, SMS and Forms",
           "CRM and Customer Records",
+          "Quotes and Invoices",
           "Marketing Content Workspace",
           "Scheduling and Follow-Up",
-          "Roles Permissions and Team Access"
+          "Roles, Permissions and Team Access"
         ],
         "url": "https://successobm.com"
       }
@@ -69,6 +71,32 @@
       max-width: 42rem;
       margin-inline: auto;
       margin-top: var(--s-5);
+    }
+
+    /* ---- Label key ---- */
+    .feat-key {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-3);
+      max-width: 780px;
+      margin-inline: auto;
+      list-style: none;
+      padding: 0;
+    }
+    @media (min-width: 640px) {
+      .feat-key { grid-template-columns: repeat(2, 1fr); }
+    }
+    .feat-key__item {
+      display: flex;
+      gap: var(--s-2);
+      font-size: var(--text-sm);
+      color: var(--c-text-body);
+      line-height: 1.55;
+    }
+    .feat-key__term {
+      flex-shrink: 0;
+      font-weight: 700;
+      color: var(--c-text);
     }
 
     /* ---- Core actions ---- */
@@ -126,6 +154,51 @@
       margin-bottom: 0;
     }
 
+    .feat-group-labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+      margin-bottom: var(--s-3);
+    }
+
+    .feat-group-label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--c-primary);
+      background: var(--c-primary-light);
+      border: 1px solid #BFDBFE;
+      border-radius: var(--r-full);
+      padding: 2px 10px;
+    }
+
+    /* ---- Limitations list ---- */
+    .feat-limitations-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+      list-style: none;
+      padding: 0;
+      margin-top: var(--s-5);
+    }
+    .feat-limitations-list li {
+      display: flex;
+      gap: var(--s-3);
+      font-size: var(--text-base);
+      color: var(--c-text-body);
+      line-height: 1.6;
+    }
+    .feat-limitations-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      margin-top: 0.55em;
+      border-radius: 50%;
+      background: var(--c-text-muted);
+    }
+
     /* ---- Workflow strip ---- */
 
     .feat-flow-strip {
@@ -181,17 +254,6 @@
       user-select: none;
     }
 
-    /* ---- Execution callout ---- */
-
-    .feat-execution-tagline {
-      font-size: var(--text-lg);
-      font-weight: 700;
-      color: var(--c-text);
-      margin-top: var(--s-6);
-      margin-bottom: 0;
-      line-height: 1.45;
-    }
-
     /* ---- FAQ answer lists ---- */
 
     .faq-answer ul {
@@ -236,6 +298,7 @@
         <ul class="nav__list" role="list">
           <li><a href="/platform"    class="nav__link">Platform</a></li>
           <li><a href="/features"    class="nav__link" aria-current="page">Features</a></li>
+          <li><a href="/who-its-for" class="nav__link">Who It&rsquo;s For</a></li>
           <li><a href="/waitlist/"   class="nav__link">Early Access</a></li>
           <li><a href="/contact"     class="nav__link">Contact</a></li>
         </ul>
@@ -255,18 +318,18 @@
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__inner">
 
-        <div class="hero__badge" aria-label="Product category">Online Business Manager</div>
+        <div class="hero__badge" aria-label="Product category">Current Capabilities</div>
 
         <h1 class="hero__headline" id="hero-heading">
-          What your online business manager helps you run
+          What your OBM helps you handle today
         </h1>
 
         <p class="hero__subheadline">
-          SuccessOBM brings customers, communication, orders, money, marketing, and operational work into one system. Your online business manager can answer questions using connected business information, prepare bounded work, and request approval before consequential actions.
+          Your online business manager answers questions using connected business information, prepares bounded work, and requests approval before consequential actions in supported flows. This page lists what&rsquo;s available today, what needs approval, and what isn&rsquo;t available yet.
         </p>
 
         <p class="feat-hero-extra">
-          Send email and SMS, manage customers, create quotes and invoices, prepare marketing content, assign work, and track status — from one place. Available features vary by workspace.
+          Available features vary by workspace.
         </p>
 
         <div class="hero__actions">
@@ -274,121 +337,166 @@
           <a href="/contact" class="btn btn--outline-light btn--lg">Book a Demo</a>
         </div>
 
-        <p class="hero__note">Guided onboarding &bull; Built for real business workflows &bull; No pressure demos</p>
-
       </div>
     </section>
 
 
-    <!-- 2. Core action strip -->
-    <section class="section section--surface" id="what-you-can-do" aria-labelledby="actions-heading">
+    <!-- 2. Label key -->
+    <section class="section section--surface" id="label-key" aria-labelledby="label-key-heading">
+      <div class="container container--narrow">
+        <div class="section-header section-header--centered">
+          <h2 class="section-title" id="label-key-heading" style="font-size:var(--text-lg);">Label key</h2>
+        </div>
+        <dl class="feat-key">
+          <div class="feat-key__item"><dt class="feat-key__term">Available today:</dt><dd>in the product now.</dd></div>
+          <div class="feat-key__item"><dt class="feat-key__term">Varies by workspace:</dt><dd>not enabled for every workspace.</dd></div>
+          <div class="feat-key__item"><dt class="feat-key__term">Approval:</dt><dd>your OBM requests approval before consequential actions in this supported flow.</dd></div>
+          <div class="feat-key__item"><dt class="feat-key__term">Staff-initiated:</dt><dd>a person on your team starts it.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+
+    <!-- 3. Core action strip -->
+    <section class="section" id="what-you-can-do" aria-labelledby="actions-heading">
       <div class="container">
         <div class="feat-actions-intro">
-          <h2 class="section-title" id="actions-heading">What you can do inside SuccessOBM</h2>
+          <h2 class="section-title" id="actions-heading">Available today, at a glance</h2>
         </div>
         <ul class="feat-action-grid" role="list">
-          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Send emails directly from tasks</li>
-          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Send SMS messages to customers</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Ask your OBM about customers, orders, invoices and open work</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Get drafts and proposed sends prepared for review</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Send email from tasks and SMS to customers</li>
           <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Create and send forms</li>
-          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Turn inquiries into tracked tasks</li>
-          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Assign work to team members</li>
-          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Schedule supported sends and set reminders</li>
-          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Create social posts and content</li>
-          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Track status across your business</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Send quotes customers can approve online</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Send invoices with Stripe payment links</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Plan, draft and publish marketing content</li>
+          <li class="feat-action-item"><span class="feat-action-item__mark" aria-hidden="true"></span> Assign work by role and track status</li>
         </ul>
       </div>
     </section>
 
 
-    <!-- A. Tasks & Reminders -->
-    <section class="section" id="tasks-reminders" aria-labelledby="tasks-reminders-heading">
+    <!-- A. Ask your OBM -->
+    <section class="section section--surface" id="ask-your-obm" aria-labelledby="ask-heading">
       <div class="container container--narrow">
         <div class="section-header">
-          <p class="section-eyebrow">Tasks &amp; Reminders</p>
-          <h2 class="section-title" id="tasks-reminders-heading">Every action starts as a task</h2>
-          <p class="section-lead">Create tasks for inquiries, follow-ups, jobs, reminders, and internal work. Each task has an owner, status, and next step so nothing gets lost or forgotten.</p>
+          <div class="feat-group-labels"><span class="feat-group-label">Available today</span><span class="feat-group-label">Varies by workspace</span></div>
+          <h2 class="section-title" id="ask-heading">Ask your OBM</h2>
+          <p class="section-lead">Ask about supported business information, such as customers, orders, open invoices, products and open work, and get answers from your connected records. Open tasks, overdue work and open invoices are also visible in one place.</p>
+          <p class="section-lead">Answers are only as current and complete as the connected records they&rsquo;re drawn from.</p>
         </div>
       </div>
     </section>
 
 
-    <!-- B. Email, SMS & Forms -->
-    <section class="section section--surface" id="email-sms-forms" aria-labelledby="email-sms-forms-heading">
+    <!-- B. Customers, forms, email & SMS -->
+    <section class="section" id="customers-communication" aria-labelledby="customers-heading">
       <div class="container container--narrow">
         <div class="section-header">
-          <p class="section-eyebrow">Email, SMS &amp; Forms</p>
-          <h2 class="section-title" id="email-sms-forms-heading">Communicate directly from your workflow</h2>
-          <p class="section-lead">Send emails, SMS messages, and forms without leaving the system. Communication is tied to tasks and customers so you always have context and history.</p>
+          <div class="feat-group-labels"><span class="feat-group-label">Available today</span><span class="feat-group-label">SMS includes consent controls</span></div>
+          <h2 class="section-title" id="customers-heading">Customers, forms, email and SMS</h2>
+          <p class="section-lead">Keep customer records, forms and subscriber lists in one place. Send email from tasks, with inbound replies handled as task messages. Send SMS with consent controls. When you send an email, create a task or generate a quote, it ties back to the customer record.</p>
         </div>
       </div>
     </section>
 
 
-    <!-- C. CRM & Customer Records -->
-    <section class="section" id="crm-customers" aria-labelledby="crm-heading">
+    <!-- C. Quotes, invoices & orders -->
+    <section class="section section--surface" id="quotes-invoices-orders" aria-labelledby="orders-heading">
       <div class="container container--narrow">
         <div class="section-header">
-          <p class="section-eyebrow">CRM &amp; Customer Records</p>
-          <h2 class="section-title" id="crm-heading">Keep your customers connected to the work</h2>
-          <p class="section-lead">Store customer information and connect it to tasks, communication, and history. Every interaction is tied to the customer record so you can see what has happened and what comes next.</p>
+          <div class="feat-group-labels"><span class="feat-group-label">Available today</span><span class="feat-group-label">Some steps staff-initiated</span></div>
+          <h2 class="section-title" id="orders-heading">Quotes, invoices and orders</h2>
+          <p class="section-lead">Create quotes that customers can approve through a public link. Send invoices with Stripe payment links. Staff can issue refunds, send purchase orders to vendors, and start a QuickBooks synchronization. Quotes and invoices are tied to the customer record and the task.</p>
         </div>
       </div>
     </section>
 
 
-    <!-- D. Marketing Content Workspace -->
-    <section class="section section--surface" id="marketing-content" aria-labelledby="marketing-content-heading">
+    <!-- D. Marketing content -->
+    <section class="section" id="marketing-content" aria-labelledby="marketing-content-heading">
       <div class="container container--narrow">
         <div class="section-header">
-          <p class="section-eyebrow">Marketing Content Workspace</p>
-          <h2 class="section-title" id="marketing-content-heading">Create and manage content from one place</h2>
-          <p class="section-lead">Manage social posts, blogs, newsletters, and announcements inside SuccessOBM. Draft and review content, then publish to supported destinations — WordPress blogs, and Facebook, Instagram, and LinkedIn with approval controls — or send newsletters and announcements to your subscribers.</p>
+          <div class="feat-group-labels"><span class="feat-group-label">Available today</span><span class="feat-group-label">Approval (social publishing)</span></div>
+          <h2 class="section-title" id="marketing-content-heading">Marketing content</h2>
+          <p class="section-lead">Plan and manage newsletters, announcements, blog posts and social posts. Your OBM can help draft content for your review. Publish to supported destinations (WordPress, plus Facebook, Instagram and LinkedIn with approval controls), or send newsletters and announcements to your subscribers.</p>
         </div>
       </div>
     </section>
 
 
-    <!-- E. Scheduling & Follow-Up -->
-    <section class="section" id="scheduling-follow-up" aria-labelledby="scheduling-heading">
+    <!-- E. Tasks, reminders & scheduling -->
+    <section class="section section--surface" id="tasks-scheduling" aria-labelledby="tasks-scheduling-heading">
       <div class="container container--narrow">
         <div class="section-header">
-          <p class="section-eyebrow">Scheduling &amp; Follow-Up</p>
-          <h2 class="section-title" id="scheduling-heading">Keep work moving without relying on memory</h2>
-          <p class="section-lead">Schedule supported sends — such as announcements, emails, and blog posts — and set reminders so follow-up stays visible on the task instead of living in memory.</p>
+          <div class="feat-group-labels"><span class="feat-group-label">Available today</span></div>
+          <h2 class="section-title" id="tasks-scheduling-heading">Tasks, reminders and scheduling</h2>
+          <p class="section-lead">Turn inquiries, follow-ups, jobs and internal work into tasks with an owner, a status and a next step. Set reminders. Schedule supported sends, such as announcements, emails and blog posts, to go out at the time you set.</p>
         </div>
       </div>
     </section>
 
 
-    <!-- F. Roles, Permissions & Team Access -->
-    <section class="section section--surface" id="roles-team" aria-labelledby="roles-heading">
+    <!-- F. Roles, permissions & team access -->
+    <section class="section" id="roles-team" aria-labelledby="roles-heading">
       <div class="container container--narrow">
         <div class="section-header">
-          <p class="section-eyebrow">Roles, Permissions &amp; Team Access</p>
-          <h2 class="section-title" id="roles-heading">Give the right people the right view</h2>
-          <p class="section-lead">Assign tasks, control access by role, and manage how staff, admins, and owners interact with the system. Everyone sees the work relevant to them.</p>
+          <div class="feat-group-labels"><span class="feat-group-label">Available today</span></div>
+          <h2 class="section-title" id="roles-heading">Roles, permissions and team access</h2>
+          <p class="section-lead">Assign work to team members and control access by role. Owners, admins and staff each see the work relevant to them, with per-feature controls.</p>
         </div>
       </div>
     </section>
 
 
-    <!-- Execution explanation -->
-    <section class="section" id="execution" aria-labelledby="execution-heading">
+    <!-- G. Approvals -->
+    <section class="section section--surface" id="approvals" aria-labelledby="approvals-heading">
       <div class="container container--narrow">
-        <div class="section-header section-header--centered">
-          <h2 class="section-title" id="execution-heading">More than a task list</h2>
-          <p class="section-lead">Tasks in SuccessOBM can carry communication, quotes, invoices, scheduling, and next steps — all in one place. Your OBM helps prepare the work, and you stay in control of what goes out.</p>
-          <p class="feat-execution-tagline">Your OBM prepares the work. You approve what matters.</p>
+        <div class="section-header">
+          <div class="feat-group-labels"><span class="feat-group-label">Available today in supported flows</span></div>
+          <h2 class="section-title" id="approvals-heading">Approvals</h2>
+          <p class="section-lead">Your OBM can prepare bounded work, such as a draft message or a proposed send. For supported flows, it requests your approval before consequential actions are carried out. Approval-gated execution exists only for those bounded flows, and your OBM does not have unrestricted authority to act on your behalf. Sends you schedule yourself go out at the time you set.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Current limitations -->
+    <section class="section" id="limitations" aria-labelledby="limitations-heading">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <p class="section-eyebrow">Current Limitations</p>
+          <h2 class="section-title" id="limitations-heading">What isn&rsquo;t available yet</h2>
+        </div>
+        <ul class="feat-limitations-list">
+          <li>WooCommerce order import is manual and read-only.</li>
+          <li>Google Business Profile publishing is not enabled.</li>
+          <li>Supplier ordering is not available.</li>
+          <li>Your OBM does not have unrestricted authority to change records or take actions; approval-gated execution covers only specific, bounded flows.</li>
+          <li>Not every capability listed on this page is enabled for every workspace.</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- Future direction -->
+    <section class="section section--surface" id="direction" aria-labelledby="direction-heading">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <p class="section-eyebrow">Future Direction &middot; Not Available Today</p>
+          <h2 class="section-title" id="direction-heading">Where we&rsquo;re headed</h2>
+          <p class="section-lead">Our longer-term direction is an online business manager that coordinates a specialized agent team across operations, customer service, sales, marketing, finance and administration. That full vision is not available today, and we&rsquo;ll say so plainly as it develops. See the <a href="/roadmap/">public roadmap</a>.</p>
         </div>
       </div>
     </section>
 
 
     <!-- Mini workflow example -->
-    <section class="section section--surface" id="example-flow" aria-labelledby="example-flow-label">
+    <section class="section" id="example-flow" aria-labelledby="example-flow-label">
       <div class="container">
         <div class="feat-flow-strip" role="region" aria-labelledby="example-flow-label">
-          <p class="feat-flow-strip__label" id="example-flow-label">Example</p>
+          <p class="feat-flow-strip__label" id="example-flow-label">Example: one customer, start to finish</p>
           <div class="feat-flow-strip__steps" aria-label="Workflow steps">
             <span class="feat-flow-pill">Inquiry</span>
             <span class="feat-flow-arrow" aria-hidden="true">›</span>
@@ -409,10 +517,10 @@
     <section class="cta-section" id="get-started" aria-labelledby="cta-heading">
       <div class="container cta-section__inner">
         <h2 class="cta-section__title" id="cta-heading">
-          Run your business from one system
+          See what&rsquo;s available for your business
         </h2>
         <p class="cta-section__body">
-          Bring your tasks, customers, communication, and workflows into one place and start operating with structure.
+          We&rsquo;ll walk through what&rsquo;s enabled in your workspace, what needs approval, and what isn&rsquo;t available yet. Access is guided and invitation-based.
         </p>
         <div class="cta-section__actions">
           <a href="/waitlist/" class="btn btn--white btn--lg">Request Early Access</a>
@@ -426,8 +534,7 @@
 
 
     <!-- ============================================================
-         9. FAQ
-         Task-flow oriented questions — distinct from Platform FAQ.
+         FAQ
          ============================================================ -->
     <section class="section section--surface" id="faq" aria-labelledby="faq-heading">
       <div class="container container--narrow">
@@ -468,7 +575,7 @@
               </button>
             </dt>
             <dd id="faqf-2" class="faq-answer" hidden>
-              <p>Contacts in SuccessOBM aren't a separate database — they're the records that every other platform activity connects to. A contact can be a lead in your sales pipeline, a subscriber on your marketing list, a client with task history and invoices, or all of the above. When you send an email, create a task, or generate a quote, it ties back to the contact record. That means everyone on your team is working from the same information, not pulling from separate tools.</p>
+              <p>Contacts in SuccessOBM aren't a separate database — they're the records that tasks, messages, quotes and invoices connect to. A contact can be a lead in your sales pipeline, a subscriber on your marketing list, a client with task history and invoices, or all of the above. When you send an email, create a task, or generate a quote, it ties back to the contact record. That means everyone on your team is working from the same information, not pulling from separate tools.</p>
             </dd>
           </div>
 
@@ -492,7 +599,7 @@
               </button>
             </dt>
             <dd id="faqf-4" class="faq-answer" hidden>
-              <p>For many owner-led businesses, it can. Quotes and invoices are created inside SuccessOBM and tied to the customer record and task. Customers can approve quotes through a public approval link, and invoices can include Stripe payment links. Staff can issue refunds, send purchase orders to vendors, and start a QuickBooks synchronization. Whether it fully replaces your current tool depends on your billing needs — we&rsquo;ll review that with you in a demo.</p>
+              <p>For some owner-led businesses, it can. Quotes and invoices are created inside SuccessOBM and tied to the customer record and task. Customers can approve quotes through a public approval link, and invoices can include Stripe payment links. Staff can issue refunds, send purchase orders to vendors, and start a QuickBooks synchronization. Whether it fully replaces your current tool depends on your billing needs — we&rsquo;ll review that with you in a demo.</p>
             </dd>
           </div>
 
@@ -513,6 +620,18 @@
                 <li>Not every capability listed on this page is enabled for every workspace.</li>
               </ul>
               <p>Our longer-term direction is an online business manager that coordinates specialized agents across the business. That full vision is not available today, and we&rsquo;ll say so plainly as it develops.</p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-toggle" aria-expanded="false" aria-controls="faqf-6">
+                Which capabilities need my approval?
+                <span class="faq-toggle__icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd id="faqf-6" class="faq-answer" hidden>
+              <p>For supported flows, your OBM requests approval before consequential actions, such as sending a message it prepared. Social publishing to Facebook, Instagram and LinkedIn uses approval controls. Sends you schedule yourself go out at the time you set. We&rsquo;ll show you which flows are approval-gated in your workspace during onboarding.</p>
             </dd>
           </div>
 

@@ -4,24 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SuccessOBM | Your Online Business Manager</title>
-  <meta name="description" content="SuccessOBM gives an overwhelmed business owner their own online business manager — one system for customers, communication, orders, money, marketing, and the work that keeps the business moving.">
+  <title>SuccessOBM | AI Online Business Manager for Owner-Led Businesses</title>
+  <meta name="description" content="SuccessOBM gives owner-led businesses their own AI online business manager. It works from your connected records, prepares work for review, and asks before consequential actions.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://successobm.com/">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="SuccessOBM">
   <meta property="og:url"         content="https://successobm.com/">
-  <meta property="og:title"       content="SuccessOBM | Your Online Business Manager">
-  <meta property="og:description" content="SuccessOBM gives an overwhelmed business owner their own online business manager — one system for customers, communication, orders, money, marketing, and the work that keeps the business moving.">
+  <meta property="og:title"       content="SuccessOBM | AI Online Business Manager for Owner-Led Businesses">
+  <meta property="og:description" content="SuccessOBM gives owner-led businesses their own AI online business manager. It works from your connected records, prepares work for review, and asks before consequential actions.">
   <meta property="og:locale"      content="en_US">
   <!-- og:image — add when asset is ready -->
   <!-- <meta property="og:image"     content="https://successobm.com/assets/og-image.png"> -->
   <!-- <meta property="og:image:alt" content="SuccessOBM platform dashboard showing marketing, sales, and operations management"> -->
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="SuccessOBM | Your Online Business Manager">
-  <meta name="twitter:description" content="SuccessOBM gives an overwhelmed business owner their own online business manager — one system for customers, communication, orders, money, marketing, and the work that keeps the business moving.">
+  <meta name="twitter:title"       content="SuccessOBM | AI Online Business Manager for Owner-Led Businesses">
+  <meta name="twitter:description" content="SuccessOBM gives owner-led businesses their own AI online business manager. It works from your connected records, prepares work for review, and asks before consequential actions.">
 
   <script type="application/ld+json">
   {
@@ -32,7 +32,7 @@
         "@id": "https://successobm.com/#organization",
         "name": "SuccessOBM",
         "url": "https://successobm.com",
-        "description": "Online business manager for owner-led small businesses — customers, communication, orders, money, marketing, and operational work in one system."
+        "description": "AI online business manager for owner-led small businesses — one point of coordination for customers, communication, orders, money, and marketing, with human review and approval in supported flows."
       },
       {
         "@type": "WebSite",
@@ -48,7 +48,7 @@
         "url": "https://successobm.com",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "Online business manager for owner-led small businesses. Tasks, customer records, email, SMS, forms, quotes, invoices, marketing content, scheduling, and role-based team access in one system. Access is guided and invitation-based.",
+        "description": "Online business manager for owner-led small businesses. Your OBM answers supported questions from connected business records, prepares bounded work, and requests approval before consequential actions in supported flows. Includes tasks, customer records, email and SMS, quotes and invoices, marketing content, scheduling, and role-based team access. Access is guided and invitation-based.",
         "offers": {
           "@type": "Offer",
           "priceCurrency": "USD",
@@ -57,9 +57,11 @@
         },
         "publisher": { "@id": "https://successobm.com/#organization" },
         "featureList": [
+          "Ask Your OBM",
           "Tasks and Reminders",
           "Email, SMS and Forms",
           "CRM and Customer Records",
+          "Quotes and Invoices",
           "Marketing Content Workspace",
           "Scheduling and Follow-Up",
           "Roles, Permissions and Team Access"
@@ -80,135 +82,7 @@
        Homepage — page-specific styles
        ================================================================ */
 
-    /* ---- Workflow example — four area rows ---- */
-    .wf-rows {
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-3);
-      margin-bottom: var(--s-10);
-    }
-
-    .wf-row {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--s-3);
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: var(--r-xl);
-      padding: var(--s-4) var(--s-5);
-    }
-
-    @media (min-width: 600px) {
-      .wf-row {
-        grid-template-columns: 110px 1fr;
-        align-items: center;
-        gap: var(--s-5);
-      }
-    }
-
-    .wf-row__area {
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.38);
-    }
-
-    .wf-row__steps {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--s-2);
-    }
-
-    /* Step pills */
-    .wf-pill {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.11);
-      border-radius: var(--r-full);
-      padding: 5px 13px;
-      font-size: var(--text-sm);
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.78);
-      white-space: nowrap;
-    }
-
-    /* OBM-assisted steps — gold */
-    .wf-pill--agent {
-      border-color: rgba(245, 158, 11, 0.42);
-      background: rgba(245, 158, 11, 0.08);
-      color: rgba(245, 158, 11, 0.92);
-    }
-
-    /* Completion step — green */
-    .wf-pill--complete {
-      border-color: rgba(16, 185, 129, 0.42);
-      background: rgba(16, 185, 129, 0.07);
-      color: rgba(16, 185, 129, 0.92);
-    }
-
-    /* Arrow separators */
-    .wf-arrow {
-      color: rgba(255, 255, 255, 0.2);
-      font-size: 12px;
-      flex-shrink: 0;
-      user-select: none;
-    }
-
-    /* Legend row */
-    .wf-legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--s-6);
-      justify-content: center;
-      margin-bottom: var(--s-10);
-    }
-    .wf-legend-item {
-      display: flex;
-      align-items: center;
-      gap: var(--s-2);
-      font-size: var(--text-xs);
-      color: rgba(255, 255, 255, 0.35);
-    }
-    .wf-legend-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    /* Three callout notes */
-    .wf-notes {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--s-4);
-    }
-    @media (min-width: 640px) {
-      .wf-notes { grid-template-columns: repeat(3, 1fr); }
-    }
-    .wf-note {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: var(--r-xl);
-      padding: var(--s-5);
-    }
-    .wf-note__label {
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--c-accent);
-      margin-bottom: var(--s-2);
-    }
-    .wf-note__body {
-      font-size: var(--text-sm);
-      color: rgba(255, 255, 255, 0.52);
-      line-height: 1.65;
-    }
-
-    /* Hero — key benefit strip */
+    /* ---- Hero — key benefit strip ---- */
     .hero-benefits {
       list-style: none;
       margin: var(--s-6) 0 0;
@@ -250,6 +124,76 @@
         animation-delay: 400ms;
       }
     }
+
+    /* ---- Founder section — narrow prose ---- */
+    .founder-quote {
+      font-size: clamp(var(--text-2xl), 3.5vw, var(--text-3xl));
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      color: var(--c-text);
+    }
+
+    .founder-body {
+      font-size: var(--text-base);
+      color: var(--c-text-muted);
+      line-height: 1.75;
+      margin-bottom: var(--s-5);
+    }
+
+    .founder-body:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .founder-body a {
+      color: var(--c-primary);
+      font-weight: 600;
+    }
+
+    /* ---- Pillar status tags (how-it-fits cards) ---- */
+    .pillar__tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 11px;
+      border-radius: var(--r-full);
+      margin-bottom: var(--s-3);
+    }
+
+    .pillar__tag--always {
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .pillar__tag--now {
+      background: rgba(37, 99, 235, 0.14);
+      color: #93C5FD;
+      border: 1px solid rgba(37, 99, 235, 0.4);
+    }
+
+    .pillar__tag--future {
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--c-gold);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+
+    /* ---- Grounding note (how-it-works) ---- */
+    .grounding-note {
+      max-width: 640px;
+      margin: var(--s-10) auto 0;
+      padding: var(--s-5);
+      background-color: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-lg);
+      font-size: var(--text-sm);
+      color: var(--c-text-muted);
+      line-height: 1.65;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -280,6 +224,7 @@
         <ul class="nav__list" role="list">
           <li><a href="/platform" class="nav__link">Platform</a></li>
           <li><a href="/features" class="nav__link">Features</a></li>
+          <li><a href="/who-its-for" class="nav__link">Who It&rsquo;s For</a></li>
           <li><a href="/waitlist/" class="nav__link">Early Access</a></li>
           <li><a href="/contact"  class="nav__link">Contact</a></li>
         </ul>
@@ -295,47 +240,45 @@
 
     <!-- ============================================================
          1. HERO
-         One H1 — keyword-forward, audience-broad, above-fold CTA.
-         "solopreneurs" not used in headline per positioning brief.
          ============================================================ -->
     <section class="hero" id="hero" aria-labelledby="hero-heading">
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__badge" aria-label="Product category">
-          Online Business Manager
+          For Owner-Led Businesses
         </div>
         <h1 class="hero__headline" id="hero-heading">
-          Your Own Online Business Manager
+          You manage your OBM. Your OBM coordinates the work.
         </h1>
         <p class="hero__subheadline">
-          SuccessOBM gives an overwhelmed business owner their own online business manager — one system for customers, communication, orders, money, marketing, and the work that keeps the business moving.
+          SuccessOBM gives your business its own AI online business manager: software that works from your connected business records, answers supported questions, prepares work for your review, and requests approval before consequential actions in supported flows. It gives you one point of coordination, instead of another stack of tools to run.
         </p>
         <div class="hero__actions">
           <a href="/waitlist/"       class="btn btn--primary btn--lg">Request Early Access</a>
           <a href="#how-it-works" class="btn btn--outline-light btn--lg">See How It Works</a>
         </div>
-        <p class="hero__note">Guided onboarding &bull; Built for real business workflows &bull; No pressure demos</p>
-        <ul class="hero-benefits" role="list" aria-label="What SuccessOBM helps you do">
-          <li class="hero-benefits__item">Send emails, SMS, and forms from one system</li>
-          <li class="hero-benefits__item">Turn every inquiry into a tracked task</li>
-          <li class="hero-benefits__item">Review and approve what your OBM prepares</li>
+        <p class="hero__note">Guided, invitation-based access &bull; Demos by request</p>
+        <ul class="hero-benefits" role="list" aria-label="What your OBM helps you do">
+          <li class="hero-benefits__item">Ask about customers, orders, invoices and open work</li>
+          <li class="hero-benefits__item">Get drafts and next steps prepared for review</li>
+          <li class="hero-benefits__item">Approve what matters in supported flows</li>
         </ul>
       </div>
     </section>
 
 
     <!-- ============================================================
-         2. PROBLEM STATEMENT
+         2. THE OWNER IS THE SYSTEM
          ============================================================ -->
     <section class="section section--light" id="problem" aria-labelledby="problem-heading">
       <div class="container">
         <div class="section-header section-header--centered">
-          <p class="section-eyebrow">The Problem</p>
+          <p class="section-eyebrow">The Real Problem</p>
           <h2 class="section-title" id="problem-heading">
-            Your business does not need another tool. It needs a system that keeps work moving.
+            In most small businesses, the operating system is the owner.
           </h2>
           <p class="section-lead">
-            Most businesses do not lose momentum because they lack software. They lose momentum because work is spread across inboxes, spreadsheets, chats, calendars, and disconnected apps — with no single place responsible for execution.
+            The business runs, but it runs through you. You know how things are done, you hold the standard, and you're the one who notices when something slips. Software stores pieces of the work. The coordination still falls to you.
           </p>
         </div>
         <ul class="pain-grid" role="list">
@@ -343,29 +286,29 @@
             <div class="pain-card__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="7" height="7" rx="1"/><rect x="15" y="3" width="7" height="7" rx="1"/><rect x="2" y="14" width="7" height="7" rx="1"/><rect x="15" y="14" width="7" height="7" rx="1"/><line x1="9" y1="6.5" x2="15" y2="6.5"/><line x1="9" y1="17.5" x2="15" y2="17.5"/><line x1="5.5" y1="10" x2="5.5" y2="14"/><line x1="18.5" y1="10" x2="18.5" y2="14"/></svg>
             </div>
-            <h3 class="pain-card__title">Work Scattered Across Tools and Channels</h3>
-            <p class="pain-card__body">The same customer conversation might live in email, SMS, a form reply, and a chat thread — while tasks live elsewhere. Nothing stays tied together, so execution breaks at every handoff.</p>
+            <h3 class="pain-card__title">The Knowledge Lives With You</h3>
+            <p class="pain-card__body">How you quote, what each customer expects, which follow-ups matter. When that knowledge isn&rsquo;t anywhere shared, the questions come back to you.</p>
           </li>
           <li class="pain-card">
             <div class="pain-card__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
-            <h3 class="pain-card__title">Follow-Up Depends on Memory</h3>
-            <p class="pain-card__body">Quotes, callbacks, and customer replies slip when reminders live in someone's head or a sticky note. Without visible schedules and tied-to-task follow-ups, momentum stalls.</p>
+            <h3 class="pain-card__title">You&rsquo;re the Final Safety Net</h3>
+            <p class="pain-card__body">A missed callback, a late invoice, a post that didn&rsquo;t go out. When no one else catches it, you do.</p>
           </li>
           <li class="pain-card">
             <div class="pain-card__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
             </div>
-            <h3 class="pain-card__title">No Clear Ownership or Next Step</h3>
-            <p class="pain-card__body">When work is not captured as tasks with an owner and status, nobody can see what happens next — or who is responsible for moving it forward. Important work sits in limbo.</p>
+            <h3 class="pain-card__title">Consistency Is Hard to Hold</h3>
+            <p class="pain-card__body">As people join, change roles or move on, training repeats, and handoffs don&rsquo;t always carry the full picture.</p>
           </li>
           <li class="pain-card">
             <div class="pain-card__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
-            <h3 class="pain-card__title">Growth Creates Coordination Problems</h3>
-            <p class="pain-card__body">Adding staff, admins, or partners multiplies updates, permissions, and handoffs. Without a shared execution layer, you spend more time chasing status and less time delivering for customers.</p>
+            <h3 class="pain-card__title">You Can Only Move One Thing Forward at a Time</h3>
+            <p class="pain-card__body">Customers, money, marketing and your team all need attention at once. Every hour spent on one is an hour the others wait.</p>
           </li>
         </ul>
       </div>
@@ -373,48 +316,75 @@
 
 
     <!-- ============================================================
-         3. WHAT SUCCESSOBM MANAGES
-         Four business pillars — marketing, sales, operations, team.
+         3. FOUNDER
          ============================================================ -->
-    <section class="section section--dark" id="platform" aria-labelledby="platform-heading">
+    <section class="section" id="founder" aria-labelledby="founder-heading">
+      <div class="container container--narrow">
+        <div class="section-header section-header--centered">
+          <p class="section-eyebrow">Why SuccessOBM Exists</p>
+          <h2 class="section-title founder-quote" id="founder-heading">
+            &ldquo;I wished there were ten more of me.&rdquo;
+          </h2>
+        </div>
+        <p class="founder-body">
+          Eric, founder of SuccessOBM, hired his first employee in 1994. Over the decades that followed, the businesses and industries changed. Many of the operating challenges stayed the same: reliability, consistency and quality; training that had to be repeated as people joined or changed roles; knowledge that was lost when someone moved on; handoffs that didn&rsquo;t always carry the full picture; and only so many things one person could keep moving at once. Through all of it, the owner remained the final safety net.
+        </p>
+        <p class="founder-body">
+          He often wished there were ten more of him. This was never about blaming employees or replacing people. It was about building a business that did not depend on any one person&mdash;including the owner&mdash;being everywhere at once.
+        </p>
+        <p class="founder-body">
+          SuccessOBM grew from that. Eric named his own OBM Gordon, after the idea of a head chef calling orders and coordinating the kitchen. Gordon is Eric&rsquo;s chosen name. It isn&rsquo;t the SuccessOBM product name, and it isn&rsquo;t the name another owner&rsquo;s OBM has to use. Letting owners name their own OBM is <a href="/roadmap/">something we&rsquo;re exploring</a>.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         4. HOW IT FITS TOGETHER
+         ============================================================ -->
+    <section class="section section--dark" id="how-it-fits" aria-labelledby="fits-heading">
       <div class="container">
         <div class="section-header section-header--centered section-header--on-dark">
-          <p class="section-eyebrow section-eyebrow--accent">The Platform</p>
-          <h2 class="section-title" id="platform-heading">
-            One workspace for the work your business actually does
+          <p class="section-eyebrow section-eyebrow--accent">How It Fits Together</p>
+          <h2 class="section-title" id="fits-heading">
+            One point of coordination, not another stack of tools
           </h2>
           <p class="section-lead">
-            SuccessOBM brings tasks, customers, communication, scheduling, content, and team execution into one workspace — so quick actions and larger workflows happen from the same system.
+            Most business software waits for someone to operate it. With SuccessOBM, you direct your OBM, and your OBM works across your connected business information to prepare the work and bring you what needs a decision.
           </p>
         </div>
         <ul class="pillar-grid" role="list">
           <li class="pillar">
             <div class="pillar__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <span class="pillar__tag pillar__tag--always">Always</span>
+            <h3 class="pillar__title">You</h3>
+            <p class="pillar__body">Set the direction, review what your OBM prepares, and approve consequential actions in supported flows. You also choose what each person on your team can access.</p>
+          </li>
+          <li class="pillar">
+            <div class="pillar__icon" aria-hidden="true">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </div>
-            <h3 class="pillar__title">Quick Tasks</h3>
-            <p class="pillar__body">Send emails, send SMS messages, send forms, create reminders, and handle one-off business actions without jumping between tools.</p>
-          </li>
-          <li class="pillar">
-            <div class="pillar__icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
-            <h3 class="pillar__title">Marketing</h3>
-            <p class="pillar__body">Create and manage social posts, blogs, announcements, newsletters, campaigns, and scheduled content from one connected workspace.</p>
-          </li>
-          <li class="pillar">
-            <div class="pillar__icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
-            </div>
-            <h3 class="pillar__title">Sales &amp; Customer Follow-Up</h3>
-            <p class="pillar__body">Turn inquiries into tracked tasks, manage customer records, send quotes or follow-ups, and keep every opportunity moving with a clear next step.</p>
+            <span class="pillar__tag pillar__tag--now">Available today</span>
+            <h3 class="pillar__title">Your OBM</h3>
+            <p class="pillar__body">Your point of coordination. It answers supported questions from your connected records, prepares bounded work, coordinates supported workflows, and requests approval before consequential actions in supported flows.</p>
           </li>
           <li class="pillar">
             <div class="pillar__icon" aria-hidden="true">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <h3 class="pillar__title">Operations &amp; Team Execution</h3>
-            <p class="pillar__body">Assign work, control access by role, track status, manage handoffs, and keep admins, staff, and owners aligned.</p>
+            <span class="pillar__tag pillar__tag--future">Future direction &middot; Not available today</span>
+            <h3 class="pillar__title">A Specialized Agent Team</h3>
+            <p class="pillar__body">Our direction is a team of specialized agents, coordinated by your OBM, spanning operations, customer service, sales, marketing, finance and administration. It is intended to let more areas of work be monitored and prepared at the same time. It is not available today, and there is no announced release date.</p>
+          </li>
+          <li class="pillar">
+            <div class="pillar__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <span class="pillar__tag pillar__tag--now">Available today</span>
+            <h3 class="pillar__title">The Platform</h3>
+            <p class="pillar__body">The connected environment underneath: customers, tasks, messages, quotes, invoices, products and content in one place, with role-based access for owners, admins and staff.</p>
           </li>
         </ul>
       </div>
@@ -422,17 +392,17 @@
 
 
     <!-- ============================================================
-         4. OUTCOMES / BENEFITS
+         5. WHAT CHANGES
          ============================================================ -->
     <section class="section" id="outcomes" aria-labelledby="outcomes-heading">
       <div class="container">
         <div class="section-header section-header--centered">
-          <p class="section-eyebrow">What You Get</p>
+          <p class="section-eyebrow">What Changes</p>
           <h2 class="section-title" id="outcomes-heading">
-            Every action tracked. Every follow-up visible. Every task moving.
+            More capacity, without everything running through you
           </h2>
           <p class="section-lead">
-            SuccessOBM gives your business one place to create, assign, send, schedule, follow up, and complete work — without relying on scattered tools or memory.
+            The goal is a business that depends less on one person&rsquo;s memory, attention and availability.
           </p>
         </div>
         <ul class="outcomes-grid" role="list">
@@ -441,17 +411,17 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
             </div>
             <div class="outcome-item__text">
-              <h3 class="outcome-item__title">Every task has an owner, a status, and a next step</h3>
-              <p class="outcome-item__body">Inquiries, quotes, jobs, reminders, and sends show up as tasks with clear ownership — so nothing lives only in someone's inbox or head.</p>
+              <h3 class="outcome-item__title">Business knowledge stays in the business</h3>
+              <p class="outcome-item__body">Customer records, task history, linked messages, quotes and invoices sit in one place instead of in separate inboxes. Your OBM answers supported questions from those records.</p>
             </div>
           </li>
           <li class="outcome-item">
             <div class="outcome-item__icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <div class="outcome-item__text">
-              <h3 class="outcome-item__title">Communication can happen directly from the task</h3>
-              <p class="outcome-item__body">Email, SMS, and forms stay linked to customer records and tasks — so outreach and replies stay connected to the work instead of splitting across apps.</p>
+              <h3 class="outcome-item__title">Consistency on busy days</h3>
+              <p class="outcome-item__body">Work carries an owner, a status and a next step. Reminders surface timing, and scheduled sends go out at the time you set.</p>
             </div>
           </li>
           <li class="outcome-item">
@@ -459,8 +429,8 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6"  y1="20" x2="6"  y2="14"/><line x1="2"  y1="20" x2="22" y2="20"/></svg>
             </div>
             <div class="outcome-item__text">
-              <h3 class="outcome-item__title">Scheduled work and follow-ups stay visible</h3>
-              <p class="outcome-item__body">Calendar-oriented sends, appointments, and follow-up timing show up alongside your queue — so deadlines and callbacks are easier to see and act on.</p>
+              <h3 class="outcome-item__title">Work stays in view</h3>
+              <p class="outcome-item__body">Follow-ups, content, customer work and team assignments stay visible in one place, and scheduled work continues at the times you set. Your OBM prepares bounded work for your review. <em>Future direction, not available today: a specialized agent team intended to let more areas of work be monitored and prepared at the same time.</em></p>
             </div>
           </li>
           <li class="outcome-item">
@@ -468,351 +438,71 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
             </div>
             <div class="outcome-item__text">
-              <h3 class="outcome-item__title">Owners, admins, and staff see the right work for their role</h3>
-              <p class="outcome-item__body">Roles and permissions shape what each person can access — staff focus on assignments, admins handle their areas, and owners keep visibility across execution.</p>
+              <h3 class="outcome-item__title">Attention goes where judgment matters</h3>
+              <p class="outcome-item__body">In supported flows, your OBM prepares the work and asks before consequential actions. That leaves you and your team more time for customers, decisions and leadership.</p>
             </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-
-    <!-- ============================================================
-         5. WHO IT'S FOR / GROWTH & ROLES
-         Moved before Features per brief section order.
-         Covers owner-led → staff → admins → scale.
-         ============================================================ -->
-    <section class="section section--surface" id="who-its-for" aria-labelledby="who-heading">
-      <div class="container">
-        <div class="section-header section-header--centered">
-          <p class="section-eyebrow">Who It's For</p>
-          <h2 class="section-title" id="who-heading">
-            Built for businesses that are ready to operate with structure
-          </h2>
-          <p class="section-lead">
-            SuccessOBM is for owners and teams that need more than a task list — they need a reliable way to manage customers, communication, marketing, follow-up, and day-to-day execution.
-          </p>
-        </div>
-        <ul class="audience-grid" role="list">
-          <li class="audience-card">
-            <h3 class="audience-card__title">Owner-Led Businesses</h3>
-            <p class="audience-card__body">You run marketing, sales, and operations yourself or with a lean team. SuccessOBM centralizes execution — tasks, sends, scheduling, and customer follow-up — without bouncing between disconnected apps.</p>
-            <ul class="audience-card__tags" aria-label="Key use cases">
-              <li>Tasks + communication</li>
-              <li>Quick actions in one workspace</li>
-              <li>Solo or small team</li>
-            </ul>
-          </li>
-          <li class="audience-card">
-            <h3 class="audience-card__title">Local &amp; Service-Based Businesses</h3>
-            <p class="audience-card__body">From first inquiry through delivery, keep jobs, quotes, customer messages, and staff assignments on track — so nothing slips between the front desk and the field.</p>
-            <ul class="audience-card__tags" aria-label="Key use cases">
-              <li>Inquiry → task → follow-up</li>
-              <li>Customer records</li>
-              <li>Operational handoffs</li>
-            </ul>
-          </li>
-          <li class="audience-card">
-            <h3 class="audience-card__title">Growing Teams</h3>
-            <p class="audience-card__body">As you add staff and admins, SuccessOBM supports role-based access, clear ownership on tasks, and shared visibility — so coordination scales instead of relying on meetings and messages alone.</p>
-            <ul class="audience-card__tags" aria-label="Key use cases">
-              <li>Roles &amp; permissions</li>
-              <li>Assigned work queues</li>
-              <li>Shared execution layer</li>
-            </ul>
-          </li>
-          <li class="audience-card">
-            <h3 class="audience-card__title">Agencies &amp; Operators</h3>
-            <p class="audience-card__body">Manage multiple streams of client work with structured tasks, scheduled content and sends, and customer-linked communication — keeping execution consistent across accounts you operate.</p>
-            <ul class="audience-card__tags" aria-label="Key use cases">
-              <li>Task-driven delivery</li>
-              <li>Marketing + follow-up</li>
-              <li>Team-ready workspace</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-
-    <!-- ============================================================
-         6. CORE FEATURES
-         Business-function framing — not generic SaaS feature list.
-         ============================================================ -->
-    <section class="section" id="features" aria-labelledby="features-heading">
-      <div class="container">
-        <div class="section-header section-header--centered">
-          <p class="section-eyebrow">Features</p>
-          <h2 class="section-title" id="features-heading">
-            The tools your business needs, built into one platform
-          </h2>
-          <p class="section-lead">
-            Tasks, messaging, records, content, scheduling, and access controls share one workspace — connected to your customers and the work your team executes every day.
-          </p>
-        </div>
-        <ul class="features-grid" role="list">
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </div>
-            <h3 class="feature-card__title">Tasks &amp; Reminders</h3>
-            <p class="feature-card__body">Create tasks for yourself or your team, assign ownership, set due dates, and use reminders so obligations stay visible instead of buried in chat threads.</p>
-          </li>
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <h3 class="feature-card__title">Email, SMS &amp; Forms</h3>
-            <p class="feature-card__body">Send email and SMS and collect responses through forms from the same workspace as tasks and customer records — so messages stay tied to the work.</p>
-          </li>
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            </div>
-            <h3 class="feature-card__title">CRM &amp; Customer Records</h3>
-            <p class="feature-card__body">Keep leads and customers in one record store linked to tasks — track quotes, messages, and next steps without juggling separate spreadsheets.</p>
-          </li>
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
-            <h3 class="feature-card__title">Marketing Content Workspace</h3>
-            <p class="feature-card__body">Plan and manage social posts, blogs, newsletters, announcements, and campaigns alongside your other work — draft, review, and publish to supported destinations with approval controls.</p>
-          </li>
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <h3 class="feature-card__title">Scheduling &amp; Follow-Up</h3>
-            <p class="feature-card__body">Schedule supported sends and set reminders so follow-up steps stay visible in your queue instead of living in memory.</p>
-          </li>
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3 class="feature-card__title">Roles, Permissions &amp; Team Access</h3>
-            <p class="feature-card__body">Give owners, admins, staff, and operators the right visibility — control access to customers, tasks, and workspace areas so execution stays orderly as you grow.</p>
           </li>
         </ul>
         <div class="features-cta">
-          <a href="/features" class="btn btn--gold">See All Features</a>
+          <a href="/features" class="btn btn--gold">See Everything Available Today</a>
         </div>
       </div>
     </section>
 
 
     <!-- ============================================================
-         7. HOW IT WORKS
+         6. HOW YOUR OBM STAYS GROUNDED
          ============================================================ -->
     <section class="section section--surface" id="how-it-works" aria-labelledby="how-heading">
       <div class="container">
         <div class="section-header section-header--centered">
           <p class="section-eyebrow">How It Works</p>
           <h2 class="section-title" id="how-heading">
-            Three steps to execution in one workspace
+            Reach from AI. Grounding and control from your business.
           </h2>
           <p class="section-lead">
-            Guided onboarding helps you set up tasks, customers, and communication — then you add capabilities as your needs grow.
+            AI supplies reach. Connected records, defined rules, supported workflows, permissions, approvals and your review supply the grounding and control.
           </p>
         </div>
-        <ol class="steps" aria-label="Three steps to get started with SuccessOBM">
+        <ol class="steps" aria-label="How your OBM stays grounded">
           <li class="step">
             <div class="step__number" aria-hidden="true">1</div>
             <div class="step__content">
-              <h3 class="step__title">Start with a task or customer action</h3>
-              <p class="step__body">Capture work where it begins — an inquiry, a job to assign, content to publish, or a quick send — so execution starts inside SuccessOBM instead of scattered notes.</p>
+              <h3 class="step__title">It works from your connected records</h3>
+              <p class="step__body">Your OBM answers supported questions about customers, orders, open invoices, products and open work using your connected business information.</p>
             </div>
           </li>
           <li class="step">
             <div class="step__number" aria-hidden="true">2</div>
             <div class="step__content">
-              <h3 class="step__title">Choose what needs to happen</h3>
-              <p class="step__body">Pick the next moves: message a customer, schedule a send, attach a quote, add a reminder, or hand work to someone on your team — all from the same workspace.</p>
+              <h3 class="step__title">It prepares bounded work</h3>
+              <p class="step__body">Draft messages, marketing content, proposed sends and next steps, prepared for your review.</p>
             </div>
           </li>
           <li class="step">
             <div class="step__number" aria-hidden="true">3</div>
             <div class="step__content">
-              <h3 class="step__title">Let your OBM help prepare the work — you approve what matters</h3>
-              <p class="step__body">Tasks keep status and owners visible; email, SMS, and forms stay linked to records; reminders surface timing. Your OBM can prepare drafts and next steps, and asks for approval before consequential actions in supported flows.</p>
+              <h3 class="step__title">It asks where approval is required</h3>
+              <p class="step__body">In supported flows, your OBM requests approval before consequential actions. It has no unrestricted authority to act for you, and approval-gated execution covers only specific, bounded flows.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__number" aria-hidden="true">4</div>
+            <div class="step__content">
+              <h3 class="step__title">Supported work stays with the record</h3>
+              <p class="step__body">Messages, quotes, invoices and task history stay tied to the customer and the task, so the context is there when someone needs it.</p>
             </div>
           </li>
         </ol>
+        <p class="grounding-note">AI output can be wrong. That&rsquo;s why your OBM works from your records and prepares work for review. Not every workflow is supported, and available capabilities vary by workspace.</p>
       </div>
     </section>
 
 
     <!-- ============================================================
-         8. WORKFLOW EXAMPLE
-         Quick Task, Marketing, Sales, Operations rows.
-         Gold pills = OBM can help prepare. Green = completion step.
+         7. FAQ
          ============================================================ -->
-    <section class="section section--dark" id="workflow-example" aria-labelledby="workflow-heading">
-      <div class="container">
-
-        <div class="section-header section-header--centered section-header--on-dark">
-          <p class="section-eyebrow section-eyebrow--accent">How Work Moves</p>
-          <h2 class="section-title" id="workflow-heading">
-            Different kinds of work. One task system.
-          </h2>
-          <p class="section-lead">
-            Quick sends, marketing content, sales follow-up, and operational jobs all become tracked tasks — with your OBM helping prepare drafts and next steps where supported.
-          </p>
-        </div>
-
-        <div class="wf-rows" role="list" aria-label="Workflow examples">
-
-          <!-- Row 1: Quick Task -->
-          <div class="wf-row" role="listitem">
-            <span class="wf-row__area">Quick Task</span>
-            <div class="wf-row__steps" aria-label="Quick task workflow">
-              <span class="wf-pill">Need to send something</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill wf-pill--agent">Draft email/SMS/form</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill">Approve, send, or schedule</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill wf-pill--complete">Logged in task</span>
-            </div>
-          </div>
-
-          <!-- Row 2: Marketing -->
-          <div class="wf-row" role="listitem">
-            <span class="wf-row__area">Marketing</span>
-            <div class="wf-row__steps" aria-label="Marketing workflow">
-              <span class="wf-pill">Idea</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill wf-pill--agent">Draft content</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill">Review &amp; approve</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill">Schedule</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill wf-pill--complete">Publish</span>
-            </div>
-          </div>
-
-          <!-- Row 3: Sales -->
-          <div class="wf-row" role="listitem">
-            <span class="wf-row__area">Sales</span>
-            <div class="wf-row__steps" aria-label="Sales workflow">
-              <span class="wf-pill">Inquiry</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill">Customer task</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill wf-pill--agent">Draft quote/follow-up</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill">Reminder</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill wf-pill--complete">Closed</span>
-            </div>
-          </div>
-
-          <!-- Row 4: Operations -->
-          <div class="wf-row" role="listitem">
-            <span class="wf-row__area">Operations</span>
-            <div class="wf-row__steps" aria-label="Operations workflow">
-              <span class="wf-pill">Job/task created</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill">Assigned</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill">Updated</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill">Completed</span>
-              <span class="wf-arrow" aria-hidden="true">›</span>
-              <span class="wf-pill wf-pill--complete">Archived/history</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="wf-legend" aria-label="Workflow key">
-          <span class="wf-legend-item">
-            <span class="wf-legend-dot" style="background:rgba(255,255,255,0.45);" aria-hidden="true"></span>
-            Task tracked in SuccessOBM
-          </span>
-          <span class="wf-legend-item">
-            <span class="wf-legend-dot" style="background:var(--c-gold);" aria-hidden="true"></span>
-            Your OBM can help prepare
-          </span>
-          <span class="wf-legend-item">
-            <span class="wf-legend-dot" style="background:#10B981;" aria-hidden="true"></span>
-            Step complete
-          </span>
-        </div>
-
-        <div class="wf-notes">
-          <div class="wf-note">
-            <p class="wf-note__label">Tasks</p>
-            <p class="wf-note__body">Tasks anchor execution — owner, status, next step, and history stay together whether work is a send, a quote, or an operational job.</p>
-          </div>
-          <div class="wf-note">
-            <p class="wf-note__label">Your OBM</p>
-            <p class="wf-note__body">Your OBM can prepare drafts and next steps, then asks for approval before consequential actions in supported flows — supporting your judgment instead of replacing it.</p>
-          </div>
-          <div class="wf-note">
-            <p class="wf-note__label">Visibility</p>
-            <p class="wf-note__body">Owners and teams see what is assigned, scheduled, waiting, or complete — filtered by role so everyone stays aligned.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ============================================================
-         9. WHY IT'S DIFFERENT
-         ============================================================ -->
-    <section class="section" id="why-different" aria-labelledby="why-heading">
-      <div class="container">
-        <div class="section-header section-header--centered">
-          <p class="section-eyebrow">Why SuccessOBM</p>
-          <h2 class="section-title" id="why-heading">
-            Why businesses use SuccessOBM to run their operations
-          </h2>
-          <p class="section-lead">
-            SuccessOBM is built around tasks — then connects customers, messaging, quotes and invoices, scheduling, roles, and your OBM so the work stays grounded in day-to-day small-business operations.
-          </p>
-        </div>
-        <ul class="differentiators" role="list">
-          <li class="diff-item">
-            <div class="diff-item__number" aria-hidden="true">01</div>
-            <div class="diff-item__content">
-              <h3 class="diff-item__title">More Than Task Management — Execution-Focused Work</h3>
-              <p class="diff-item__body">Lists alone don't move businesses forward. SuccessOBM ties tasks to sends, schedules, customer records, and handoffs — so items become accountable execution, not unchecked boxes.</p>
-            </div>
-          </li>
-          <li class="diff-item">
-            <div class="diff-item__number" aria-hidden="true">02</div>
-            <div class="diff-item__content">
-              <h3 class="diff-item__title">Communication Built Into the Work</h3>
-              <p class="diff-item__body">Email, SMS, and forms live beside tasks and CRM records — conversations stay linked to what you're trying to finish instead of splitting across standalone messaging tools.</p>
-            </div>
-          </li>
-          <li class="diff-item">
-            <div class="diff-item__number" aria-hidden="true">03</div>
-            <div class="diff-item__content">
-              <h3 class="diff-item__title">An OBM That Prepares Work and Asks Before Acting</h3>
-              <p class="diff-item__body">Your OBM can answer questions using connected business information, draft content and messages, and prepare bounded work — then request your approval before consequential actions. We don&rsquo;t promise a fully automated business; you stay in control of what goes out.</p>
-            </div>
-          </li>
-          <li class="diff-item">
-            <div class="diff-item__number" aria-hidden="true">04</div>
-            <div class="diff-item__content">
-              <h3 class="diff-item__title">Designed Around How Small Businesses Actually Operate</h3>
-              <p class="diff-item__body">Owners wear many hats — inquiries, quotes, scheduling, marketing, and staff coordination all overlap. SuccessOBM mirrors that reality with role-based access and one workspace instead of forcing rigid departmental silos.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-
-    <!-- ============================================================
-         9. FAQ
-         Questions aligned with online business management positioning.
-         ============================================================ -->
-    <section class="section section--surface" id="faq" aria-labelledby="faq-heading">
+    <section class="section" id="faq" aria-labelledby="faq-heading">
       <div class="container container--narrow">
         <div class="section-header section-header--centered">
           <p class="section-eyebrow">FAQ</p>
@@ -825,72 +515,72 @@
           <div class="faq-item">
             <dt>
               <button class="faq-toggle" aria-expanded="false" aria-controls="faq-1">
-                What exactly is SuccessOBM?
+                What is SuccessOBM?
                 <span class="faq-toggle__icon" aria-hidden="true"></span>
               </button>
             </dt>
             <dd id="faq-1" class="faq-answer" hidden>
-              <p>SuccessOBM gives an overwhelmed business owner their own online business manager (OBM) — one system for customers, communication, orders, money, marketing, and the work that keeps the business moving. Your OBM understands supported business information, prepares work, coordinates bounded workflows, and asks for approval before consequential actions. If work is scattered across inboxes and apps with no accountable next step, SuccessOBM brings it together instead of adding another disconnected login.</p>
+              <p>SuccessOBM is software that gives an owner-led business its own online business manager (OBM). It is not a person or an agency. Your OBM works from your connected business records, answers supported questions, prepares bounded work, and requests approval before consequential actions in supported flows. Around it, SuccessOBM brings customers, communication, quotes and invoices, marketing and team work into one place.</p>
             </dd>
           </div>
 
           <div class="faq-item">
             <dt>
               <button class="faq-toggle" aria-expanded="false" aria-controls="faq-2">
-                Is it just a CRM or project management tool?
+                How is this different from a CRM, project tool or automation?
                 <span class="faq-toggle__icon" aria-hidden="true"></span>
               </button>
             </dt>
             <dd id="faq-2" class="faq-answer" hidden>
-              <p>No. SuccessOBM includes CRM and task management, but it's meant as one workspace for execution — marketing content, sends, scheduling, follow-up, operations-style jobs, and team access together. Think task-centered execution tied to customers and communication, not a narrow single-purpose app.</p>
+              <p>Each of those covers one slice of the work and waits to be operated, or runs on fixed triggers. SuccessOBM puts one point of coordination at the center: your OBM, working from connected customer, task, money and marketing records.</p>
             </dd>
           </div>
 
           <div class="faq-item">
             <dt>
               <button class="faq-toggle" aria-expanded="false" aria-controls="faq-3">
-                Does it work for a solo owner or a small team?
+                Does SuccessOBM run my business automatically?
                 <span class="faq-toggle__icon" aria-hidden="true"></span>
               </button>
             </dt>
             <dd id="faq-3" class="faq-answer" hidden>
-              <p>Yes. SuccessOBM fits owner-led operators and small teams — start with tasks, customers, and sends, then layer scheduling, marketing content, and more collaboration as you need them.</p>
+              <p>No. Your OBM can answer questions using connected business information and prepare bounded work. For supported flows, it requests your approval before consequential actions. It does not have unrestricted authority to act on your behalf, and not every workflow is supported.</p>
             </dd>
           </div>
 
           <div class="faq-item">
             <dt>
               <button class="faq-toggle" aria-expanded="false" aria-controls="faq-4">
-                Can it scale as I add staff and admins?
+                Will it replace my employees?
                 <span class="faq-toggle__icon" aria-hidden="true"></span>
               </button>
             </dt>
             <dd id="faq-4" class="faq-answer" hidden>
-              <p>Yes. SuccessOBM supports role-based access for owners, admins, and staff, with per-feature controls so each person can access the areas they need.</p>
+              <p>It&rsquo;s built to add capacity, not to take people out of the business. People remain essential for relationships, empathy, creativity, physical work, negotiation, leadership and high-stakes judgment. SuccessOBM carries more of the coordination, preparation and follow-up around that work, and keeps business knowledge in shared records.</p>
             </dd>
           </div>
 
           <div class="faq-item">
             <dt>
               <button class="faq-toggle" aria-expanded="false" aria-controls="faq-5">
-                Do I need technical knowledge to get started?
+                What&rsquo;s available today, and what&rsquo;s coming?
                 <span class="faq-toggle__icon" aria-hidden="true"></span>
               </button>
             </dt>
             <dd id="faq-5" class="faq-answer" hidden>
-              <p>No developer is required for day-to-day use. Guided onboarding gets you oriented; you start with the capabilities that match how you operate and add more over time — not everything has to be configured on day one.</p>
+              <p>Today your OBM answers supported questions from your records, prepares drafts and proposed sends, and asks before consequential actions in supported flows. Our direction is a specialized agent team spanning operations, customer service, sales, marketing, finance and administration. That is not available today. <a href="/features">See current capabilities and limitations</a>.</p>
             </dd>
           </div>
 
           <div class="faq-item">
             <dt>
               <button class="faq-toggle" aria-expanded="false" aria-controls="faq-6">
-                How do I get access to SuccessOBM?
+                How do I get access?
                 <span class="faq-toggle__icon" aria-hidden="true"></span>
               </button>
             </dt>
             <dd id="faq-6" class="faq-answer" hidden>
-              <p>Access is currently guided and invitation-based — there is no self-service signup. <a href="/waitlist/">Join the interest list and request early access</a>, and we&apos;ll follow up by email about next steps. Prefer a walkthrough first? <a href="/contact">Book a demo</a> on the contact page.</p>
+              <p>Access is currently guided and invitation-based — there is no self-service signup. <a href="/waitlist/">Join the interest list and request early access</a>, and we&apos;ll follow up by email about next steps. Prefer a walkthrough first? <a href="/contact">Book a demo</a>.</p>
             </dd>
           </div>
 
@@ -900,16 +590,15 @@
 
 
     <!-- ============================================================
-         10. CTA — placed after FAQ so objections are handled first.
-         Secondary button uses gold — brand-forward, demo-focused.
+         8. CTA
          ============================================================ -->
     <section class="cta-section" id="get-started" aria-labelledby="cta-heading">
       <div class="container cta-section__inner">
         <h2 class="cta-section__title" id="cta-heading">
-          See what your business looks like when it's managed in one place
+          Stop being the only one holding it all together.
         </h2>
         <p class="cta-section__body">
-          Every inquiry, lead, quote, job, invoice, and follow-up — organized as tasks, prepared with your OBM, and tracked in one place. Access is guided and invitation-based: request early access or book a demo to see it against your workflow.
+          See how an online business manager would work with your business: what it can answer, what it can prepare, and where you stay in control. Access is guided and invitation-based.
         </p>
         <div class="cta-section__actions">
           <a href="/waitlist/"  class="btn btn--white btn--lg">Request Early Access</a>
